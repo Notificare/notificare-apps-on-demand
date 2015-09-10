@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory 
+        android:title="@string/pref_location_services_title"
+        android:key="pref_key_location_services">
+        <CheckBoxPreference
+            android:key="pref_key_location_updates"
+            android:summary="@string/pref_summary_location_updates"
+            android:title="@string/pref_title_location_updates"
+            android:defaultValue="true" />
+        </PreferenceCategory>
+</PreferenceScreen><!-- From: file:/Users/joris/Developer/Projects/notificare-push-lib-android-src/res/xml/notificare_preferences.xml -->

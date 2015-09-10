@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/joris/Developer/Projects/notificare-push-lib-android-src/res/values-nl/strings.xml -->
+    <eat-comment/>
+    <string name="notificare_action_error_no_dialer">Kan geen nummer bellen.</string>
+    <string name="notificare_action_error_no_email_clients">Er is geen e-mailprogramma geïnstalleerd.</string>
+    <string name="notificare_action_error_no_sms_clients">Kan geen SMS versturen.</string>
+    <string name="notificare_action_failed">Actie kon niet uitgevoerd worden</string>
+    <string name="notificare_action_progress">Actie uitvoeren</string>
+    <string name="notificare_action_success">Actie succesvol</string>
+    <string name="notificare_action_title_intent_email">E-mail versturen…</string>
+    <string name="notificare_action_title_intent_more">Meer…</string>
+    <string name="notificare_action_title_intent_passbook">Pas openen…</string>
+    <string name="notificare_action_title_intent_sms">SMS versturen…</string>
+    <string name="notificare_action_title_intent_telephone">Nummer bellen…</string>
+    <string name="notificare_notification_error_gms_connect">Fout bij verbinden.</string>
+    <string name="notificare_notification_has_action">Deze notificatie heeft acties</string>
+    <string name="notificare_text_back">Terug</string>
+    <string name="notificare_text_cancel">Annuleren</string>
+    <string name="notificare_text_message_hint">type een tekst</string>
+    <string name="notificare_text_send">Zenden</string>
+    <!-- From: file:/Users/joris/Developer/Projects/notificare-push-lib-android-src/res/values-nl/strings_preferences.xml -->
+    <eat-comment/>
+    <string name="pref_location_services_title">Locatievoorzieningen</string>
+    <string name="pref_summary_location_updates">Werk locatie automatisch bij om relevante informatie te ontvangen</string>
+    <string name="pref_title_location_updates">Locatie bijwerken</string>
+</resources>

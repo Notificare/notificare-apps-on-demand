@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:paddingBottom="20dp"
+	android:background="#000000" >
+
+	<ScrollView
+		android:layout_width="fill_parent"
+		android:layout_height="200dp"
+		android:background="#FFFFFF" >
+		
+		<EditText 
+			android:id="@+id/notificare_callback_message"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:padding="5dp"
+			android:hint="@string/notificare_text_message_hint">
+		</EditText>
+	</ScrollView>
+	
+	<Button
+		android:id="@+id/notificare_send_button"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:textColor="#000000"
+		android:background="#FFFFFF"
+		android:padding="5dp"
+		android:text="@string/notificare_text_send"
+		android:textSize="20sp"
+		android:layout_margin="10dp"
+		 />
+
+
+</LinearLayout><!-- From: file:/Users/joris/Developer/Projects/notificare-push-lib-android-src/res/layout/notificare_callback_keyboard.xml --><!-- From: file:/Users/joeloliveira/Documents/AndroidDevelopment/Projects/notificare-demo-android/app/build/intermediates/exploded-aar/re.notifica/notificare-push-lib-android/1.5.6/res/layout/notificare_callback_keyboard.xml -->

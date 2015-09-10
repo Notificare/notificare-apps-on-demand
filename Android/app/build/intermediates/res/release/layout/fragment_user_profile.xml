@@ -1,0 +1,17 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+	<ListView
+		android:id="@+id/userProfileList"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:divider="@null"
+		android:scaleType="fitXY"
+		android:dividerHeight="0dp"
+		android:drawSelectorOnTop="false">
+	</ListView>
+
+</RelativeLayout><!-- From: file:/Users/joeloliveira/Documents/AndroidDevelopment/Projects/notificare-demo-android/app/src/main/res/layout/fragment_user_profile.xml -->

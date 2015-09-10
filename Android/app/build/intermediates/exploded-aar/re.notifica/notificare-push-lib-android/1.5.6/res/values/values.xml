@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/joris/Developer/Projects/notificare-push-lib-android-src/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="notificare_action_camera_failed">Camera can not be used</string>
+    <string name="notificare_action_error_no_dialer">Can not make a phone call.</string>
+    <string name="notificare_action_error_no_email_clients">No email client installed.</string>
+    <string name="notificare_action_error_no_sms_clients">Can not send SMS.</string>
+    <string name="notificare_action_failed">Could not perform the action</string>
+    <string name="notificare_action_progress">Performing action</string>
+    <string name="notificare_action_success">Action successful</string>
+    <string name="notificare_action_title_intent_email">Send mail…</string>
+    <string name="notificare_action_title_intent_more">More…</string>
+    <string name="notificare_action_title_intent_passbook">Open pass…</string>
+    <string name="notificare_action_title_intent_sms">Send SMS…</string>
+    <string name="notificare_action_title_intent_telephone">Call number…</string>
+    <string name="notificare_notification_error_gms_connect">Could not connect.</string>
+    <string name="notificare_notification_has_action">This notification has actions</string>
+    <string name="notificare_text_back">Back</string>
+    <string name="notificare_text_cancel">Cancel</string>
+    <string name="notificare_text_message_hint">type something</string>
+    <string name="notificare_text_send">Send</string>
+    <!-- From: file:/Users/joris/Developer/Projects/notificare-push-lib-android-src/res/values/strings_preferences.xml -->
+    <eat-comment/>
+    <string name="pref_location_services_title">Location Services</string>
+    <string name="pref_summary_location_updates">Keep track of your location to receive only relevant information</string>
+    <string name="pref_title_location_updates">Location updates</string>
+    <!-- From: file:/Users/joris/Developer/Projects/notificare-push-lib-android-src/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+</resources>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:layout_gravity="top"
+	android:paddingBottom="20dp"
+	android:background="#000000" >
+
+	<ImageView
+		android:id="@+id/notificare_callback_image" 
+		android:layout_centerHorizontal="true"
+		android:layout_centerVertical="true"
+		android:layout_width="match_parent" 
+		android:layout_height="match_parent"
+		android:layout_alignParentTop="true" 
+		android:adjustViewBounds="true" />
+	
+	<EditText 
+		android:id="@+id/notificare_callback_message"
+		android:layout_width="fill_parent"
+		android:layout_height="48dp"
+		android:background="#FFFFFF"
+		android:layout_alignParentBottom="true"
+		android:layout_marginRight="110dp"
+		android:padding="5dp"
+		android:hint="@string/notificare_text_message_hint" >
+	</EditText>
+	
+	<Button
+		android:id="@+id/notificare_send_button"
+		android:layout_width="100dp"
+		android:layout_height="wrap_content"
+		android:textColor="#000000"
+		android:background="#FFFFFF"
+		android:padding="5dp"
+		android:text="@string/notificare_text_send"
+		android:textSize="20sp"
+		android:layout_margin="10dp"
+		android:layout_alignParentRight="true"
+		android:layout_alignParentBottom="true"
+		 />
+
+
+</RelativeLayout><!-- From: file:/Users/joris/Developer/Projects/notificare-push-lib-android-src/res/layout/notificare_callback_camera_keyboard.xml --><!-- From: file:/Users/joeloliveira/Documents/AndroidDevelopment/Projects/notificare-demo-android/app/build/intermediates/exploded-aar/re.notifica/notificare-push-lib-android/1.5.6/res/layout/notificare_callback_camera_keyboard.xml -->

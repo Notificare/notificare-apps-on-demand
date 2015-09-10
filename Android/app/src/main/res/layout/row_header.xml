@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="fill_parent" android:layout_height="@dimen/user_header_height"
+    android:paddingTop="35dip" android:paddingBottom="10dip" android:paddingLeft="10dip" android:background="#EFEFF4">
+
+    <TextView
+        android:id="@+id/item_label"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:textSize="12sp"
+        android:textColor="#808080"
+        android:textAllCaps="true"
+        android:text="header" />
+
+</RelativeLayout>

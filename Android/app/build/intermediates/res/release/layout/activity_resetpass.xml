@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:orientation="vertical"
+    android:focusableInTouchMode="true" >
+    
+	<ScrollView android:id="@+id/ScrlView" 
+	    android:layout_width="fill_parent" 
+	    android:layout_height="fill_parent" >
+		<LinearLayout 
+	        android:id="@+id/layoutForScroll" 
+	        android:orientation="vertical" 
+	        android:layout_width="fill_parent" 
+	        android:layout_height="wrap_content"
+	        android:background="@color/wildsand" >
+
+			<EditText 
+				android:id="@+id/pass"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_elements_top_margin"
+                android:layout_marginLeft="@dimen/activity_elements_default_margin"
+                android:layout_marginRight="@dimen/activity_elements_default_margin"
+                android:layout_marginBottom="@dimen/activity_elements_default_margin"
+				android:inputType="textPassword"
+				android:hint="@string/hint_pass" >
+			</EditText>
+			
+			<EditText 
+				android:id="@+id/confirmPass"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_elements_default_margin"
+                android:layout_marginRight="@dimen/activity_elements_default_margin"
+                android:layout_marginBottom="@dimen/activity_elements_default_margin"
+				android:inputType="textPassword"
+				android:hint="@string/hint_confirm_pass" >
+			</EditText>
+			
+			<Button
+				android:id="@+id/buttonResetPass"
+				android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:textColor="#FFFFFF"
+                android:background="@color/mantis"
+                android:layout_marginTop="@dimen/activity_elements_default_margin"
+                android:layout_marginLeft="@dimen/activity_elements_default_margin"
+                android:layout_marginRight="@dimen/activity_elements_default_margin"
+                android:layout_marginBottom="@dimen/activity_elements_default_margin"
+				android:text="@string/button_reset_pass"
+				android:textSize="20dp"
+				 />
+		 
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>
+<!-- From: file:/Users/joeloliveira/Documents/AndroidDevelopment/Projects/notificare-demo-android/app/src/main/res/layout/activity_resetpass.xml -->
