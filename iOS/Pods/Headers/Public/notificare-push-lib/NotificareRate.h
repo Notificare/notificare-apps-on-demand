@@ -1,0 +1,1 @@
+../../../notificare-push-lib/Notificare/NotificarePushLib/Types/Rate/NotificareRate.h

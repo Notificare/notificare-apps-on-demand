@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>testflight</key>
+	<string></string>
+	<key>url</key>
+	<string>http://notifica.re/apps-content/notificare/</string>
+	<key>navigation</key>
+	<array>
+		<dict>
+			<key>label</key>
+			<string>menu_item_home</string>
+			<key>url</key>
+			<string>MainView:Tutorial</string>
+		</dict>
+		<dict>
+			<key>label</key>
+			<string>menu_item_products</string>
+			<key>url</key>
+			<string>Products:SKProduct</string>
+		</dict>
+		<dict>
+			<key>label</key>
+			<string>menu_item_location</string>
+			<key>url</key>
+			<string>MKMapView:lat,long</string>
+		</dict>
+		<dict>
+			<key>label</key>
+			<string>menu_item_beacons</string>
+			<key>url</key>
+			<string>IBAction:openBeacons</string>
+		</dict>
+		<dict>
+			<key>label</key>
+			<string>menu_item_user</string>
+			<key>url</key>
+			<string>Auth:</string>
+		</dict>
+		<dict>
+			<key>label</key>
+			<string>menu_item_inbox</string>
+			<key>url</key>
+			<string>IBAction:openInbox</string>
+		</dict>
+		<dict>
+			<key>label</key>
+			<string>menu_item_settings</string>
+			<key>url</key>
+			<string>IBAction:openPreferences</string>
+		</dict>
+		<dict>
+			<key>label</key>
+			<string>menu_item_log</string>
+			<key>url</key>
+			<string>Log:</string>
+		</dict>
+	</array>
+	<key>host</key>
+	<string></string>
+	<key>facebook</key>
+	<string>392549870780732</string>
+	<key>twitter</key>
+	<string>notificare</string>
+</dict>
+</plist>
