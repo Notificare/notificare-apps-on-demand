@@ -12,10 +12,23 @@
 
 +(UIColor *) colorFromRgbaDictionary: (NSDictionary *) dictionary {
     
-    return RGBA([[dictionary objectForKey:@"red"] doubleValue],
-                [[dictionary objectForKey:@"green"] doubleValue],
-                [[dictionary objectForKey:@"blue"] doubleValue],
-                [[dictionary objectForKey:@"alpha"] doubleValue]);
+    if (dictionary &&
+        [dictionary objectForKey:@"red"] &&
+        [dictionary objectForKey:@"green"] &&
+        [dictionary objectForKey:@"blue"] &&
+        [dictionary objectForKey:@"alpha"]) {
+        
+        return RGBA([[dictionary objectForKey:@"red"] doubleValue],
+                    [[dictionary objectForKey:@"green"] doubleValue],
+                    [[dictionary objectForKey:@"blue"] doubleValue],
+                    [[dictionary objectForKey:@"alpha"] doubleValue]);
+        
+    } else {
+        
+        NSLog(@"An invalid color has been parsed. Please check the plist file.");
+        
+        return [UIColor grayColor];
+    }
 }
 
 @end
