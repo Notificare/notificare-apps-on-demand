@@ -20,9 +20,16 @@
 @property (nonatomic, strong) IBOutlet BadgeLabel * badgeNr;
 @property (nonatomic, strong) IBOutlet UIButton * badgeButton;
 @property (nonatomic, strong) IBOutlet UIImageView * buttonIcon;
-@property (nonatomic, strong) UIActivityIndicatorView * activityIndicatorView;
-@property (nonatomic, strong) UIView * loadingView;
+@property (nonatomic, strong) IBOutlet UIView *loadingView;
+@property (nonatomic, strong) IBOutlet UIActivityIndicatorView *activityIndicatorView;
 @property (nonatomic, strong) NSString * viewTitle;
 @property (nonatomic, strong) NSString * targetUrl;
+@property (nonatomic, strong) UIFont *titleFont;
+@property (nonatomic, strong) UIColor *titleColor;
+@property (nonatomic, strong) UIColor *loadingViewColor;
+@property (nonatomic, strong) UIColor *navigationBackgroundColor;
+@property (nonatomic, strong) UIColor *navigationForegroundColor;
+@property (nonatomic, strong) UIColor *toolbarBackgroundColor;
+@property (nonatomic, strong) UIColor *toolbarForegroundColor;
 
 @end

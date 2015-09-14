@@ -26,25 +26,16 @@
     [super viewDidLoad];
     UILabel * title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 40)];
     [title setText:[self viewTitle]];
-    [title setFont:LATO_LIGHT_FONT(20)];
+    [title setFont:[self titleFont]];
     [title setTextAlignment:NSTextAlignmentCenter];
-    [title setTextColor:ICONS_COLOR];
+    [title setTextColor:[self titleColor]];
     [[self navigationItem] setTitleView:title];
     
+    [[self loadingView] setBackgroundColor:[self loadingViewColor]];
     
     [self setupNavigationBar];
     
-    [self setActivityIndicatorView:[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]];
-    
-    
     [[self activityIndicatorView] setHidden:YES];
-    [[self activityIndicatorView]  setCenter:CGPointMake( self.view.frame.size.width /2-5, self.view.frame.size.height /2-5)];
-    [[self activityIndicatorView]  setContentMode:UIViewContentModeCenter];
-    
-    [self setLoadingView:[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)]];
-    [[self loadingView] setBackgroundColor:[UIColor whiteColor]];
-    [[self loadingView] addSubview:[self activityIndicatorView]];
-    [[self view] addSubview:[self loadingView]];
     
     [[self backButton] setImage:[UIImage imageNamed: @"BackButton"]];
     [[self forwardButton] setImage:[UIImage imageNamed: @"ForwardButton"]];
@@ -54,39 +45,37 @@
     [[self forwardButton] setEnabled:NO];
     [[self refreshButton] setEnabled:YES];
     
-    [[self toolbar] setBackgroundColor:[UIColor whiteColor]];
-    [[self toolbar] setTintColor:[UIColor blackColor]];
+    [[self toolbar] setBackgroundColor:[self toolbarBackgroundColor]];
+    [[self toolbar] setTintColor:[self toolbarForegroundColor]];
     [[self toolbar] setTranslucent:NO];
     
     //For iOS6
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
-        [[[self navigationController] navigationBar] setTintColor:MAIN_COLOR];
         
-        [[self toolbar] setTintColor:MAIN_COLOR];
+        [[[self navigationController] navigationBar] setTintColor:[self navigationBackgroundColor]];
         
-        [[self backButton] setTintColor:[UIColor blackColor]];
-        [[self forwardButton] setTintColor:[UIColor blackColor]];
-        [[self refreshButton] setTintColor:[UIColor blackColor]];
+        [[self toolbar] setTintColor:[self toolbarForegroundColor]];
+        
+        [[self backButton] setTintColor:[self toolbarForegroundColor]];
+        [[self forwardButton] setTintColor:[self toolbarForegroundColor]];
+        [[self refreshButton] setTintColor:[self toolbarForegroundColor]];
         
         [[UIBarButtonItem appearance] setBackgroundImage:[UIImage imageNamed:@"Transparent"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
         [[UIBarButtonItem appearance] setBackgroundImage:[UIImage imageNamed:@"Transparent"] forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
         
     } else {
         
-        [[[self navigationController] navigationBar] setBarTintColor:MAIN_COLOR];
+        [[[self navigationController] navigationBar] setBarTintColor:[self navigationBackgroundColor]];
     }
     
-    
     [self goToUrl];
-    
-
 }
 
 -(void)setupNavigationBar{
     int count = [[[self appDelegate] notificarePushLib] myBadge];
     
     if(count > 0){
-        [[self buttonIcon] setTintColor:ICONS_COLOR];
+        [[self buttonIcon] setTintColor:[self navigationForegroundColor]];
         [[self badgeButton] addTarget:[self viewDeckController] action:@selector(toggleLeftView) forControlEvents:UIControlEventTouchUpInside];
         
         NSString * badge = [NSString stringWithFormat:@"%i", count];
@@ -95,29 +84,28 @@
         UIBarButtonItem * leftButton = [[UIBarButtonItem alloc] initWithCustomView:[self badge]];
         [leftButton setTarget:[self viewDeckController]];
         [leftButton setAction:@selector(toggleLeftView)];
-        [leftButton setTintColor:ICONS_COLOR];
+        [leftButton setTintColor:[self navigationForegroundColor]];
         [[self navigationItem] setLeftBarButtonItem:leftButton];
     } else {
         
         UIBarButtonItem * leftButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"LeftMenuIcon"] style:UIBarButtonItemStylePlain target:[self viewDeckController] action:@selector(toggleLeftView)];
-        [leftButton setTintColor:ICONS_COLOR];
+        [leftButton setTintColor:[self navigationForegroundColor]];
         [[self navigationItem] setLeftBarButtonItem:leftButton];
         
     }
     
-    
-    
     UIBarButtonItem * rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"RightMenuIcon"] style:UIBarButtonItemStylePlain target:[self viewDeckController] action:@selector(toggleRightView)];
     
-    
-    [rightButton setTintColor:ICONS_COLOR];
+    [rightButton setTintColor:[self navigationForegroundColor]];
     
     if([[[self appDelegate] beacons] count] > 0){
+        
         [[self navigationItem] setRightBarButtonItem:rightButton];
+        
     } else {
+        
         [[self navigationItem] setRightBarButtonItem:nil];
     }
-    
 }
 
 -(void)changeBadge{
@@ -214,6 +202,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 @end

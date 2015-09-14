@@ -52,6 +52,7 @@
 #define MANTIS_COLOR [UIColor colorWithRed:64.0/255.0 green:202.0/255 blue:171.0/255.0 alpha:1.0]
 #define ICONS_COLOR [UIColor colorWithRed:255.0/255.0 green:255.0/255 blue:255.0/255.0 alpha:1.0]
 
+#define RGBA(r, g, b, a) [UIColor colorWithRed: r / 255.0 green: g / 255.0 blue: b / 255.0 alpha:a];
 
 #define FIELD_BACKGROUND_COLOR [UIColor whiteColor]
 #define FIELD_TEXT_COLOR MAIN_COLOR

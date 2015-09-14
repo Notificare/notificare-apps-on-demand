@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9046" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WebViewController">
             <connections>
+                <outlet property="activityIndicatorView" destination="fBQ-nm-XLh" id="cIa-nz-DK4"/>
                 <outlet property="backButton" destination="Qmv-rU-jcV" id="ImZ-Eu-QQg"/>
                 <outlet property="badge" destination="Zr7-fu-s4T" id="EFe-ei-QHq"/>
                 <outlet property="badgeButton" destination="17i-I8-0vG" id="rfC-Vb-XS2"/>
                 <outlet property="badgeNr" destination="g6B-wJ-esC" id="4vR-T1-edc"/>
                 <outlet property="buttonIcon" destination="sv8-sN-lKo" id="ufu-NU-xvB"/>
                 <outlet property="forwardButton" destination="79D-lh-Xiu" id="Sxm-1e-s04"/>
+                <outlet property="loadingView" destination="OOM-hV-dYu" id="7MA-Ss-cq4"/>
                 <outlet property="refreshButton" destination="7ac-fS-Xse" id="NLL-VS-Tmi"/>
                 <outlet property="toolbar" destination="Gh0-fT-h5U" id="Fhw-bW-Sa8"/>
                 <outlet property="view" destination="egr-bP-iyZ" id="0xk-mB-eR5"/>
@@ -39,13 +41,13 @@
                                 <action selector="goBack" destination="N6v-iB-O1V" id="Ygm-KD-yf7"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="X4j-61-Syj"/>
+                        <barButtonItem width="30" style="plain" systemItem="fixedSpace" id="X4j-61-Syj"/>
                         <barButtonItem image="ForwardButton.png" style="plain" id="79D-lh-Xiu">
                             <connections>
                                 <action selector="goForward" destination="N6v-iB-O1V" id="Yvo-Im-u4a"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem width="178" style="plain" systemItem="fixedSpace" id="NEp-6K-vyZ"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="kHX-Pb-cJN"/>
                         <barButtonItem image="RefreshButton.png" style="plain" id="7ac-fS-Xse">
                             <connections>
                                 <action selector="reload" destination="N6v-iB-O1V" id="P10-cW-DJi"/>
@@ -54,14 +56,31 @@
                     </items>
                     <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </toolbar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OOM-hV-dYu" userLabel="Loading View">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fBQ-nm-XLh" userLabel="Activity Indicator">
+                            <rect key="frame" x="150" y="274" width="20" height="20"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="fBQ-nm-XLh" firstAttribute="centerY" secondItem="OOM-hV-dYu" secondAttribute="centerY" id="IvF-lX-Xih"/>
+                        <constraint firstItem="fBQ-nm-XLh" firstAttribute="centerX" secondItem="OOM-hV-dYu" secondAttribute="centerX" id="hxz-Sr-VPY"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="OOM-hV-dYu" firstAttribute="trailing" secondItem="N6v-iB-O1V" secondAttribute="trailing" id="4L4-Z3-Lbp"/>
                 <constraint firstItem="N6v-iB-O1V" firstAttribute="leading" secondItem="egr-bP-iyZ" secondAttribute="leading" id="8r2-2z-ehe"/>
                 <constraint firstItem="N6v-iB-O1V" firstAttribute="leading" secondItem="Gh0-fT-h5U" secondAttribute="leading" id="B1q-Kv-50D"/>
                 <constraint firstAttribute="trailing" secondItem="N6v-iB-O1V" secondAttribute="trailing" id="Jch-6V-e3w"/>
+                <constraint firstItem="OOM-hV-dYu" firstAttribute="bottom" secondItem="N6v-iB-O1V" secondAttribute="bottom" id="Mwl-ff-9M0"/>
+                <constraint firstItem="OOM-hV-dYu" firstAttribute="top" secondItem="N6v-iB-O1V" secondAttribute="top" id="Pjl-Iv-9NJ"/>
                 <constraint firstItem="N6v-iB-O1V" firstAttribute="top" secondItem="egr-bP-iyZ" secondAttribute="top" id="cju-rH-8k9"/>
                 <constraint firstAttribute="bottom" secondItem="Gh0-fT-h5U" secondAttribute="bottom" id="ec4-Im-Pkq"/>
+                <constraint firstItem="OOM-hV-dYu" firstAttribute="leading" secondItem="N6v-iB-O1V" secondAttribute="leading" id="ifh-0g-KS4"/>
                 <constraint firstItem="N6v-iB-O1V" firstAttribute="trailing" secondItem="Gh0-fT-h5U" secondAttribute="trailing" id="oU2-cy-PVy"/>
                 <constraint firstItem="N6v-iB-O1V" firstAttribute="bottom" secondItem="Gh0-fT-h5U" secondAttribute="bottom" id="wSw-aL-h27"/>
             </constraints>
@@ -91,7 +110,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="140.5" y="153"/>
+            <point key="canvasLocation" x="210" y="-42"/>
         </view>
     </objects>
     <resources>
