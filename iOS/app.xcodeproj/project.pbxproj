@@ -116,6 +116,7 @@
 		40F226CD1A2E375F003A98B1 /* TutorialDoneIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F226CA1A2E375F003A98B1 /* TutorialDoneIcon.png */; };
 		40F226CE1A2E375F003A98B1 /* TutorialDoneIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F226CB1A2E375F003A98B1 /* TutorialDoneIcon@2x.png */; };
 		40F226CF1A2E375F003A98B1 /* TutorialDoneIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F226CC1A2E375F003A98B1 /* TutorialDoneIcon@3x.png */; };
+		A089D3A21BA734F300060399 /* UIColor+NSDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = A089D3A11BA734F300060399 /* UIColor+NSDictionary.m */; };
 		A0A9CA9C1BA2F53C004E2A98 /* LostPassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A9CA561BA2F53C004E2A98 /* LostPassViewController.m */; };
 		A0A9CA9D1BA2F53C004E2A98 /* LostPassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0A9CA571BA2F53C004E2A98 /* LostPassViewController.xib */; };
 		A0A9CA9E1BA2F53C004E2A98 /* ResetPassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A9CA591BA2F53C004E2A98 /* ResetPassViewController.m */; };
@@ -294,6 +295,8 @@
 		40F226CA1A2E375F003A98B1 /* TutorialDoneIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TutorialDoneIcon.png; sourceTree = "<group>"; };
 		40F226CB1A2E375F003A98B1 /* TutorialDoneIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TutorialDoneIcon@2x.png"; sourceTree = "<group>"; };
 		40F226CC1A2E375F003A98B1 /* TutorialDoneIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TutorialDoneIcon@3x.png"; sourceTree = "<group>"; };
+		A089D3A01BA734F300060399 /* UIColor+NSDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+NSDictionary.h"; path = "Shared/UIColor+NSDictionary.h"; sourceTree = "<group>"; };
+		A089D3A11BA734F300060399 /* UIColor+NSDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+NSDictionary.m"; path = "Shared/UIColor+NSDictionary.m"; sourceTree = "<group>"; };
 		A0A9CA551BA2F53C004E2A98 /* LostPassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LostPassViewController.h; sourceTree = "<group>"; };
 		A0A9CA561BA2F53C004E2A98 /* LostPassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LostPassViewController.m; sourceTree = "<group>"; };
 		A0A9CA571BA2F53C004E2A98 /* LostPassViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LostPassViewController.xib; sourceTree = "<group>"; };
@@ -455,6 +458,8 @@
 				A0A9CA7A1BA2F53C004E2A98 /* Subclasses */,
 				4083856618FF11F4000DC352 /* Resources */,
 				40F226AF1A2DFDE2003A98B1 /* Tutorial */,
+				A089D39F1BA7345E00060399 /* Shared */,
+				4083849118FF015C000DC352 /* Supporting Files */,
 				4083849918FF015C000DC352 /* AppDelegate.h */,
 				4083849A18FF015C000DC352 /* AppDelegate.m */,
 				4083858418FF2192000DC352 /* Configuration.h */,
@@ -473,7 +478,6 @@
 				408384A218FF015C000DC352 /* Images.xcassets */,
 				4029094019DF630100C159ED /* app.entitlements */,
 				40967F4F1A5A2660002E4AF8 /* locations.gpx */,
-				4083849118FF015C000DC352 /* Supporting Files */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -630,6 +634,15 @@
 				B115C4EC381D01F44F6C763F /* Pods.adhoc.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A089D39F1BA7345E00060399 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A089D3A01BA734F300060399 /* UIColor+NSDictionary.h */,
+				A089D3A11BA734F300060399 /* UIColor+NSDictionary.m */,
+			);
+			name = Shared;
 			sourceTree = "<group>";
 		};
 		A0A9CA531BA2F53C004E2A98 /* Components */ = {
@@ -1025,6 +1038,7 @@
 				A0A9CABA1BA2F53C004E2A98 /* FormField.m in Sources */,
 				A0A9CAB41BA2F53C004E2A98 /* DefaultCell.m in Sources */,
 				4083857A18FF132C000DC352 /* RightViewController.m in Sources */,
+				A089D3A21BA734F300060399 /* UIColor+NSDictionary.m in Sources */,
 				4083858718FF2192000DC352 /* Configuration.m in Sources */,
 				4083849B18FF015C000DC352 /* AppDelegate.m in Sources */,
 				A0A9CAA61BA2F53C004E2A98 /* UserDetailsViewController.m in Sources */,

@@ -24,6 +24,7 @@
 #import "NSData+Hex.h"
 #import "Configuration.h"
 #import "NotificareDevice.h"
+#import "UIColor+NSDictionary.h"
 
 
 
@@ -196,42 +197,12 @@
             [main setTargetUrl:[item objectForKey:@"url"]];
             [main setTitleFont:[UIFont fontWithName:[item objectForKey:@"titleFont"] size:[[item objectForKey:@"titleSize"] doubleValue]]];
             
-            UIColor *titleColor = RGBA([[[item objectForKey:@"titleColor"] objectForKey:@"red"] doubleValue],
-                                       [[[item objectForKey:@"titleColor"] objectForKey:@"green"] doubleValue],
-                                       [[[item objectForKey:@"titleColor"] objectForKey:@"blue"] doubleValue],
-                                       [[[item objectForKey:@"titleColor"] objectForKey:@"alpha"] doubleValue]);
-            
-            UIColor *loadingBackgroundColor = RGBA([[[item objectForKey:@"loadingViewColor"] objectForKey:@"red"] doubleValue],
-                                                   [[[item objectForKey:@"loadingViewColor"] objectForKey:@"green"] doubleValue],
-                                                   [[[item objectForKey:@"loadingViewColor"] objectForKey:@"blue"] doubleValue],
-                                                   [[[item objectForKey:@"loadingViewColor"] objectForKey:@"alpha"] doubleValue]);
-            
-            UIColor *navigationBackgroundColor = RGBA([[[item objectForKey:@"navigationBgColor"] objectForKey:@"red"] doubleValue],
-                                                      [[[item objectForKey:@"navigationBgColor"] objectForKey:@"green"] doubleValue],
-                                                      [[[item objectForKey:@"navigationBgColor"] objectForKey:@"blue"] doubleValue],
-                                                      [[[item objectForKey:@"navigationBgColor"] objectForKey:@"alpha"] doubleValue]);
-            
-            UIColor *navigationForegroundColor = RGBA([[[item objectForKey:@"navigationFgColor"] objectForKey:@"red"] doubleValue],
-                                                      [[[item objectForKey:@"navigationFgColor"] objectForKey:@"green"] doubleValue],
-                                                      [[[item objectForKey:@"navigationFgColor"] objectForKey:@"blue"] doubleValue],
-                                                      [[[item objectForKey:@"navigationFgColor"] objectForKey:@"alpha"] doubleValue]);
-            
-            UIColor *toolbarBackgroundColor = RGBA([[[item objectForKey:@"toolbarBgColor"] objectForKey:@"red"] doubleValue],
-                                                   [[[item objectForKey:@"toolbarBgColor"] objectForKey:@"green"] doubleValue],
-                                                   [[[item objectForKey:@"toolbarBgColor"] objectForKey:@"blue"] doubleValue],
-                                                   [[[item objectForKey:@"toolbarBgColor"] objectForKey:@"alpha"] doubleValue]);
-            
-            UIColor *toolbarForegroundColor = RGBA([[[item objectForKey:@"toolbarFgColor"] objectForKey:@"red"] doubleValue],
-                                                   [[[item objectForKey:@"toolbarFgColor"] objectForKey:@"green"] doubleValue],
-                                                   [[[item objectForKey:@"toolbarFgColor"] objectForKey:@"blue"] doubleValue],
-                                                   [[[item objectForKey:@"toolbarFgColor"] objectForKey:@"alpha"] doubleValue]);
-            
-            [main setTitleColor:titleColor];
-            [main setNavigationBackgroundColor:navigationBackgroundColor];
-            [main setNavigationForegroundColor:navigationForegroundColor];
-            [main setLoadingViewColor:loadingBackgroundColor];
-            [main setToolbarBackgroundColor:toolbarBackgroundColor];
-            [main setToolbarForegroundColor:toolbarForegroundColor];
+            [main setTitleColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"titleColor"]]];
+            [main setNavigationBackgroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"navigationBgColor"]]];
+            [main setNavigationForegroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"navigationFgColor"]]];
+            [main setLoadingViewColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"loadingViewColor"]]];
+            [main setToolbarBackgroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"toolbarBgColor"]]];
+            [main setToolbarForegroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"toolbarFgColor"]]];
             
             [self setCenterController:[[UINavigationController alloc] initWithRootViewController:main]];
             
