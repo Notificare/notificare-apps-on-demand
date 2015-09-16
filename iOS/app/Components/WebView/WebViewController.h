@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BadgeLabel.h"
 
-@interface WebViewController  : UIViewController <UIWebViewDelegate>
+@interface WebViewController : UIViewController <UIWebViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UIWebView * webView;
 @property (nonatomic, strong) IBOutlet UIToolbar * toolbar;

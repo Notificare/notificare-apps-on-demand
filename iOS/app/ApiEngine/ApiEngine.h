@@ -11,6 +11,9 @@
 
 @interface ApiEngine : MKNetworkEngine
 
+@property (nonatomic, strong) NSString * apiID;
+@property (nonatomic, strong) NSString * apiSecret;
+
 typedef void (^SuccessBlock)(NSDictionary* info);
 typedef void (^ErrorBlock)(NSError * error);
 
@@ -22,5 +25,14 @@ typedef void (^ErrorBlock)(NSError * error);
  */
 
 -(void)getEvents:(SuccessBlock)successBlock errorHandler:(ErrorBlock)errorBlock;
+
+- (void) requestWithHostName:(NSString *)hostName
+                     apiPath:(NSString *)path
+                  httpMethod:(NSString *)httpMethod
+              applicationKey:(NSString *)appKey
+           applicationSecret:(NSString *)appSecret
+                customParams:(NSDictionary *)customParams
+                   onSuccess:(SuccessBlock)successBlock
+                     onError:(ErrorBlock)errorBlock;
 
 @end

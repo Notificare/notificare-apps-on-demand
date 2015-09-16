@@ -117,6 +117,7 @@
 		40F226CE1A2E375F003A98B1 /* TutorialDoneIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F226CB1A2E375F003A98B1 /* TutorialDoneIcon@2x.png */; };
 		40F226CF1A2E375F003A98B1 /* TutorialDoneIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F226CC1A2E375F003A98B1 /* TutorialDoneIcon@3x.png */; };
 		A089D3A21BA734F300060399 /* UIColor+NSDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = A089D3A11BA734F300060399 /* UIColor+NSDictionary.m */; };
+		A089D3A41BA9A53400060399 /* regionsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = A089D3A31BA9A53400060399 /* regionsMock.json */; };
 		A0A9CA9C1BA2F53C004E2A98 /* LostPassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A9CA561BA2F53C004E2A98 /* LostPassViewController.m */; };
 		A0A9CA9D1BA2F53C004E2A98 /* LostPassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0A9CA571BA2F53C004E2A98 /* LostPassViewController.xib */; };
 		A0A9CA9E1BA2F53C004E2A98 /* ResetPassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A9CA591BA2F53C004E2A98 /* ResetPassViewController.m */; };
@@ -297,6 +298,7 @@
 		40F226CC1A2E375F003A98B1 /* TutorialDoneIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TutorialDoneIcon@3x.png"; sourceTree = "<group>"; };
 		A089D3A01BA734F300060399 /* UIColor+NSDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+NSDictionary.h"; path = "Shared/UIColor+NSDictionary.h"; sourceTree = "<group>"; };
 		A089D3A11BA734F300060399 /* UIColor+NSDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+NSDictionary.m"; path = "Shared/UIColor+NSDictionary.m"; sourceTree = "<group>"; };
+		A089D3A31BA9A53400060399 /* regionsMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = regionsMock.json; sourceTree = "<group>"; };
 		A0A9CA551BA2F53C004E2A98 /* LostPassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LostPassViewController.h; sourceTree = "<group>"; };
 		A0A9CA561BA2F53C004E2A98 /* LostPassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LostPassViewController.m; sourceTree = "<group>"; };
 		A0A9CA571BA2F53C004E2A98 /* LostPassViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LostPassViewController.xib; sourceTree = "<group>"; };
@@ -491,6 +493,7 @@
 				4083849618FF015C000DC352 /* main.m */,
 				4083849818FF015C000DC352 /* app-Prefix.pch */,
 				408385A518FF446C000DC352 /* Localizable.strings */,
+				A089D3A31BA9A53400060399 /* regionsMock.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -885,6 +888,7 @@
 				408385A018FF3FE4000DC352 /* MainViewController.xib in Resources */,
 				40961FB91A33C672009218FF /* Twitter@3x.png in Resources */,
 				40F226AC1A2DF58B003A98B1 /* BackButton@3x.png in Resources */,
+				A089D3A41BA9A53400060399 /* regionsMock.json in Resources */,
 				40BF798E1902B2C300622FA5 /* ForwardButton@2x.png in Resources */,
 				40BF79AB19035A1B00622FA5 /* SignalImmediate.png in Resources */,
 				40BF79AE19035A1B00622FA5 /* SignalImmediate@2x.png in Resources */,

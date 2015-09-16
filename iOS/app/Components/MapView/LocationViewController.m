@@ -22,21 +22,24 @@
 
 @implementation LocationViewController
 
-
-
 - (AppDelegate *)appDelegate {
+    
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 - (NotificarePushLib *)notificare {
+    
     return (NotificarePushLib *)[[self appDelegate] notificarePushLib];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
+    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
     if (self) {
         // Custom initialization
     }
+    
     return self;
 }
 
@@ -46,19 +49,18 @@
     // Do any additional setup after loading the view from its nib.
     
     UILabel * title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 40)];
-    [title setText:LSSTRING(@"title_locations")];
-    [title setFont:LATO_LIGHT_FONT(20)];
+    [title setText:[self viewTitle]];
+    [title setFont:[self titleFont]];
     [title setTextAlignment:NSTextAlignmentCenter];
-    [title setTextColor:ICONS_COLOR];
+    [title setTextColor:[self titleColor]];
     [[self navigationItem] setTitleView:title];
     
-    
     [self setupNavigationBar];
-    
     
     [[self mapView] setDelegate:self];
     
     if([[self notificare] checkLocationUpdates]){
+        
         [[self mapView] setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
         [[self mapView] setShowsUserLocation:YES];
     }
@@ -67,7 +69,7 @@
 
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
         
-        [[[self navigationController] navigationBar] setTintColor:MAIN_COLOR];
+        [[[self navigationController] navigationBar] setTintColor:[self navigationBackgroundColor]];
         
         [[UIBarButtonItem appearance] setBackgroundImage:[UIImage imageNamed:@"Transparent"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
         [[UIBarButtonItem appearance] setBackgroundImage:[UIImage imageNamed:@"Transparent"] forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
@@ -77,7 +79,7 @@
         [[self mapView] setShowsPointsOfInterest:YES];
         [[self mapView] setShowsBuildings:NO];
         
-        [[[self navigationController] navigationBar] setBarTintColor:MAIN_COLOR];
+        [[[self navigationController] navigationBar] setBarTintColor:[self navigationBackgroundColor]];
     }
 
 }
@@ -86,10 +88,8 @@
     int count = [[[self appDelegate] notificarePushLib] myBadge];
     
     if(count > 0){
-        [[self buttonIcon] setTintColor:ICONS_COLOR];
+        [[self buttonIcon] setTintColor:[self navigationForegroundColor]];
         [[self badgeButton] addTarget:[self viewDeckController] action:@selector(toggleLeftView) forControlEvents:UIControlEventTouchUpInside];
-        
-        
         
         NSString * badge = [NSString stringWithFormat:@"%i", count];
         [[self badgeNr] setText:badge];
@@ -97,28 +97,27 @@
         UIBarButtonItem * leftButton = [[UIBarButtonItem alloc] initWithCustomView:[self badge]];
         [leftButton setTarget:[self viewDeckController]];
         [leftButton setAction:@selector(toggleLeftView)];
-        [leftButton setTintColor:ICONS_COLOR];
+        [leftButton setTintColor:[self navigationForegroundColor]];
         [[self navigationItem] setLeftBarButtonItem:leftButton];
     } else {
         
         UIBarButtonItem * leftButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"LeftMenuIcon"] style:UIBarButtonItemStylePlain target:[self viewDeckController] action:@selector(toggleLeftView)];
-        [leftButton setTintColor:ICONS_COLOR];
+        [leftButton setTintColor:[self navigationForegroundColor]];
         [[self navigationItem] setLeftBarButtonItem:leftButton];
-        
     }
-    
-    
-    
+
     UIBarButtonItem * rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"RightMenuIcon"] style:UIBarButtonItemStylePlain target:[self viewDeckController] action:@selector(toggleRightView)];
     
-    [rightButton setTintColor:ICONS_COLOR];
+    [rightButton setTintColor:[self navigationForegroundColor]];
     
-    if([[[self appDelegate] beacons] count] > 0){
+    if([[[self appDelegate] beacons] count] > 0) {
+        
         [[self navigationItem] setRightBarButtonItem:rightButton];
+        
     } else {
+        
         [[self navigationItem] setRightBarButtonItem:nil];
     }
-    
 }
 
 -(void)changeBadge{
@@ -143,10 +142,73 @@
         [markers addObject:annotation];
         MKCircle *circle = [MKCircle circleWithCenterCoordinate:[region center] radius:[region radius]];
         [regions addObject:circle];
-        
-        
     }
     
+#warning NEEDS TO BE REPLACED BY API REQUEST (CAN BE DONE ON APPDELEGATE)
+    // API Request here, currently only mocked data
+    NSError * error=nil;
+    NSString *pathString=[[NSBundle mainBundle] pathForResource:@"regionsMock" ofType:@"json"];
+    NSData *jsonData = [NSData dataWithContentsOfFile:pathString];
+    NSDictionary * jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
+    //
+    
+    NSDictionary *regionsJson = [jsonObject objectForKey:@"regions"];
+    
+    if(regionsJson && [regionsJson count] > 0){
+        
+        for (NSDictionary * region in regionsJson) {
+            
+            // Parsing coordinates, if not available, skip to next region
+            CLLocationCoordinate2D location;
+            
+            NSDictionary *coordinates = [[region objectForKey:@"geometry"] objectForKey:@"coordinates"];
+            
+            if (coordinates && [coordinates count] > 1) {
+                
+                NSMutableArray *coordinatesArray = [[NSMutableArray alloc] initWithCapacity:2];
+                
+                for (id coord in coordinates) {
+                    
+                    [coordinatesArray addObject:coord];
+                }
+                
+                location = CLLocationCoordinate2DMake([[coordinatesArray objectAtIndex:1] doubleValue],
+                                                      [[coordinatesArray objectAtIndex:0] doubleValue]);
+            } else {
+                
+                continue;
+            }
+            
+            // Parsing region radius, if not available, skip to next region
+            CLLocationDistance radius;
+            
+            if ([region objectForKey:@"distance"]) {
+                
+                radius = [[region objectForKey:@"distance"] doubleValue];
+                
+            } else {
+                
+                continue;
+            }
+        
+            // Parsing the name
+            NSString *name = @"Unknown name";
+            
+            if ([region objectForKey:@"name"]) {
+                
+                name = [region objectForKey:@"name"];
+            }
+            
+            RegionsMarker *annotation = [[RegionsMarker alloc] initWithName:name address:@"" coordinate:location] ;
+            [markers addObject:annotation];
+            
+            if ([self shouldShowCircles]) {
+                
+                MKCircle *circle = [MKCircle circleWithCenterCoordinate:location radius:radius];
+                [regions addObject:circle];
+            }
+        }
+    }
     
     [self setCircles:regions];
     [self setMarkers:markers];
@@ -154,20 +216,27 @@
     [[self mapView] addAnnotations:markers];
     //[self setRegion:[self mapView]];
     
+#warning TESTING PURPOSES ONLY, SHOULD BE REMOVED
+    // Testing purposes only
+    CLLocationCoordinate2D location = CLLocationCoordinate2DMake(51.9328507, 4.454954499999985);
+    MKCoordinateSpan span = MKCoordinateSpanMake(0.05, 0.05);
+    MKCoordinateRegion region = MKCoordinateRegionMake(location, span);
     
- 
+    [[self mapView] setRegion:region animated:YES];
+    [[self mapView] regionThatFits:region];
+    //
 }
-
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
 
     
     static NSString *identifier = @"RegionsMarker";
     
+    
     MKAnnotationView *annotationView = (MKAnnotationView *) [mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
     if (annotationView == nil) {
+    
         annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-        
     }
     
     [annotationView setEnabled:YES];
@@ -178,14 +247,15 @@
     [annotationView setRightCalloutAccessoryView:[UIButton buttonWithType:UIButtonTypeDetailDisclosure]];
     
     return annotationView;
-    
 }
 
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay {
+    
     MKCircleView *circleView = [[MKCircleView alloc] initWithOverlay:overlay];
-    [circleView setFillColor:MAIN_COLOR];
+    [circleView setFillColor:[self circleColor]];
     [circleView setStrokeColor:[UIColor clearColor]];
     [circleView setAlpha:0.5f];
+    
     return circleView;
 }
 

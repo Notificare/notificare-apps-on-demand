@@ -193,10 +193,8 @@
             WebViewController * main = [[WebViewController alloc] initWithNibName:@"WebViewController" bundle:nil];
             
             [main setViewTitle:LSSTRING([item objectForKey:@"label"])];
-            
             [main setTargetUrl:[item objectForKey:@"url"]];
             [main setTitleFont:[UIFont fontWithName:[item objectForKey:@"titleFont"] size:[[item objectForKey:@"titleSize"] doubleValue]]];
-            
             [main setTitleColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"titleColor"]]];
             [main setNavigationBackgroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"navigationBgColor"]]];
             [main setNavigationForegroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"navigationFgColor"]]];
@@ -243,7 +241,15 @@
                 
                 
                 LocationViewController * map = [[LocationViewController alloc] initWithNibName:@"LocationViewController" bundle:nil];
-
+                
+                [map setShowCircles:[item objectForKey:@"showCircles"]];
+                [map setViewTitle:LSSTRING([item objectForKey:@"label"])];
+                [map setTitleFont:[UIFont fontWithName:[item objectForKey:@"titleFont"] size:[[item objectForKey:@"titleSize"] doubleValue]]];
+                [map setTitleColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"titleColor"]]];
+                [map setNavigationBackgroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"navigationBgColor"]]];
+                [map setNavigationForegroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"navigationFgColor"]]];
+                [map setCircleColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"circleColor"]]];
+                
                 [self setCenterController:[[UINavigationController alloc] initWithRootViewController:map]];
                 [[self deckController] setCenterController:[self centerController]];
                 
