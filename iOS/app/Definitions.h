@@ -88,6 +88,7 @@
 #define BADGE_BORDER_COLOR [UIColor whiteColor]
 #define BADGE_BORDER_WIDTH 0.0f
 #define BADGE_CORNER_RADIUS 10.0f
+#define NAV_BAR_HEIGHT 64.0
 
 #define CLCOORDINATES_EQUALS( coord1, coord2 ) (coord1.latitude == coord2.latitude && coord1.longitude == coord2.longitude)
 

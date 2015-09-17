@@ -216,9 +216,80 @@
     return NO;
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    
+    [self setActiveField:(FormField *)textField];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    
+    [self setActiveField:nil];
+    
+    [textField resignFirstResponder];
+}
+
+- (void)keyboardDidShow:(NSNotification *)note
+{
+    NSDictionary* info = [note userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(NAV_BAR_HEIGHT, 0.0, kbSize.height+10, 0.0);
+    [self scrollView].contentInset = contentInsets;
+    [self scrollView].scrollIndicatorInsets = contentInsets;
+    
+    
+    CGRect aRect = self.view.frame;
+    aRect.size.height -= kbSize.height;
+    
+    if (!CGRectContainsPoint(aRect, [self activeField].frame.origin) ) {
+        
+        [self.scrollView scrollRectToVisible:[self activeField].frame animated:YES];
+    }
+    
+    if (!CGRectContainsPoint(aRect, [self activeField].frame.origin) ) {
+        
+        [UIView animateWithDuration:0.5
+                              delay:0
+                            options:UIViewAnimationOptionTransitionNone
+                         animations:^{
+                             [self.scrollView scrollRectToVisible:[self activeField].frame animated:YES];
+                         }
+                         completion:^(BOOL finished) {
+                             
+                         }];
+    }
+}
+
+- (void)keyboardWillHide:(NSNotification *)note
+{
+    
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(NAV_BAR_HEIGHT, 0.0, 0.0, 0.0);
+    
+    
+    [UIView animateWithDuration:0.5
+                          delay:0
+                        options:UIViewAnimationOptionTransitionNone
+                     animations:^{
+                         [self scrollView].contentInset = contentInsets;
+                         [self scrollView].scrollIndicatorInsets = contentInsets;
+                     }
+                     completion:^(BOOL finished) {
+                         
+                     }];
+}
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidShow:)
+                                                 name:UIKeyboardDidShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeBadge) name:@"incomingNotification" object:nil];
     
@@ -229,6 +300,14 @@
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardDidShowNotification
+                                                  object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillHideNotification
+                                                  object:nil];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:@"incomingNotification"

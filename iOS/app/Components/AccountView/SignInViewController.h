@@ -20,6 +20,7 @@
 
 @interface SignInViewController : UIViewController <UITextFieldDelegate>
 
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) IBOutlet FormField * email;
 @property (nonatomic, strong) IBOutlet FormField * password;
 @property (nonatomic, strong) IBOutlet FormButton * signinButton;
@@ -32,6 +33,7 @@
 @property (nonatomic, strong) IBOutlet UIImageView * buttonIcon;
 @property (nonatomic, strong) SignUpViewController * signUpView;
 @property (nonatomic, strong) LostPassViewController * lostpassView;
+@property (nonatomic, strong) FormField *activeField;
 
 -(IBAction)doLogin:(id)sender;
 -(IBAction)forgottenPassword:(id)sender;

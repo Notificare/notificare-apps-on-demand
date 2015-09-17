@@ -13,13 +13,15 @@
 
 @interface SignUpViewController : UIViewController <UITextFieldDelegate>
 
-@property (nonatomic, strong) IBOutlet FormField * name;
-@property (nonatomic, strong) IBOutlet FormField * email;
-@property (nonatomic, strong) IBOutlet FormField * password;
-@property (nonatomic, strong) IBOutlet FormField * passwordConfirm;
-@property (nonatomic, strong) IBOutlet FormButton * signupButton;
-@property (nonatomic, strong) IBOutlet FormButton * goBackButton;
-@property (nonatomic, strong) IBOutlet InfoLabel * infoLabel;
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong) IBOutlet FormField *name;
+@property (nonatomic, strong) IBOutlet FormField *email;
+@property (nonatomic, strong) IBOutlet FormField *password;
+@property (nonatomic, strong) IBOutlet FormField *passwordConfirm;
+@property (nonatomic, strong) IBOutlet FormButton *signupButton;
+@property (nonatomic, strong) IBOutlet FormButton *goBackButton;
+@property (nonatomic, strong) IBOutlet InfoLabel *infoLabel;
+@property (nonatomic, strong) FormField *activeField;
 
 -(IBAction)createAccount:(id)sender;
 

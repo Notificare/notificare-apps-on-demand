@@ -21,13 +21,14 @@
 
 
 - (AppDelegate *)appDelegate {
+    
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
 - (NotificarePushLib *)notificare {
+    
     return (NotificarePushLib *)[[self appDelegate] notificarePushLib];
 }
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -89,8 +90,6 @@
     
 }
 
-
-
 -(IBAction)createAccount:(id)sender{
     
     [[self signupButton] setEnabled:NO];
@@ -133,8 +132,6 @@
     
 }
 
-
-
 -(BOOL)textFieldShouldReturn:(UITextField*)textField;
 {
     NSInteger nextTag = textField.tag + 1;
@@ -152,36 +149,60 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     
-    
+    [self setActiveField:(FormField *)textField];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     
-    [textField resignFirstResponder];
+    [self setActiveField:nil];
     
+    [textField resignFirstResponder];
 }
 
 - (void)keyboardDidShow:(NSNotification *)note
 {
+    NSDictionary* info = [note userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(NAV_BAR_HEIGHT, 0.0, kbSize.height+10, 0.0);
+    [self scrollView].contentInset = contentInsets;
+    [self scrollView].scrollIndicatorInsets = contentInsets;
+    
+    
+    CGRect aRect = self.view.frame;
+    aRect.size.height -= kbSize.height;
+    
+    if (!CGRectContainsPoint(aRect, [self activeField].frame.origin) ) {
+        
+        [self.scrollView scrollRectToVisible:[self activeField].frame animated:YES];
+    }
+    
+    if (!CGRectContainsPoint(aRect, [self activeField].frame.origin) ) {
+        
         [UIView animateWithDuration:0.5
                               delay:0
                             options:UIViewAnimationOptionTransitionNone
                          animations:^{
-                             self.view.center = CGPointMake(self.view.center.x, self.view.center.y - 65);
+                             [self.scrollView scrollRectToVisible:[self activeField].frame animated:YES];
                          }
                          completion:^(BOOL finished) {
-    
+                             
                          }];
+    }
 }
 
 - (void)keyboardWillHide:(NSNotification *)note
 {
     
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(NAV_BAR_HEIGHT, 0.0, 0.0, 0.0);
+    
+    
         [UIView animateWithDuration:0.5
                               delay:0
                             options:UIViewAnimationOptionTransitionNone
                          animations:^{
-                             self.view.center = [self viewCenter];
+                             [self scrollView].contentInset = contentInsets;
+                             [self scrollView].scrollIndicatorInsets = contentInsets;
                          }
                          completion:^(BOOL finished) {
                              
@@ -191,20 +212,22 @@
 
 
 -(void)goBack{
+    
     [[self navigationController] popViewControllerAnimated:YES];
 }
 
 -(void)resetForm{
+    
     [[self name] setText:@""];
     [[self email] setText:@""];
     [[self password] setText:@""];
     [[self passwordConfirm] setText:@""];
     [[self infoLabel] setText:@""];
-    
 }
 
 
 -(void)viewWillAppear:(BOOL)animated{
+    
     [super viewWillAppear:animated];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -216,11 +239,11 @@
                                              selector:@selector(keyboardWillHide:)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
-    
     [self resetForm];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
+    
     [super viewWillDisappear:animated];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self
@@ -230,7 +253,6 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:UIKeyboardWillHideNotification
                                                   object:nil];
-    
 }
 
 
