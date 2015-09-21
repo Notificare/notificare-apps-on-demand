@@ -18,11 +18,13 @@
 @interface ResetPassViewController : UIViewController <UITextFieldDelegate>
 
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) IBOutlet FormField * password;
 @property (nonatomic, strong) IBOutlet FormField * passwordConfirm;
 @property (nonatomic, strong) IBOutlet FormButton * resetPassButton;
 @property (nonatomic, strong) IBOutlet InfoLabel * infoLabel;
 @property (nonatomic, strong) SignInViewController * signInView;
+@property (nonatomic, strong) FormField *activeField;
 @property (nonatomic, strong)  NSString * token;
 
 -(IBAction)resetPassword:(id)sender;

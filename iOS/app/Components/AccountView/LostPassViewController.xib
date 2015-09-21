@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="email" destination="gMW-Mi-1ux" id="kuH-uI-0pq"/>
                 <outlet property="forgotPassButton" destination="9iJ-XR-9Nt" id="Jq3-cQ-m81"/>
+                <outlet property="scrollView" destination="GdA-d8-FSH" id="qhr-8i-RdD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,37 +18,52 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gMW-Mi-1ux" customClass="FormField">
-                    <rect key="frame" x="20" y="120" width="280" height="60"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GdA-d8-FSH">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gMW-Mi-1ux" customClass="FormField">
+                            <rect key="frame" x="20" y="20" width="280" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="dtM-W8-x6H"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iJ-XR-9Nt" customClass="FormButton">
+                            <rect key="frame" x="20" y="90" width="280" height="60"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="l1p-f4-tBr"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="Recover Password">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="recoverPassword:" destination="-1" eventType="touchUpInside" id="SNT-6m-exa"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="60" id="dtM-W8-x6H"/>
+                        <constraint firstItem="gMW-Mi-1ux" firstAttribute="top" secondItem="GdA-d8-FSH" secondAttribute="top" constant="20" id="BzP-hp-iTW"/>
+                        <constraint firstAttribute="trailing" secondItem="gMW-Mi-1ux" secondAttribute="trailing" constant="20" id="FdI-gb-mka"/>
+                        <constraint firstItem="gMW-Mi-1ux" firstAttribute="leading" secondItem="GdA-d8-FSH" secondAttribute="leading" constant="20" id="eww-JJ-HvQ"/>
+                        <constraint firstItem="9iJ-XR-9Nt" firstAttribute="centerX" secondItem="GdA-d8-FSH" secondAttribute="centerX" id="nJy-eM-1Eq"/>
+                        <constraint firstItem="9iJ-XR-9Nt" firstAttribute="leading" secondItem="gMW-Mi-1ux" secondAttribute="leading" id="qyK-G9-GPv"/>
+                        <constraint firstItem="9iJ-XR-9Nt" firstAttribute="top" secondItem="gMW-Mi-1ux" secondAttribute="bottom" constant="10" id="rL2-uz-daM"/>
+                        <constraint firstAttribute="bottom" secondItem="9iJ-XR-9Nt" secondAttribute="bottom" constant="15" id="xlS-Ge-8Mw"/>
+                        <constraint firstItem="gMW-Mi-1ux" firstAttribute="centerX" secondItem="GdA-d8-FSH" secondAttribute="centerX" id="zBh-P7-pzE"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iJ-XR-9Nt" customClass="FormButton">
-                    <rect key="frame" x="20" y="190" width="280" height="60"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="60" id="l1p-f4-tBr"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <state key="normal" title="Recover Password">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="recoverPassword:" destination="-1" eventType="touchUpInside" id="SNT-6m-exa"/>
-                    </connections>
-                </button>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="9iJ-XR-9Nt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="GHJ-th-QGk"/>
-                <constraint firstItem="gMW-Mi-1ux" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="120" id="HMF-2m-XYv"/>
-                <constraint firstItem="9iJ-XR-9Nt" firstAttribute="top" secondItem="gMW-Mi-1ux" secondAttribute="bottom" constant="10" id="bqB-jL-eOY"/>
-                <constraint firstItem="gMW-Mi-1ux" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="imn-Ac-VAv"/>
-                <constraint firstItem="gMW-Mi-1ux" firstAttribute="leading" secondItem="9iJ-XR-9Nt" secondAttribute="leading" id="yB8-JI-URH"/>
-                <constraint firstItem="gMW-Mi-1ux" firstAttribute="trailing" secondItem="9iJ-XR-9Nt" secondAttribute="trailing" id="yZ7-gm-QIe"/>
+                <constraint firstItem="GdA-d8-FSH" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="1n4-ti-zsB"/>
+                <constraint firstItem="GdA-d8-FSH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="EkD-Oh-MX4"/>
+                <constraint firstAttribute="bottom" secondItem="GdA-d8-FSH" secondAttribute="bottom" id="NBP-Av-VWC"/>
+                <constraint firstItem="GdA-d8-FSH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="O5c-S0-erz"/>
+                <constraint firstAttribute="trailing" secondItem="GdA-d8-FSH" secondAttribute="trailing" id="YvH-9w-efg"/>
+                <constraint firstItem="GdA-d8-FSH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bGe-Bh-K93"/>
             </constraints>
         </view>
     </objects>

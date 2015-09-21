@@ -10,6 +10,7 @@
                 <outlet property="password" destination="F5k-7l-9y7" id="NY1-0Q-5yG"/>
                 <outlet property="passwordConfirm" destination="zCH-Mb-05g" id="Rmi-em-Dxa"/>
                 <outlet property="resetPassButton" destination="100-Wp-Nbw" id="lVe-Hd-1md"/>
+                <outlet property="scrollView" destination="Jww-IU-y8r" id="xbQ-EX-5k7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,48 +19,63 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F5k-7l-9y7" customClass="FormField">
-                    <rect key="frame" x="20" y="123" width="280" height="60"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jww-IU-y8r">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F5k-7l-9y7" customClass="FormField">
+                            <rect key="frame" x="20" y="20" width="280" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="2kS-rt-2Ze"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zCH-Mb-05g" customClass="FormField">
+                            <rect key="frame" x="20" y="91" width="280" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="jME-zg-LJ5"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="100-Wp-Nbw" customClass="FormButton">
+                            <rect key="frame" x="20" y="161" width="280" height="60"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="b5j-U6-ahM"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="Reset Password">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="resetPassword:" destination="-1" eventType="touchUpInside" id="4O0-9l-52a"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="60" id="2kS-rt-2Ze"/>
+                        <constraint firstItem="F5k-7l-9y7" firstAttribute="leading" secondItem="Jww-IU-y8r" secondAttribute="leading" constant="20" id="2pT-HF-mo4"/>
+                        <constraint firstItem="zCH-Mb-05g" firstAttribute="trailing" secondItem="F5k-7l-9y7" secondAttribute="trailing" id="4gu-0f-oqo"/>
+                        <constraint firstItem="F5k-7l-9y7" firstAttribute="top" secondItem="Jww-IU-y8r" secondAttribute="top" constant="20" id="Ehd-FC-eGP"/>
+                        <constraint firstItem="100-Wp-Nbw" firstAttribute="top" secondItem="zCH-Mb-05g" secondAttribute="bottom" constant="10" id="MOc-qw-nRJ"/>
+                        <constraint firstItem="100-Wp-Nbw" firstAttribute="centerX" secondItem="Jww-IU-y8r" secondAttribute="centerX" id="Tve-Qj-zaY"/>
+                        <constraint firstItem="100-Wp-Nbw" firstAttribute="trailing" secondItem="zCH-Mb-05g" secondAttribute="trailing" id="XTj-cf-Nyo"/>
+                        <constraint firstItem="zCH-Mb-05g" firstAttribute="centerX" secondItem="Jww-IU-y8r" secondAttribute="centerX" id="b4h-dL-9Ng"/>
+                        <constraint firstAttribute="bottom" secondItem="100-Wp-Nbw" secondAttribute="bottom" constant="20" id="oqZ-in-ELO"/>
+                        <constraint firstAttribute="trailing" secondItem="F5k-7l-9y7" secondAttribute="trailing" constant="20" id="sSU-Zi-5ff"/>
+                        <constraint firstItem="F5k-7l-9y7" firstAttribute="centerX" secondItem="Jww-IU-y8r" secondAttribute="centerX" id="vDl-B0-mmS"/>
+                        <constraint firstItem="zCH-Mb-05g" firstAttribute="top" secondItem="F5k-7l-9y7" secondAttribute="bottom" constant="11" id="z8x-9u-xmw"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                </textField>
-                <textField opaque="NO" clipsSubviews="YES" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zCH-Mb-05g" customClass="FormField">
-                    <rect key="frame" x="20" y="194" width="280" height="60"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="60" id="jME-zg-LJ5"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="100-Wp-Nbw" customClass="FormButton">
-                    <rect key="frame" x="20" y="264" width="280" height="60"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="60" id="b5j-U6-ahM"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <state key="normal" title="Create new Account">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="resetPassword:" destination="-1" eventType="touchUpInside" id="4O0-9l-52a"/>
-                    </connections>
-                </button>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="zCH-Mb-05g" firstAttribute="trailing" secondItem="F5k-7l-9y7" secondAttribute="trailing" id="4VN-Mm-RzR"/>
-                <constraint firstItem="zCH-Mb-05g" firstAttribute="leading" secondItem="F5k-7l-9y7" secondAttribute="leading" id="6AL-NY-VCu"/>
-                <constraint firstItem="100-Wp-Nbw" firstAttribute="leading" secondItem="zCH-Mb-05g" secondAttribute="leading" id="XoU-lx-NnV"/>
-                <constraint firstItem="F5k-7l-9y7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="123" id="afU-QU-h24"/>
-                <constraint firstItem="F5k-7l-9y7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="fqn-eW-Ok5"/>
-                <constraint firstItem="100-Wp-Nbw" firstAttribute="top" secondItem="zCH-Mb-05g" secondAttribute="bottom" constant="10" id="hoq-NF-yRu"/>
-                <constraint firstItem="F5k-7l-9y7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qlr-WF-JTr"/>
-                <constraint firstItem="zCH-Mb-05g" firstAttribute="trailing" secondItem="100-Wp-Nbw" secondAttribute="trailing" id="tsn-n2-qj8"/>
-                <constraint firstItem="zCH-Mb-05g" firstAttribute="top" secondItem="F5k-7l-9y7" secondAttribute="bottom" constant="11" id="xES-NU-AE4"/>
+                <constraint firstItem="Jww-IU-y8r" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="00A-vK-Fve"/>
+                <constraint firstItem="Jww-IU-y8r" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="0HO-tn-nYc"/>
+                <constraint firstAttribute="trailing" secondItem="Jww-IU-y8r" secondAttribute="trailing" id="8Sh-Jy-62Z"/>
+                <constraint firstAttribute="bottom" secondItem="Jww-IU-y8r" secondAttribute="bottom" id="KsG-HV-9ea"/>
+                <constraint firstItem="Jww-IU-y8r" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ssd-Wz-E33"/>
+                <constraint firstItem="Jww-IU-y8r" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gLw-sk-dxf"/>
             </constraints>
         </view>
     </objects>

@@ -44,6 +44,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self.view action:@selector(endEditing:)]];
+    
     UILabel * title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 40)];
     [title setText:LSSTRING(@"title_signup")];
     [title setFont:LATO_LIGHT_FONT(20)];

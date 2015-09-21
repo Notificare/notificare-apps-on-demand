@@ -41,6 +41,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self.view action:@selector(endEditing:)]];
+    
     UILabel * title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 40)];
     [title setText:LSSTRING(@"title_lostpass")];
     [title setFont:LATO_LIGHT_FONT(20)];
@@ -119,6 +121,67 @@
     return NO;
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    
+    [self setActiveField:(FormField *)textField];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    
+    [self setActiveField:nil];
+    
+    [textField resignFirstResponder];
+}
+
+- (void)keyboardDidShow:(NSNotification *)note
+{
+    NSDictionary* info = [note userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(NAV_BAR_HEIGHT, 0.0, kbSize.height+10, 0.0);
+    [self scrollView].contentInset = contentInsets;
+    [self scrollView].scrollIndicatorInsets = contentInsets;
+    
+    
+    CGRect aRect = self.view.frame;
+    aRect.size.height -= kbSize.height;
+    
+    if (!CGRectContainsPoint(aRect, [self activeField].frame.origin) ) {
+        
+        [self.scrollView scrollRectToVisible:[self activeField].frame animated:YES];
+    }
+    
+    if (!CGRectContainsPoint(aRect, [self activeField].frame.origin) ) {
+        
+        [UIView animateWithDuration:0.5
+                              delay:0
+                            options:UIViewAnimationOptionTransitionNone
+                         animations:^{
+                             [self.scrollView scrollRectToVisible:[self activeField].frame animated:YES];
+                         }
+                         completion:^(BOOL finished) {
+                             
+                         }];
+    }
+}
+
+- (void)keyboardWillHide:(NSNotification *)note
+{
+    
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(NAV_BAR_HEIGHT, 0.0, 0.0, 0.0);
+    
+    
+    [UIView animateWithDuration:0.5
+                          delay:0
+                        options:UIViewAnimationOptionTransitionNone
+                     animations:^{
+                         [self scrollView].contentInset = contentInsets;
+                         [self scrollView].scrollIndicatorInsets = contentInsets;
+                     }
+                     completion:^(BOOL finished) {
+                         
+                     }];
+}
 
 -(void)goBack{
     [[self navigationController] popViewControllerAnimated:YES];

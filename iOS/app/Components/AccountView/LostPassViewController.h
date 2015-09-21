@@ -14,9 +14,11 @@
 @interface LostPassViewController : UIViewController <UITextFieldDelegate>
 
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) IBOutlet FormField * email;
 @property (nonatomic, strong) IBOutlet FormButton * forgotPassButton;
 @property (nonatomic, strong) IBOutlet InfoLabel * infoLabel;
+@property (nonatomic, strong) FormField *activeField;
 
 
 -(IBAction)recoverPassword:(id)sender;
