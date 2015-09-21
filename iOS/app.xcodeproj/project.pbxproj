@@ -159,6 +159,8 @@
 		A0A9CAC21BA2F53C004E2A98 /* SegmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0A9CA981BA2F53C004E2A98 /* SegmentCell.xib */; };
 		A0A9CAC31BA2F53C004E2A98 /* UserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A9CA9A1BA2F53C004E2A98 /* UserCell.m */; };
 		A0A9CAC41BA2F53C004E2A98 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0A9CA9B1BA2F53C004E2A98 /* UserCell.xib */; };
+		A0BA40C61BAC6F300041C0BC /* Notificare.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0BA40C41BAC6F300041C0BC /* Notificare.plist */; };
+		A0BA40C71BAC6F300041C0BC /* NotificareTags.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0BA40C51BAC6F300041C0BC /* NotificareTags.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -364,6 +366,8 @@
 		A0A9CA991BA2F53C004E2A98 /* UserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCell.h; sourceTree = "<group>"; };
 		A0A9CA9A1BA2F53C004E2A98 /* UserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCell.m; sourceTree = "<group>"; };
 		A0A9CA9B1BA2F53C004E2A98 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		A0BA40C41BAC6F300041C0BC /* Notificare.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Notificare.plist; path = "Pods/notificare-push-lib/Notificare.plist"; sourceTree = SOURCE_ROOT; };
+		A0BA40C51BAC6F300041C0BC /* NotificareTags.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = NotificareTags.plist; path = "Pods/notificare-push-lib/NotificareTags.plist"; sourceTree = SOURCE_ROOT; };
 		B115C4EC381D01F44F6C763F /* Pods.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.adhoc.xcconfig; path = "Pods/Target Support Files/Pods/Pods.adhoc.xcconfig"; sourceTree = "<group>"; };
 		CE576009EFAEAAF16B00391B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -489,6 +493,8 @@
 			children = (
 				4083858318FF2192000DC352 /* Configuration.plist */,
 				4083849218FF015C000DC352 /* app-Info.plist */,
+				A0BA40C41BAC6F300041C0BC /* Notificare.plist */,
+				A0BA40C51BAC6F300041C0BC /* NotificareTags.plist */,
 				4083849318FF015C000DC352 /* InfoPlist.strings */,
 				4083849618FF015C000DC352 /* main.m */,
 				4083849818FF015C000DC352 /* app-Prefix.pch */,
@@ -888,6 +894,7 @@
 				408385A018FF3FE4000DC352 /* MainViewController.xib in Resources */,
 				40961FB91A33C672009218FF /* Twitter@3x.png in Resources */,
 				40F226AC1A2DF58B003A98B1 /* BackButton@3x.png in Resources */,
+				A0BA40C71BAC6F300041C0BC /* NotificareTags.plist in Resources */,
 				A089D3A41BA9A53400060399 /* regionsMock.json in Resources */,
 				40BF798E1902B2C300622FA5 /* ForwardButton@2x.png in Resources */,
 				40BF79AB19035A1B00622FA5 /* SignalImmediate.png in Resources */,
@@ -913,6 +920,7 @@
 				40967F501A5A2660002E4AF8 /* locations.gpx in Resources */,
 				40F226AB1A2DF58B003A98B1 /* ForwardButton@3x.png in Resources */,
 				A0A9CAB31BA2F53C004E2A98 /* BeaconCell.xib in Resources */,
+				A0BA40C61BAC6F300041C0BC /* Notificare.plist in Resources */,
 				40961FB51A33C672009218FF /* Facebook.png in Resources */,
 				A0A9CAB71BA2F53C004E2A98 /* EmptyBeaconsCell.xib in Resources */,
 				40F1F2461903F24B00204BA5 /* Blue.png in Resources */,
