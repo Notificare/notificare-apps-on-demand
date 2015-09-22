@@ -230,6 +230,14 @@
                 } else {
                     
                     SignInViewController * login = [[SignInViewController alloc] initWithNibName:@"SignInViewController" bundle:nil];
+                    
+                    [login setTitleFont:[UIFont fontWithName:[item objectForKey:@"titleFont"] size:[[item objectForKey:@"titleSize"] doubleValue]]];
+                    [login setTitleColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"titleColor"]]];
+                    [login setNavigationBackgroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"navigationBgColor"]]];
+                    [login setNavigationForegroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"navigationFgColor"]]];
+                    [login setViewBackgroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"backgroundColor"]]];
+                    [login setSignInProperties:(NSDictionary *)[item objectForKey:@"signIn"]];
+                    
                     [self setCenterController:[[UINavigationController alloc] initWithRootViewController:login]];
                 }
                 
@@ -242,7 +250,7 @@
                 
                 LocationViewController * map = [[LocationViewController alloc] initWithNibName:@"LocationViewController" bundle:nil];
                 
-                [map setShowCircles:[item objectForKey:@"showCircles"]];
+                [map setShowCircles:(BOOL)[item objectForKey:@"showCircles"]];
                 [map setViewTitle:LSSTRING([item objectForKey:@"label"])];
                 [map setTitleFont:[UIFont fontWithName:[item objectForKey:@"titleFont"] size:[[item objectForKey:@"titleSize"] doubleValue]]];
                 [map setTitleColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"titleColor"]]];
