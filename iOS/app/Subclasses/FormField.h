@@ -12,5 +12,7 @@
 
 @property (nonatomic, assign) UIEdgeInsets edgeInsets;
 
+- (void) setPlaceholderText:(NSString *) placeholderString
+         withRGBaDictionary:(NSDictionary *) colorDictionary;
 
 @end

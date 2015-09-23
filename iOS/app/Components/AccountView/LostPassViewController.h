@@ -13,13 +13,26 @@
 
 @interface LostPassViewController : UIViewController <UITextFieldDelegate>
 
+- (id)initWithNibName:(NSString *) nibNameOrNil
+               bundle:(NSBundle *) nibBundleOrNil
+       viewProperties:(NSDictionary *) signUpProperties
+            titleFont:(UIFont *) titleFont
+           titleColor:(UIColor *) titleColor
+ navigationBarBgColor:(UIColor *) navigationBarBgColor
+ navigationBarFgColor:(UIColor *) navigationBarFgColor
+          viewBgColor:(UIColor *) viewBgColor;
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) IBOutlet FormField * email;
 @property (nonatomic, strong) IBOutlet FormButton * forgotPassButton;
 @property (nonatomic, strong) IBOutlet InfoLabel * infoLabel;
 @property (nonatomic, strong) FormField *activeField;
-
+@property (nonatomic, strong) UIFont *titleFont;
+@property (nonatomic, strong) UIColor *titleColor;
+@property (nonatomic, strong) UIColor *navigationBackgroundColor;
+@property (nonatomic, strong) UIColor *navigationForegroundColor;
+@property (nonatomic, strong) UIColor *viewBackgroundColor;
+@property (nonatomic, strong) NSDictionary *signUpProperties;
 
 -(IBAction)recoverPassword:(id)sender;
 

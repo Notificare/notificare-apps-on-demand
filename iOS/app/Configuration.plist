@@ -50,6 +50,185 @@
 			</dict>
 			<key>statusBarWhite</key>
 			<true/>
+			<key>resetPasswordView</key>
+			<dict>
+				<key>passwordForm</key>
+				<dict>
+					<key>textFont</key>
+					<string>Lato-Light</string>
+					<key>textSize</key>
+					<integer>20</integer>
+					<key>textColor</key>
+					<dict>
+						<key>red</key>
+						<integer>60</integer>
+						<key>green</key>
+						<integer>60</integer>
+						<key>blue</key>
+						<integer>60</integer>
+						<key>alpha</key>
+						<integer>1</integer>
+					</dict>
+					<key>placeholderColor</key>
+					<dict>
+						<key>red</key>
+						<integer>250</integer>
+						<key>green</key>
+						<integer>60</integer>
+						<key>blue</key>
+						<integer>60</integer>
+						<key>alpha</key>
+						<real>0.5</real>
+					</dict>
+					<key>backgroundColor</key>
+					<dict>
+						<key>red</key>
+						<integer>255</integer>
+						<key>green</key>
+						<integer>255</integer>
+						<key>blue</key>
+						<integer>255</integer>
+						<key>alpha</key>
+						<integer>1</integer>
+					</dict>
+					<key>tintColor</key>
+					<dict>
+						<key>red</key>
+						<integer>20</integer>
+						<key>green</key>
+						<integer>160</integer>
+						<key>blue</key>
+						<integer>20</integer>
+						<key>alpha</key>
+						<integer>1</integer>
+					</dict>
+					<key>borderColor</key>
+					<dict>
+						<key>red</key>
+						<integer>230</integer>
+						<key>green</key>
+						<integer>20</integer>
+						<key>blue</key>
+						<integer>20</integer>
+						<key>alpha</key>
+						<integer>1</integer>
+					</dict>
+					<key>cornerRadius</key>
+					<integer>10</integer>
+					<key>borderWidth</key>
+					<integer>2</integer>
+				</dict>
+				<key>confirmPasswordForm</key>
+				<dict>
+					<key>textFont</key>
+					<string>Lato-Light</string>
+					<key>textSize</key>
+					<integer>20</integer>
+					<key>textColor</key>
+					<dict>
+						<key>red</key>
+						<integer>60</integer>
+						<key>green</key>
+						<integer>60</integer>
+						<key>blue</key>
+						<integer>60</integer>
+						<key>alpha</key>
+						<integer>1</integer>
+					</dict>
+					<key>placeholderColor</key>
+					<dict>
+						<key>red</key>
+						<integer>250</integer>
+						<key>green</key>
+						<integer>60</integer>
+						<key>blue</key>
+						<integer>60</integer>
+						<key>alpha</key>
+						<real>0.5</real>
+					</dict>
+					<key>backgroundColor</key>
+					<dict>
+						<key>red</key>
+						<integer>255</integer>
+						<key>green</key>
+						<integer>255</integer>
+						<key>blue</key>
+						<integer>255</integer>
+						<key>alpha</key>
+						<integer>1</integer>
+					</dict>
+					<key>tintColor</key>
+					<dict>
+						<key>red</key>
+						<integer>20</integer>
+						<key>green</key>
+						<integer>160</integer>
+						<key>blue</key>
+						<integer>20</integer>
+						<key>alpha</key>
+						<integer>1</integer>
+					</dict>
+					<key>borderColor</key>
+					<dict>
+						<key>red</key>
+						<integer>230</integer>
+						<key>green</key>
+						<integer>20</integer>
+						<key>blue</key>
+						<integer>20</integer>
+						<key>alpha</key>
+						<integer>1</integer>
+					</dict>
+					<key>cornerRadius</key>
+					<integer>10</integer>
+					<key>borderWidth</key>
+					<integer>2</integer>
+				</dict>
+				<key>resetPasswordButton</key>
+				<dict>
+					<key>textFont</key>
+					<string>Lato-Light</string>
+					<key>textSize</key>
+					<integer>20</integer>
+					<key>textColor</key>
+					<dict>
+						<key>red</key>
+						<integer>250</integer>
+						<key>green</key>
+						<integer>250</integer>
+						<key>blue</key>
+						<integer>250</integer>
+						<key>alpha</key>
+						<integer>1</integer>
+					</dict>
+					<key>backgroundColor</key>
+					<dict>
+						<key>red</key>
+						<integer>160</integer>
+						<key>green</key>
+						<integer>60</integer>
+						<key>blue</key>
+						<integer>60</integer>
+						<key>alpha</key>
+						<integer>1</integer>
+					</dict>
+					<key>borderColor</key>
+					<dict>
+						<key>red</key>
+						<integer>20</integer>
+						<key>green</key>
+						<integer>20</integer>
+						<key>blue</key>
+						<integer>20</integer>
+						<key>alpha</key>
+						<integer>1</integer>
+					</dict>
+					<key>cornerRadius</key>
+					<integer>10</integer>
+					<key>borderWidth</key>
+					<integer>2</integer>
+				</dict>
+			</dict>
 		</dict>
 	</array>
 	<key>navigation</key>
@@ -301,9 +480,9 @@
 					<key>tintColor</key>
 					<dict>
 						<key>red</key>
-						<integer>20</integer>
-						<key>green</key>
 						<integer>160</integer>
+						<key>green</key>
+						<integer>20</integer>
 						<key>blue</key>
 						<integer>20</integer>
 						<key>alpha</key>
@@ -367,9 +546,9 @@
 					<key>tintColor</key>
 					<dict>
 						<key>red</key>
-						<integer>20</integer>
-						<key>green</key>
 						<integer>160</integer>
+						<key>green</key>
+						<integer>20</integer>
 						<key>blue</key>
 						<integer>20</integer>
 						<key>alpha</key>
@@ -509,11 +688,11 @@
 					<key>textColor</key>
 					<dict>
 						<key>red</key>
-						<integer>230</integer>
+						<integer>250</integer>
 						<key>green</key>
-						<integer>230</integer>
+						<integer>60</integer>
 						<key>blue</key>
-						<integer>230</integer>
+						<integer>60</integer>
 						<key>alpha</key>
 						<integer>1</integer>
 					</dict>
@@ -531,18 +710,18 @@
 					<key>backgroundColor</key>
 					<dict>
 						<key>red</key>
-						<integer>20</integer>
+						<integer>255</integer>
 						<key>green</key>
-						<integer>20</integer>
+						<integer>255</integer>
 						<key>blue</key>
-						<integer>20</integer>
+						<integer>255</integer>
 						<key>alpha</key>
 						<integer>1</integer>
 					</dict>
 					<key>tintColor</key>
 					<dict>
 						<key>red</key>
-						<integer>20</integer>
+						<integer>160</integer>
 						<key>green</key>
 						<integer>20</integer>
 						<key>blue</key>
@@ -555,16 +734,16 @@
 						<key>red</key>
 						<integer>230</integer>
 						<key>green</key>
-						<integer>230</integer>
+						<integer>20</integer>
 						<key>blue</key>
-						<integer>230</integer>
+						<integer>20</integer>
 						<key>alpha</key>
 						<integer>1</integer>
 					</dict>
 					<key>cornerRadius</key>
-					<integer>0</integer>
+					<integer>10</integer>
 					<key>borderWidth</key>
-					<integer>0</integer>
+					<integer>2</integer>
 				</dict>
 				<key>emailForm</key>
 				<dict>
@@ -575,7 +754,7 @@
 					<key>textColor</key>
 					<dict>
 						<key>red</key>
-						<integer>60</integer>
+						<integer>250</integer>
 						<key>green</key>
 						<integer>60</integer>
 						<key>blue</key>
@@ -608,9 +787,9 @@
 					<key>tintColor</key>
 					<dict>
 						<key>red</key>
-						<integer>20</integer>
-						<key>green</key>
 						<integer>160</integer>
+						<key>green</key>
+						<integer>20</integer>
 						<key>blue</key>
 						<integer>20</integer>
 						<key>alpha</key>
@@ -641,7 +820,7 @@
 					<key>textColor</key>
 					<dict>
 						<key>red</key>
-						<integer>60</integer>
+						<integer>250</integer>
 						<key>green</key>
 						<integer>60</integer>
 						<key>blue</key>
@@ -674,9 +853,9 @@
 					<key>tintColor</key>
 					<dict>
 						<key>red</key>
-						<integer>20</integer>
-						<key>green</key>
 						<integer>160</integer>
+						<key>green</key>
+						<integer>20</integer>
 						<key>blue</key>
 						<integer>20</integer>
 						<key>alpha</key>
@@ -707,7 +886,7 @@
 					<key>textColor</key>
 					<dict>
 						<key>red</key>
-						<integer>60</integer>
+						<integer>250</integer>
 						<key>green</key>
 						<integer>60</integer>
 						<key>blue</key>
@@ -740,9 +919,9 @@
 					<key>tintColor</key>
 					<dict>
 						<key>red</key>
-						<integer>20</integer>
-						<key>green</key>
 						<integer>160</integer>
+						<key>green</key>
+						<integer>20</integer>
 						<key>blue</key>
 						<integer>20</integer>
 						<key>alpha</key>
@@ -773,40 +952,40 @@
 					<key>textColor</key>
 					<dict>
 						<key>red</key>
-						<integer>230</integer>
+						<integer>250</integer>
 						<key>green</key>
-						<integer>230</integer>
+						<integer>250</integer>
 						<key>blue</key>
-						<integer>230</integer>
+						<integer>250</integer>
 						<key>alpha</key>
 						<integer>1</integer>
 					</dict>
 					<key>backgroundColor</key>
 					<dict>
 						<key>red</key>
-						<integer>20</integer>
+						<integer>160</integer>
 						<key>green</key>
-						<integer>20</integer>
+						<integer>60</integer>
 						<key>blue</key>
-						<integer>20</integer>
+						<integer>60</integer>
 						<key>alpha</key>
 						<integer>1</integer>
 					</dict>
 					<key>borderColor</key>
 					<dict>
 						<key>red</key>
-						<integer>230</integer>
+						<integer>20</integer>
 						<key>green</key>
-						<integer>230</integer>
+						<integer>20</integer>
 						<key>blue</key>
-						<integer>230</integer>
+						<integer>20</integer>
 						<key>alpha</key>
 						<integer>1</integer>
 					</dict>
 					<key>cornerRadius</key>
-					<integer>0</integer>
+					<integer>10</integer>
 					<key>borderWidth</key>
-					<integer>0</integer>
+					<integer>2</integer>
 				</dict>
 			</dict>
 			<key>forgottenPassword</key>
@@ -878,185 +1057,6 @@
 					<integer>2</integer>
 				</dict>
 				<key>forgottenPasswordButton</key>
-				<dict>
-					<key>textFont</key>
-					<string>Lato-Light</string>
-					<key>textSize</key>
-					<integer>20</integer>
-					<key>textColor</key>
-					<dict>
-						<key>red</key>
-						<integer>230</integer>
-						<key>green</key>
-						<integer>230</integer>
-						<key>blue</key>
-						<integer>230</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
-					<key>backgroundColor</key>
-					<dict>
-						<key>red</key>
-						<integer>20</integer>
-						<key>green</key>
-						<integer>20</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
-					<key>borderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>230</integer>
-						<key>green</key>
-						<integer>230</integer>
-						<key>blue</key>
-						<integer>230</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
-					<key>cornerRadius</key>
-					<integer>0</integer>
-					<key>borderWidth</key>
-					<integer>0</integer>
-				</dict>
-			</dict>
-			<key>resetPassword</key>
-			<dict>
-				<key>passwordForm</key>
-				<dict>
-					<key>textFont</key>
-					<string>Lato-Light</string>
-					<key>textSize</key>
-					<integer>20</integer>
-					<key>textColor</key>
-					<dict>
-						<key>red</key>
-						<integer>60</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
-					<key>placeholderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<real>0.5</real>
-					</dict>
-					<key>backgroundColor</key>
-					<dict>
-						<key>red</key>
-						<integer>255</integer>
-						<key>green</key>
-						<integer>255</integer>
-						<key>blue</key>
-						<integer>255</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
-					<key>tintColor</key>
-					<dict>
-						<key>red</key>
-						<integer>20</integer>
-						<key>green</key>
-						<integer>160</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
-					<key>borderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>230</integer>
-						<key>green</key>
-						<integer>20</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
-					<key>cornerRadius</key>
-					<integer>10</integer>
-					<key>borderWidth</key>
-					<integer>2</integer>
-				</dict>
-				<key>confirmPasswordForm</key>
-				<dict>
-					<key>textFont</key>
-					<string>Lato-Light</string>
-					<key>textSize</key>
-					<integer>20</integer>
-					<key>textColor</key>
-					<dict>
-						<key>red</key>
-						<integer>60</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
-					<key>placeholderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<real>0.5</real>
-					</dict>
-					<key>backgroundColor</key>
-					<dict>
-						<key>red</key>
-						<integer>255</integer>
-						<key>green</key>
-						<integer>255</integer>
-						<key>blue</key>
-						<integer>255</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
-					<key>tintColor</key>
-					<dict>
-						<key>red</key>
-						<integer>20</integer>
-						<key>green</key>
-						<integer>160</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
-					<key>borderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>230</integer>
-						<key>green</key>
-						<integer>20</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
-					<key>cornerRadius</key>
-					<integer>10</integer>
-					<key>borderWidth</key>
-					<integer>2</integer>
-				</dict>
-				<key>resetPasswordButton</key>
 				<dict>
 					<key>textFont</key>
 					<string>Lato-Light</string>

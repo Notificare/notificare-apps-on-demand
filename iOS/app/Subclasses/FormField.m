@@ -8,6 +8,7 @@
 
 #import "FormField.h"
 #import <QuartzCore/QuartzCore.h>
+#import "UIColor+NSDictionary.h"
 
 @implementation FormField
 
@@ -36,5 +37,17 @@
     return self;
 }
 
+- (void) setPlaceholderText:(NSString *) placeholderString
+         withRGBaDictionary:(NSDictionary *) colorDictionary {
+    
+    if ([self respondsToSelector:@selector(setAttributedPlaceholder:)]) {
+        
+        self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeholderString attributes:@{NSForegroundColorAttributeName: [UIColor colorFromRgbaDictionary:colorDictionary]}];
+        
+    } else {
+        
+        [self setPlaceholder:placeholderString];
+    }
+}
 
 @end

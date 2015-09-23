@@ -42,7 +42,7 @@
 "placeholder_confirm_newpass" = "confirm new password";
 "button_signup" = "create an account";
 "button_signin" = "sign in";
-"button_forgotpass" = "forgotten password";
+"button_forgotpass" = "recover password";
 "button_resetpass" = "change password";
 "button_changepass" = "save new password";
 "button_generatetoken" = "generate new email token";

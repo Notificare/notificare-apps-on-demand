@@ -237,6 +237,7 @@
                     [login setNavigationForegroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"navigationFgColor"]]];
                     [login setViewBackgroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"backgroundColor"]]];
                     [login setSignInProperties:(NSDictionary *)[item objectForKey:@"signIn"]];
+                    [login setSignUpProperties:[item objectForKey:@"signUp"]];
                     
                     [self setCenterController:[[UINavigationController alloc] initWithRootViewController:login]];
                 }

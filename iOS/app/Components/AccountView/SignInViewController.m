@@ -56,25 +56,22 @@
     
     [self resetForm];
     
+    
+    // Email Form Field
     NSDictionary *emailFormProperties = [[self signInProperties] objectForKey:@"emailForm"];
     [[self email] setDelegate:self];
     [[self email] setFont:[UIFont fontWithName:[emailFormProperties objectForKey:@"textFont"]
                                           size:[[emailFormProperties objectForKey:@"textSize"] doubleValue]]];
     [[self email] setBackgroundColor:[UIColor colorFromRgbaDictionary:[emailFormProperties objectForKey:@"backgroundColor"]]];
     [[self email] setTextColor:[UIColor colorFromRgbaDictionary:[emailFormProperties objectForKey:@"textColor"]]];
+    [[self email] setTintColor:[UIColor colorFromRgbaDictionary:[emailFormProperties objectForKey:@"tintColor"]]];
     [self email].layer.cornerRadius= [[emailFormProperties objectForKey:@"cornerRadius"] doubleValue];
     [self email].layer.borderColor= [[UIColor colorFromRgbaDictionary:[emailFormProperties objectForKey:@"borderColor"]] CGColor];
     [self email].layer.borderWidth= [[emailFormProperties objectForKey:@"borderWidth"] doubleValue];
+    [[self email] setPlaceholderText:LSSTRING(@"placeholder_email")
+                  withRGBaDictionary:[emailFormProperties objectForKey:@"placeholderColor"]];
     
-    if ([[self email] respondsToSelector:@selector(setAttributedPlaceholder:)]) {
-        
-        [self email].attributedPlaceholder = [[NSAttributedString alloc] initWithString:LSSTRING(@"placeholder_email") attributes:@{NSForegroundColorAttributeName: [UIColor colorFromRgbaDictionary:[emailFormProperties objectForKey:@"placeholderColor"]]}];
-        
-    } else {
-        
-        [[self email] setPlaceholder:LSSTRING(@"placeholder_email")];
-    }
-    
+    // Password Form Field
     NSDictionary *passwordFormProperties = [[self signInProperties] objectForKey:@"passwordForm"];
     [[self password] setDelegate:self];
     [[self password] setSecureTextEntry:YES];
@@ -82,25 +79,21 @@
                                           size:[[passwordFormProperties objectForKey:@"textSize"] doubleValue]]];
     [[self password] setBackgroundColor:[UIColor colorFromRgbaDictionary:[passwordFormProperties objectForKey:@"backgroundColor"]]];
     [[self password] setTextColor:[UIColor colorFromRgbaDictionary:[passwordFormProperties objectForKey:@"textColor"]]];
+    [[self password] setTintColor:[UIColor colorFromRgbaDictionary:[passwordFormProperties objectForKey:@"tintColor"]]];
     [self password].layer.cornerRadius= [[passwordFormProperties objectForKey:@"cornerRadius"] doubleValue];
     [self password].layer.borderColor= [[UIColor colorFromRgbaDictionary:[passwordFormProperties objectForKey:@"borderColor"]] CGColor];
     [self password].layer.borderWidth= [[passwordFormProperties objectForKey:@"borderWidth"] doubleValue];
+    [[self password] setPlaceholderText:LSSTRING(@"placeholder_password")
+                     withRGBaDictionary:[passwordFormProperties objectForKey:@"placeholderColor"]];
     
-    if ([[self password] respondsToSelector:@selector(setAttributedPlaceholder:)]) {
-        
-        [self password].attributedPlaceholder = [[NSAttributedString alloc] initWithString:LSSTRING(@"placeholder_password") attributes:@{NSForegroundColorAttributeName: [UIColor colorFromRgbaDictionary:[passwordFormProperties objectForKey:@"placeholderColor"]]}];
-        
-    } else {
-        
-        [[self password] setPlaceholder:LSSTRING(@"placeholder_password")];
-    }
-    
+    // Forgotten Password Transparent Button
     NSDictionary *forgottenPasswordButtonProperties = [[self signInProperties] objectForKey:@"forgottenPasswordButton"];
     [[self forgotPasswordButton] setTitle:LSSTRING(@"button_forgotpass") forState:UIControlStateNormal];
     [[[self forgotPasswordButton] titleLabel] setFont:[UIFont fontWithName:[forgottenPasswordButtonProperties objectForKey:@"textFont"]
                                                                       size:[[forgottenPasswordButtonProperties objectForKey:@"textSize"] doubleValue]]];
     [[self forgotPasswordButton] setTitleColor:[UIColor colorFromRgbaDictionary:[forgottenPasswordButtonProperties objectForKey:@"textColor"]] forState:UIControlStateNormal];
     
+    // Sign In Button
     NSDictionary *signInButtonProperties = [[self signInProperties] objectForKey:@"signInButton"];
     [[self signinButton] setTitle:LSSTRING(@"button_signin") forState:UIControlStateNormal];
     [[[self signinButton] titleLabel] setFont:[UIFont fontWithName:[signInButtonProperties objectForKey:@"textFont"]
@@ -112,6 +105,7 @@
     [self signinButton].layer.borderColor= [[UIColor colorFromRgbaDictionary:[signInButtonProperties objectForKey:@"borderColor"]] CGColor];
     [self signinButton].layer.borderWidth= [[signInButtonProperties objectForKey:@"borderWidth"] doubleValue];
     
+    // Create Account Button
     NSDictionary *createAccountButtonProperties = [[self signInProperties] objectForKey:@"createAccountButton"];
     [[self createAccountButton] setTitle:LSSTRING(@"button_signup") forState:UIControlStateNormal];
     [[[self createAccountButton] titleLabel] setFont:[UIFont fontWithName:[createAccountButtonProperties objectForKey:@"textFont"]
@@ -123,9 +117,23 @@
     [self createAccountButton].layer.borderColor= [[UIColor colorFromRgbaDictionary:[createAccountButtonProperties objectForKey:@"borderColor"]] CGColor];
     [self createAccountButton].layer.borderWidth= [[createAccountButtonProperties objectForKey:@"borderWidth"] doubleValue];
 
+    [self setSignUpView:[[SignUpViewController alloc] initWithNibName:@"SignUpViewController"
+                                                              bundle:nil
+                                                      viewProperties:[self signUpProperties]
+                                                           titleFont:[self titleFont]
+                                                          titleColor:[self titleColor]
+                                                navigationBarBgColor:[self navigationBackgroundColor]
+                                                navigationBarFgColor:[self navigationForegroundColor]
+                                                         viewBgColor:[self viewBackgroundColor]]];
     
-    [self setSignUpView:[[SignUpViewController alloc] initWithNibName:@"SignUpViewController" bundle:nil]];
-    [self setLostpassView:[[LostPassViewController alloc] initWithNibName:@"LostPassViewController" bundle:nil]];
+    [self setLostpassView:[[LostPassViewController alloc] initWithNibName:@"LostPassViewController"
+                                                                   bundle:nil
+                                                           viewProperties:[self signUpProperties]
+                                                                titleFont:[self titleFont]
+                                                               titleColor:[self titleColor]
+                                                     navigationBarBgColor:[self navigationBackgroundColor]
+                                                     navigationBarFgColor:[self navigationForegroundColor]
+                                                              viewBgColor:[self viewBackgroundColor]]];
     
     //For iOS6
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
