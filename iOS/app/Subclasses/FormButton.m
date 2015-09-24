@@ -7,6 +7,7 @@
 //
 
 #import "FormButton.h"
+#import "UIColor+NSDictionary.h"
 
 @implementation FormButton
 
@@ -22,12 +23,22 @@
         self.layer.masksToBounds= YES;
         self.layer.borderColor= [BUTTON_BORDER_COLOR CGColor];
         self.layer.borderWidth= BUTTON_BORDER_WIDTH;
-        
-        
     }
+    
     return self;
 }
 
-
+- (void) configureWithProperties:(NSDictionary *) formProperties
+                       titleText:(NSString *) titleText {
+    
+    [self setTitle:titleText forState:UIControlStateNormal];
+    [[self titleLabel] setFont:[UIFont fontWithName:[formProperties objectForKey:@"textFont"] size:[[formProperties objectForKey:@"textSize"] doubleValue]]];
+    [self setTitleColor:[UIColor colorFromRgbaDictionary:[formProperties objectForKey:@"textColor"]] forState:UIControlStateNormal];
+    [self setBackgroundColor:[UIColor colorFromRgbaDictionary:[formProperties objectForKey:@"backgroundColor"]]];
+    [[self titleLabel] setShadowColor:[UIColor blackColor]];
+    self.layer.cornerRadius= [[formProperties objectForKey:@"cornerRadius"] doubleValue];
+    self.layer.borderColor= [[UIColor colorFromRgbaDictionary:[formProperties objectForKey:@"borderColor"]] CGColor];
+    self.layer.borderWidth= [[formProperties objectForKey:@"borderWidth"] doubleValue];
+}
 
 @end

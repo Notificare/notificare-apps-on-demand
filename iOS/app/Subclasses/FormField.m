@@ -37,6 +37,24 @@
     return self;
 }
 
+- (void) configureWithDelegate:(id) delegate
+               secureTextEntry:(BOOL) secureText
+                    properties:(NSDictionary *) formProperties
+               placeHolderText:(NSString *) placeholderText {
+    
+    [self setDelegate:delegate];
+    [self setSecureTextEntry:secureText];
+    [self setFont:[UIFont fontWithName:[formProperties objectForKey:@"textFont"] size:[[formProperties objectForKey:@"textSize"] doubleValue]]];
+    [self setBackgroundColor:[UIColor colorFromRgbaDictionary:[formProperties objectForKey:@"backgroundColor"]]];
+    [self setTextColor:[UIColor colorFromRgbaDictionary:[formProperties objectForKey:@"textColor"]]];
+    [self setTintColor:[UIColor colorFromRgbaDictionary:[formProperties objectForKey:@"tintColor"]]];
+    self.layer.cornerRadius = [[formProperties objectForKey:@"cornerRadius"] doubleValue];
+    self.layer.borderColor = [[UIColor colorFromRgbaDictionary:[formProperties objectForKey:@"borderColor"]] CGColor];
+    self.layer.borderWidth = [[formProperties objectForKey:@"borderWidth"] doubleValue];
+    [self setPlaceholderText:placeholderText
+          withRGBaDictionary:[formProperties objectForKey:@"placeholderColor"]];
+}
+
 - (void) setPlaceholderText:(NSString *) placeholderString
          withRGBaDictionary:(NSDictionary *) colorDictionary {
     

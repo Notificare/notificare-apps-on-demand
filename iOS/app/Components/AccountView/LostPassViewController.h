@@ -15,7 +15,7 @@
 
 - (id)initWithNibName:(NSString *) nibNameOrNil
                bundle:(NSBundle *) nibBundleOrNil
-       viewProperties:(NSDictionary *) signUpProperties
+       viewProperties:(NSDictionary *) lostPassProperties
             titleFont:(UIFont *) titleFont
            titleColor:(UIColor *) titleColor
  navigationBarBgColor:(UIColor *) navigationBarBgColor
@@ -32,7 +32,7 @@
 @property (nonatomic, strong) UIColor *navigationBackgroundColor;
 @property (nonatomic, strong) UIColor *navigationForegroundColor;
 @property (nonatomic, strong) UIColor *viewBackgroundColor;
-@property (nonatomic, strong) NSDictionary *signUpProperties;
+@property (nonatomic, strong) NSDictionary *lostPassProperties;
 
 -(IBAction)recoverPassword:(id)sender;
 

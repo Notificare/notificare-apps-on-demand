@@ -41,6 +41,7 @@
 @property (nonatomic, strong) UIColor *viewBackgroundColor;
 @property (nonatomic, strong) NSDictionary *signInProperties;
 @property (nonatomic, strong) NSDictionary *signUpProperties;
+@property (nonatomic, strong) NSDictionary *lostPassProperties;
 
 -(IBAction)doLogin:(id)sender;
 -(IBAction)forgottenPassword:(id)sender;

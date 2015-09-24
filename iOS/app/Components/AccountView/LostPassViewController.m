@@ -31,18 +31,19 @@
 
 - (id)initWithNibName:(NSString *) nibNameOrNil
                bundle:(NSBundle *) nibBundleOrNil
-       viewProperties:(NSDictionary *) signUpProperties
+       viewProperties:(NSDictionary *) lostPassProperties
             titleFont:(UIFont *) titleFont
            titleColor:(UIColor *) titleColor
  navigationBarBgColor:(UIColor *) navigationBarBgColor
  navigationBarFgColor:(UIColor *) navigationBarFgColor
           viewBgColor:(UIColor *) viewBgColor
 {
+    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     
     if (self) {
         
-        _signUpProperties = signUpProperties;
+        _lostPassProperties = lostPassProperties;
         _titleFont = titleFont;
         _titleColor = titleColor;
         _navigationBackgroundColor = navigationBarBgColor;
@@ -60,44 +61,30 @@
     
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self.view action:@selector(endEditing:)]];
     
+    [self setupNavigationBarWithTitle:LSSTRING(@"title_lostpass")];
+    [self resetForm];
+    [[self view] setBackgroundColor:[self viewBackgroundColor]];
+
+    // Email Form Field
+    [[self email] configureWithDelegate:self
+                           secureTextEntry:NO
+                                properties:[[self lostPassProperties] objectForKey:@"emailForm"]
+                           placeHolderText:LSSTRING(@"placeholder_email")];
+    
+    // Recover Password Button
+    [[self forgotPassButton] configureWithProperties:[[self lostPassProperties] objectForKey:@"forgottenPasswordButton"]
+                                           titleText:LSSTRING(@"button_forgotpass")];
+}
+
+- (void) setupNavigationBarWithTitle:(NSString *) titleText {
+    
     UILabel * title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 40)];
-    [title setText:LSSTRING(@"title_lostpass")];
+    [title setText:titleText];
     [title setFont:[self titleFont]];
     [title setTextAlignment:NSTextAlignmentCenter];
     [title setTextColor:[self titleColor]];
     [[self navigationItem] setTitleView:title];
     
-    [[self view] setBackgroundColor:[self viewBackgroundColor]];
-    
-    [self resetForm];
-
-    // Email Form Field
-    NSDictionary *emailFormProperties = [[self signUpProperties] objectForKey:@"emailForm"];
-    [[self email] setDelegate:self];
-    [[self email] setFont:[UIFont fontWithName:[emailFormProperties objectForKey:@"textFont"]
-                                          size:[[emailFormProperties objectForKey:@"textSize"] doubleValue]]];
-    [[self email] setBackgroundColor:[UIColor colorFromRgbaDictionary:[emailFormProperties objectForKey:@"backgroundColor"]]];
-    [[self email] setTextColor:[UIColor colorFromRgbaDictionary:[emailFormProperties objectForKey:@"textColor"]]];
-    [[self email] setTintColor:[UIColor colorFromRgbaDictionary:[emailFormProperties objectForKey:@"tintColor"]]];
-    [self email].layer.cornerRadius= [[emailFormProperties objectForKey:@"cornerRadius"] doubleValue];
-    [self email].layer.borderColor= [[UIColor colorFromRgbaDictionary:[emailFormProperties objectForKey:@"borderColor"]] CGColor];
-    [self email].layer.borderWidth= [[emailFormProperties objectForKey:@"borderWidth"] doubleValue];
-    [[self email] setPlaceholderText:LSSTRING(@"placeholder_email")
-                  withRGBaDictionary:[emailFormProperties objectForKey:@"placeholderColor"]];
-    
-    // Recover Password Button
-    NSDictionary *forgotPassButtonProperties = [[self signUpProperties] objectForKey:@"createAccountButton"];
-    [[self forgotPassButton] setTitle:LSSTRING(@"button_forgotpass") forState:UIControlStateNormal];
-    [[[self forgotPassButton] titleLabel] setFont:[UIFont fontWithName:[forgotPassButtonProperties objectForKey:@"textFont"] size:[[forgotPassButtonProperties objectForKey:@"textSize"] doubleValue]]];
-    [[self forgotPassButton] setTitleColor:[UIColor colorFromRgbaDictionary:[forgotPassButtonProperties objectForKey:@"textColor"]] forState:UIControlStateNormal];
-    [[self forgotPassButton] setBackgroundColor:[UIColor colorFromRgbaDictionary:[forgotPassButtonProperties objectForKey:@"backgroundColor"]]];
-    [[[self forgotPassButton] titleLabel] setShadowColor:[UIColor blackColor]];
-    [self forgotPassButton].layer.cornerRadius= [[forgotPassButtonProperties objectForKey:@"cornerRadius"] doubleValue];
-    [self forgotPassButton].layer.borderColor= [[UIColor colorFromRgbaDictionary:[forgotPassButtonProperties objectForKey:@"borderColor"]] CGColor];
-    [self forgotPassButton].layer.borderWidth= [[forgotPassButtonProperties objectForKey:@"borderWidth"] doubleValue];
-
-    [[self forgotPassButton] setTitle:LSSTRING(@"button_forgotpass") forState:UIControlStateNormal];
-
     UIBarButtonItem * leftButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"BackButton"] style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
     
     [leftButton setTintColor:[self navigationForegroundColor]];
@@ -106,6 +93,7 @@
     [[self navigationItem] setRightBarButtonItem:nil];
     
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+        
         [[[self navigationController] navigationBar] setTintColor:[self navigationBackgroundColor]];
         
         [[UIBarButtonItem appearance] setBackgroundImage:[UIImage imageNamed:@"Transparent"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];

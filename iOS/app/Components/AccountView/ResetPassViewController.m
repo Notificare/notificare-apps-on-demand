@@ -10,6 +10,8 @@
 #import "NotificarePushLib.h"
 #import "AppDelegate.h"
 #import "IIViewDeckController.h"
+#import "UIColor+NSDictionary.h"
+
 @interface ResetPassViewController ()
 
 @end
@@ -27,11 +29,30 @@
 }
 
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithNibName:(NSString *) nibNameOrNil
+               bundle:(NSBundle *) nibBundleOrNil
+       viewProperties:(NSDictionary *) resetPassProperties
+     signInProperties:(NSDictionary *) signInProperties
+     signUpProperties:(NSDictionary *) signUpProperties
+            titleFont:(UIFont *) titleFont
+           titleColor:(UIColor *) titleColor
+ navigationBarBgColor:(UIColor *) navigationBarBgColor
+ navigationBarFgColor:(UIColor *) navigationBarFgColor
+          viewBgColor:(UIColor *) viewBgColor
 {
+    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
     if (self) {
-        // Custom initialization
+        
+        _resetPassProperties = resetPassProperties;
+        _signUpProperties = signUpProperties;
+        _signInProperties = signInProperties;
+        _titleFont = titleFont;
+        _titleColor = titleColor;
+        _navigationBackgroundColor = navigationBarBgColor;
+        _navigationForegroundColor = navigationBarFgColor;
+        _viewBackgroundColor = viewBgColor;
     }
     return self;
 }
@@ -43,47 +64,55 @@
     
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self.view action:@selector(endEditing:)]];
     
-    UILabel * title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 40)];
-    [title setText:LSSTRING(@"title_resetpass")];
-    [title setFont:LATO_LIGHT_FONT(20)];
-    [title setTextAlignment:NSTextAlignmentCenter];
-    [title setTextColor:ICONS_COLOR];
-    [[self navigationItem] setTitleView:title];
+    [self setupNavigationBarWithTitle:LSSTRING(@"title_resetpass")];
+    [self resetForm];
+    [[self view] setBackgroundColor:[self viewBackgroundColor]];
+
+    // Password Form Field
+    [[self password] configureWithDelegate:self
+                           secureTextEntry:YES
+                                properties:[[self resetPassProperties] objectForKey:@"passwordForm"]
+                           placeHolderText:LSSTRING(@"placeholder_newpass")];
     
+    // Confirm Password Form Field
+    [[self passwordConfirm] configureWithDelegate:self
+                                  secureTextEntry:YES
+                                       properties:[[self resetPassProperties] objectForKey:@"confirmPasswordForm"]
+                                  placeHolderText:LSSTRING(@"placeholder_confirm_newpass")];
+    
+    // Reset Password Button
+    [[self resetPassButton] configureWithProperties:[[self resetPassProperties] objectForKey:@"resetPasswordButton"]
+                                          titleText:LSSTRING(@"button_resetpass")];
+}
+
+- (void) setupNavigationBarWithTitle:(NSString *) titleText {
+    
+    UILabel * title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 40)];
+    [title setText:titleText];
+    [title setFont:[self titleFont]];
+    [title setTextAlignment:NSTextAlignmentCenter];
+    [title setTextColor:[self titleColor]];
+    [[self navigationItem] setTitleView:title];
     
     UIBarButtonItem * leftButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"BackButton"] style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
     
-    [leftButton setTintColor:ICONS_COLOR];
-    //[rightButton setTintColor:[UIColor whiteColor]];
+    [leftButton setTintColor:[self navigationForegroundColor]];
     
     [[self navigationItem] setLeftBarButtonItem:leftButton];
     [[self navigationItem] setRightBarButtonItem:nil];
     
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
-        [[[self navigationController] navigationBar] setTintColor:MAIN_COLOR];
+        
+        [[[self navigationController] navigationBar] setTintColor:[self navigationBackgroundColor]];
         
         [[UIBarButtonItem appearance] setBackgroundImage:[UIImage imageNamed:@"Transparent"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
         [[UIBarButtonItem appearance] setBackgroundImage:[UIImage imageNamed:@"Transparent"] forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
         
     } else {
         
-        [[[self navigationController] navigationBar] setBarTintColor:MAIN_COLOR];
+        [[[self navigationController] navigationBar] setBarTintColor:[self navigationBackgroundColor]];
     }
-    
-    
-    [self resetForm];
-    [[self password] setPlaceholder:LSSTRING(@"placeholder_newpass")];
-    [[self password] setDelegate:self];
-    [[self password] setSecureTextEntry:YES];
-    [[self passwordConfirm] setSecureTextEntry:YES];
-    [[self passwordConfirm] setDelegate:self];
-    [[self passwordConfirm] setPlaceholder:LSSTRING(@"placeholder_confirm_newpass")];
-
-    [[self resetPassButton] setTitle:LSSTRING(@"button_resetpass") forState:UIControlStateNormal];
-    
-    [self setSignInView:[[SignInViewController alloc] initWithNibName:@"SignInViewController" bundle:nil]];
 }
-
 
 -(IBAction)resetPassword:(id)sender{
     
@@ -194,7 +223,8 @@
 
 
 -(void)goBack{
-    [[self navigationController] pushViewController:[self signInView] animated:YES];
+   
+    [[self navigationController] popViewControllerAnimated:YES];
 }
 
 -(void)resetForm{
