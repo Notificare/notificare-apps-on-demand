@@ -667,7 +667,7 @@
 						<key>textColor</key>
 						<dict>
 							<key>red</key>
-							<integer>60</integer>
+							<integer>250</integer>
 							<key>green</key>
 							<integer>60</integer>
 							<key>blue</key>
@@ -700,9 +700,9 @@
 						<key>tintColor</key>
 						<dict>
 							<key>red</key>
-							<integer>20</integer>
-							<key>green</key>
 							<integer>160</integer>
+							<key>green</key>
+							<integer>20</integer>
 							<key>blue</key>
 							<integer>20</integer>
 							<key>alpha</key>
@@ -1719,7 +1719,7 @@
 					<key>textColor</key>
 					<dict>
 						<key>red</key>
-						<integer>60</integer>
+						<integer>250</integer>
 						<key>green</key>
 						<integer>60</integer>
 						<key>blue</key>
@@ -1752,9 +1752,9 @@
 					<key>tintColor</key>
 					<dict>
 						<key>red</key>
-						<integer>20</integer>
-						<key>green</key>
 						<integer>160</integer>
+						<key>green</key>
+						<integer>20</integer>
 						<key>blue</key>
 						<integer>20</integer>
 						<key>alpha</key>
