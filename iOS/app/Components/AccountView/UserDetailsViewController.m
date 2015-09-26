@@ -16,6 +16,7 @@
 #import "NotificareUser.h"
 #import "NotificareUserPreference.h"
 #import "NotificareSegment.h"
+#import "UIColor+NSDictionary.h"
 
 @interface UserDetailsViewController ()
 
@@ -44,36 +45,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    UILabel * title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 40)];
-    [title setText:LSSTRING(@"title_user_profile")];
-    [title setFont:LATO_LIGHT_FONT(20)];
-    [title setTextAlignment:NSTextAlignmentCenter];
-    [title setTextColor:ICONS_COLOR];
-    [[self navigationItem] setTitleView:title];
     
+    [self setupNavigationBarWithTitle:LSSTRING(@"title_user_profile")];
+    [self resetForm];
+    [[self view] setBackgroundColor:[self viewBackgroundColor]];
     
     [self setNavSections:[NSMutableArray array]];
     [self setSectionTitles:[NSMutableArray array]];
     
-    
     [[self sectionTitles] addObject:LSSTRING(@"title_section_user")];
     [[self sectionTitles] addObject:LSSTRING(@"title_section_segments")];
-    
-    
-    [self setupNavigationBar];
-    
-    //For iOS6
-    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
-        [[[self navigationController] navigationBar] setTintColor:MAIN_COLOR];
-        
-        [[UIBarButtonItem appearance] setBackgroundImage:[UIImage imageNamed:@"Transparent"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-        [[UIBarButtonItem appearance] setBackgroundImage:[UIImage imageNamed:@"Transparent"] forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
-        
-    } else {
-        
-        [[[self navigationController] navigationBar] setBarTintColor:MAIN_COLOR];
-    }
 
     [self resetForm];
     [[self password] setPlaceholder:LSSTRING(@"placeholder_newpass")];
@@ -83,16 +64,12 @@
     [[self passwordConfirm] setDelegate:self];
     [[self passwordConfirm] setPlaceholder:LSSTRING(@"placeholder_confirm_newpass")];
     
-    [[self userToken] setFont:LATO_FONT(10)];
-    
     [[self changePassButton] setTitle:LSSTRING(@"button_changepass") forState:UIControlStateNormal];
     [[self generateTokenButton] setTitle:LSSTRING(@"button_generatetoken") forState:UIControlStateNormal];
     [[self logoutButton] setTitle:LSSTRING(@"button_logout") forState:UIControlStateNormal];
     [[self logoutButton] setBackgroundColor:[UIColor redColor]];
 
-    [self setSignInView:[[SignInViewController alloc] initWithNibName:@"SignInViewController" bundle:nil]];
     [self setOptionsView:[[UserDetailsOptionsViewController alloc] initWithNibName:@"UserDetailsOptionsViewController" bundle:nil]];
-
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -100,17 +77,12 @@
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeBadge) name:@"incomingNotification" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupNavigationBar) name:@"rangingBeacons" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeBadge) name:@"rangingBeacons" object:nil];
     
     [self loadAccount];
-    [self setActivityIndicatorView:[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]];
-    
-    [[self activityIndicatorView]  setCenter:CGPointMake( self.view.frame.size.width /2-5, self.view.frame.size.height /2-5)];
-    [[self activityIndicatorView]  setContentMode:UIViewContentModeCenter];
     [[self activityIndicatorView] setHidden:NO];
     [[self activityIndicatorView] startAnimating];
     
-    [self setLoadingView:[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)]];
     [[self loadingView] setBackgroundColor:[UIColor whiteColor]];
     [[self loadingView] addSubview:[self activityIndicatorView]];
     [[self view] addSubview:[self loadingView]];
@@ -165,12 +137,14 @@
     [[self notificare] fetchUserPreferences:^(NSArray *info) {
         
         for (NotificareUserPreference * preference in info){
+            
             [[self segments] addObject:preference];
         }
         
         [self setupTable];
         
     } errorHandler:^(NSError *error) {
+        
         [self loadSegments];
     }];
 }
@@ -219,11 +193,19 @@
     [[self tableView] reloadData];
 }
 
--(void)setupNavigationBar{
+- (void) setupNavigationBarWithTitle:(NSString *) titleText {
+    
+    UILabel * title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 40)];
+    [title setText:titleText];
+    [title setFont:[self titleFont]];
+    [title setTextAlignment:NSTextAlignmentCenter];
+    [title setTextColor:[self titleColor]];
+    [[self navigationItem] setTitleView:title];
+    
     int count = [[[self appDelegate] notificarePushLib] myBadge];
     
     if(count > 0){
-        [[self buttonIcon] setTintColor:ICONS_COLOR];
+        [[self buttonIcon] setTintColor:[self navigationForegroundColor]];
         [[self badgeButton] addTarget:[self viewDeckController] action:@selector(toggleLeftView) forControlEvents:UIControlEventTouchUpInside];
         
         
@@ -234,19 +216,19 @@
         UIBarButtonItem * leftButton = [[UIBarButtonItem alloc] initWithCustomView:[self badge]];
         [leftButton setTarget:[self viewDeckController]];
         [leftButton setAction:@selector(toggleLeftView)];
-        [leftButton setTintColor:ICONS_COLOR];
+        [leftButton setTintColor:[self navigationForegroundColor]];
         [[self navigationItem] setLeftBarButtonItem:leftButton];
     } else {
         
         UIBarButtonItem * leftButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"LeftMenuIcon"] style:UIBarButtonItemStylePlain target:[self viewDeckController] action:@selector(toggleLeftView)];
-        [leftButton setTintColor:ICONS_COLOR];
+        [leftButton setTintColor:[self navigationForegroundColor]];
         [[self navigationItem] setLeftBarButtonItem:leftButton];
         
     }
     
     UIBarButtonItem * rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"RightMenuIcon"] style:UIBarButtonItemStylePlain target:[self viewDeckController] action:@selector(toggleRightView)];
     
-    [rightButton setTintColor:ICONS_COLOR];
+    [rightButton setTintColor:[self navigationForegroundColor]];
     
     if([[[self appDelegate] beacons] count] > 0){
         [[self navigationItem] setRightBarButtonItem:rightButton];
@@ -254,11 +236,23 @@
         [[self navigationItem] setRightBarButtonItem:nil];
     }
     
+    //For iOS6
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+        
+        [[[self navigationController] navigationBar] setTintColor:[self navigationBackgroundColor]];
+        
+        [[UIBarButtonItem appearance] setBackgroundImage:[UIImage imageNamed:@"Transparent"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+        [[UIBarButtonItem appearance] setBackgroundImage:[UIImage imageNamed:@"Transparent"] forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
+        
+    } else {
+        
+        [[[self navigationController] navigationBar] setBarTintColor:[self navigationBackgroundColor]];
+    }
 }
 
 -(void)changeBadge{
     
-    [self setupNavigationBar];
+    [self setupNavigationBarWithTitle:LSSTRING(@"title_user_profile")];
     
 }
 
@@ -391,6 +385,7 @@
 
 #pragma mark - Table delegates
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
     return [[self navSections] count];
 }
 
@@ -406,33 +401,45 @@
     
     
     if([indexPath section] == 0){
+        
         if([indexPath row] == 0){
+            
             static NSString* cellType = @"UserCell";
             UserCell * cell = (UserCell *)[tableView dequeueReusableCellWithIdentifier:cellType];
             
             if (cell == nil) {
+                
                 NSArray *nib = [[NSBundle mainBundle] loadNibNamed:cellType owner:nil options:nil];
                 cell = (UserCell*)[nib objectAtIndex:0];
             }
             
-            
             NSDictionary * item = (NSDictionary *)[[[self navSections] objectAtIndex:[indexPath section]] objectAtIndex:[indexPath row]];
+            NSDictionary * nameProperties = [[self userDetailsProperties] objectForKey:@"profileName"];
             
             UILabel * name = (UILabel *)[cell viewWithTag:100];
             [name setText:[item objectForKey:@"name"]];
-            [name setFont:LATO_FONT(16)];
+            [name setFont:[UIFont fontWithName:[nameProperties objectForKey:@"textFont"] size:[[nameProperties objectForKey:@"textSize"] doubleValue]]];
+            [name setTextColor:[UIColor colorFromRgbaDictionary:[nameProperties objectForKey:@"textColor"]]];
+            
+            NSDictionary * emailProperties = [[self userDetailsProperties] objectForKey:@"profileEmail"];
             
             UILabel * email = (UILabel *)[cell viewWithTag:101];
             [email setText:[item objectForKey:@"email"]];
-            [email setFont:LATO_LIGHT_FONT(14)];
+            [email setFont:[UIFont fontWithName:[emailProperties objectForKey:@"textFont"] size:[[emailProperties objectForKey:@"textSize"] doubleValue]]];
+            [email setTextColor:[UIColor colorFromRgbaDictionary:[emailProperties objectForKey:@"textColor"]]];
             
+            NSDictionary * tokenProperties = [[self userDetailsProperties] objectForKey:@"profileToken"];
             UILabel * token = (UILabel *)[cell viewWithTag:102];
             if([item objectForKey:@"token"] && [NSNull class] != [[item objectForKey:@"token"] class]){
+                
                 [token setText:[NSString stringWithFormat:@"%@@pushmail.notifica.re", [item objectForKey:@"token"]]];
+                
             } else {
+                
                 [token setText:@""];
             }
-            [token setFont:LATO_LIGHT_FONT(9)];
+            [token setFont:[UIFont fontWithName:[tokenProperties objectForKey:@"textFont"] size:[[tokenProperties objectForKey:@"textSize"] doubleValue]]];
+            [token setTextColor:[UIColor colorFromRgbaDictionary:[tokenProperties objectForKey:@"textColor"]]];
             
             UIImageView * image = (UIImageView *)[cell viewWithTag:103];
             [image setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[GravatarHelper getGravatarURL:[item objectForKey:@"email"]]]]];
@@ -441,22 +448,28 @@
             image.layer.masksToBounds = YES;
             
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+            [cell setBackgroundColor:[UIColor colorFromRgbaDictionary:[[self userDetailsProperties] objectForKey:@"profileBackgroundColor"]]];
             return cell;
+            
         } else {
             
             static NSString* cellType = @"SegmentCell";
             SegmentCell * cell = (SegmentCell *)[tableView dequeueReusableCellWithIdentifier:cellType];
             
             if (cell == nil) {
+                
                 NSArray *nib = [[NSBundle mainBundle] loadNibNamed:cellType owner:nil options:nil];
                 cell = (SegmentCell*)[nib objectAtIndex:0];
             }
             
             NSDictionary * item = (NSDictionary *)[[[self navSections] objectAtIndex:[indexPath section]] objectAtIndex:[indexPath row]];
+            NSDictionary * properties = [[self userDetailsProperties] objectForKey:@"profileOptions"];
             
             [[cell textLabel] setText:[item objectForKey:@"label"]];
-            [[cell textLabel] setFont:LATO_LIGHT_FONT(14)];
+            [[cell textLabel] setFont:[UIFont fontWithName:[properties objectForKey:@"textFont"] size:[[properties objectForKey:@"textSize"] doubleValue]]];
+            [[cell textLabel] setTextColor:[UIColor colorFromRgbaDictionary:[properties objectForKey:@"textColor"]]];
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+            [cell setBackgroundColor:[UIColor colorFromRgbaDictionary:[properties objectForKey:@"backgroundColor"]]];
             return cell;
         }
         
@@ -471,25 +484,29 @@
         }
         
         NotificareUserPreference * item = (NotificareUserPreference *)[[[self navSections] objectAtIndex:[indexPath section]] objectAtIndex:[indexPath row]];
+        NSDictionary *profilePreferences = [[self userDetailsProperties] objectForKey:@"infoOptions"];
         
         [[cell textLabel] setText:[item preferenceLabel]];
-        [[cell textLabel] setFont:LATO_FONT(14)];
+        [[cell textLabel] setFont:[UIFont fontWithName:[profilePreferences objectForKey:@"textFont"] size:[[profilePreferences objectForKey:@"textSize"] doubleValue]]];
+        [[cell textLabel] setTextColor:[UIColor colorFromRgbaDictionary:[profilePreferences objectForKey:@"textColor"]]];
         
         
         if([[item preferenceType] isEqualToString:@"single"]){
+            
             NotificareSegment * seg = (NotificareSegment *)[[item preferenceOptions] firstObject];
             [[cell detailTextLabel] setText:[seg segmentLabel]];
             [[cell detailTextLabel] setFont:LATO_FONT(14)];
             UISwitch *mySwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
             [cell setAccessoryView:mySwitch];
             [mySwitch setTag:(([indexPath section] * 100) + [indexPath row])];
+            [mySwitch setOnTintColor:[UIColor colorFromRgbaDictionary:[profilePreferences objectForKey:@"selectionColor"]]];
             
             if([seg selected]){
+                
                 [mySwitch setOn:YES];
             }
             
             [mySwitch addTarget:self action:@selector(OnSegmentsChanged:) forControlEvents:UIControlEventValueChanged];
-
         }
         
         if([[item preferenceType] isEqualToString:@"choice"]){
@@ -550,50 +567,60 @@
     
 }
 
+- (CGFloat)tableView:(UITableView*)tableView heightForFooterInSection:(NSInteger)section {
+    
+    return 2.0;
+}
+
+- (UIView*)tableView:(UITableView*)tableView viewForFooterInSection:(NSInteger)section {
+    
+    return [[UIView alloc] initWithFrame:CGRectZero];
+}
+
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     
+    NSDictionary* sectionProperties = [[self userDetailsProperties] objectForKey:@"sectionHeader"];
+    
     if(section == 0){
+        
         UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, USER_HEADER_HEIGHT)];
-        headerView.backgroundColor = [UIColor clearColor];
+        headerView.backgroundColor = [UIColor colorFromRgbaDictionary:[sectionProperties objectForKey:@"backgroundColor"]];
         
         UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, self.view.frame.size.width - 10, USER_HEADER_HEIGHT)];
         [label setText:[[self sectionTitles] objectAtIndex:section]];
-        [label setTextColor:[UIColor grayColor]];
-        [label setFont:LATO_FONT(14)];
+        [label setFont:[UIFont fontWithName:[sectionProperties objectForKey:@"textFont"] size:[[sectionProperties objectForKey:@"textSize"] doubleValue]]];
+        [label setTextColor:[UIColor colorFromRgbaDictionary:[sectionProperties objectForKey:@"textColor"]]];
         [label setBackgroundColor:[UIColor clearColor]];
         label.autoresizingMask = UIViewAutoresizingFlexibleRightMargin;
         
         [headerView addSubview:label];
         return headerView;
+        
     } else {
+        
         UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, SEGMENT_HEADER_HEIGHT)];
-        headerView.backgroundColor = [UIColor clearColor];
+        headerView.backgroundColor = [UIColor colorFromRgbaDictionary:[sectionProperties objectForKey:@"backgroundColor"]];
         
         UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, self.view.frame.size.width - 10, SEGMENT_HEADER_HEIGHT)];
         [label setText:[[self sectionTitles] objectAtIndex:section]];
-        [label setTextColor:[UIColor grayColor]];
-        [label setFont:LATO_FONT(14)];
+        [label setFont:[UIFont fontWithName:[sectionProperties objectForKey:@"textFont"] size:[[sectionProperties objectForKey:@"textSize"] doubleValue]]];
+        [label setTextColor:[UIColor colorFromRgbaDictionary:[sectionProperties objectForKey:@"textColor"]]];
         [label setBackgroundColor:[UIColor clearColor]];
         label.autoresizingMask = UIViewAutoresizingFlexibleRightMargin;
         
         [headerView addSubview:label];
         return headerView;
     }
-    
-    
-    
 }
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
     return [[self sectionTitles] objectAtIndex:section];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    
-    
     
     if([[[[self navSections] objectAtIndex:[indexPath section]] objectAtIndex:[indexPath row]] isKindOfClass:[NotificareUserPreference class]]){
         

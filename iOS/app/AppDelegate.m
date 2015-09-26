@@ -225,6 +225,14 @@
                 if([[NotificarePushLib shared] isLoggedIn]){
                     
                     UserDetailsViewController * userDetails = [[UserDetailsViewController alloc] initWithNibName:@"UserDetailsViewController" bundle:nil];
+                    
+                    [userDetails setTitleFont:[UIFont fontWithName:[item objectForKey:@"titleFont"] size:[[item objectForKey:@"titleSize"] doubleValue]]];
+                    [userDetails setTitleColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"titleColor"]]];
+                    [userDetails setNavigationBackgroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"navigationBgColor"]]];
+                    [userDetails setNavigationForegroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"navigationFgColor"]]];
+                    [userDetails setViewBackgroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"backgroundColor"]]];
+                    [userDetails setUserDetailsProperties:[item objectForKey:@"userDetails"]];
+                  
                     [self setCenterController:[[UINavigationController alloc] initWithRootViewController:userDetails]];
                     
                 } else {
@@ -236,7 +244,7 @@
                     [login setNavigationBackgroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"navigationBgColor"]]];
                     [login setNavigationForegroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"navigationFgColor"]]];
                     [login setViewBackgroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"backgroundColor"]]];
-                    [login setSignInProperties:(NSDictionary *)[item objectForKey:@"signIn"]];
+                    [login setSignInProperties:[item objectForKey:@"signIn"]];
                     [login setSignUpProperties:[item objectForKey:@"signUp"]];
                     [login setLostPassProperties:[item objectForKey:@"forgottenPassword"]];
                     
@@ -350,6 +358,21 @@
     NSLog(@"didChangeAccountNotification: %@",info);
     
     UserDetailsViewController * userDetailsView = [[UserDetailsViewController alloc] initWithNibName:@"UserDetailsViewController" bundle:nil];
+    
+    NSArray * settings = [[Configuration shared] getArray:@"appSettings"];
+    
+    for (NSDictionary * setting in settings) {
+        
+        NSDictionary *accountViewProperties = [setting objectForKey:@"accountView"];
+        
+        [userDetailsView setTitleFont:[UIFont fontWithName:[accountViewProperties objectForKey:@"titleFont"] size:[[accountViewProperties objectForKey:@"titleSize"] doubleValue]]];
+        [userDetailsView setTitleColor:[UIColor colorFromRgbaDictionary:[accountViewProperties objectForKey:@"titleColor"]]];
+        [userDetailsView setNavigationBackgroundColor:[UIColor colorFromRgbaDictionary:[accountViewProperties objectForKey:@"navigationBgColor"]]];
+        [userDetailsView setNavigationForegroundColor:[UIColor colorFromRgbaDictionary:[accountViewProperties objectForKey:@"navigationFgColor"]]];
+        [userDetailsView setViewBackgroundColor:[UIColor colorFromRgbaDictionary:[accountViewProperties objectForKey:@"backgroundColor"]]];
+        [userDetailsView setUserDetailsProperties:(NSDictionary *)[accountViewProperties objectForKey:@"userDetails"]];
+    }
+    
     UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:userDetailsView];
     [self setCenterController:navigationController];
     [[self deckController] setCenterController:[self centerController]];

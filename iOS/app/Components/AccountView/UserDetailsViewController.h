@@ -36,15 +36,21 @@
 @property (nonatomic, strong) IBOutlet UIImageView * buttonIcon;
 @property (nonatomic, strong) IBOutlet UITableView * tableView;
 @property (nonatomic, strong) IBOutlet UITableViewController * tableViewController;
+@property (nonatomic, strong) UIView *loadingView;
+@property (nonatomic, strong) UIActivityIndicatorView *activityIndicatorView;
 @property (nonatomic, strong) NSMutableArray * navSections;
 @property (nonatomic, strong) NSMutableArray * sectionTitles;
 @property (nonatomic, strong) NSMutableArray * segments;
 @property (nonatomic, strong) NotificareUser * user;
-@property (nonatomic, strong) UIActivityIndicatorView * activityIndicatorView;
-@property (nonatomic, strong) UIView * loadingView;
-@property (strong, nonatomic) MFMailComposeViewController *mailComposer;
+@property (nonatomic, strong) MFMailComposeViewController *mailComposer;
 @property (nonatomic, strong) SignInViewController * signInView;
 @property (nonatomic, strong) UserDetailsOptionsViewController * optionsView;
+@property (nonatomic, strong) UIFont *titleFont;
+@property (nonatomic, strong) UIColor *titleColor;
+@property (nonatomic, strong) UIColor *viewBackgroundColor;
+@property (nonatomic, strong) UIColor *navigationBackgroundColor;
+@property (nonatomic, strong) UIColor *navigationForegroundColor;
+@property (nonatomic, strong) NSDictionary *userDetailsProperties;
 
 -(IBAction)generateToken:(id)sender;
 -(IBAction)changePass:(id)sender;

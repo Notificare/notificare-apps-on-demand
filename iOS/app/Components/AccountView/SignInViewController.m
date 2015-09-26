@@ -91,20 +91,6 @@
                                                      navigationBarBgColor:[self navigationBackgroundColor]
                                                      navigationBarFgColor:[self navigationForegroundColor]
                                                               viewBgColor:[self viewBackgroundColor]]];
-    
-    //For iOS6
-    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
-        
-        [[[self navigationController] navigationBar] setTintColor:[self navigationBackgroundColor]];
-        
-        [[UIBarButtonItem appearance] setBackgroundImage:[UIImage imageNamed:@"Transparent"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-        [[UIBarButtonItem appearance] setBackgroundImage:[UIImage imageNamed:@"Transparent"] forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
-    
-    } else {
-        
-        [[[self navigationController] navigationBar] setBarTintColor:[self navigationBackgroundColor]];
-    }
-
 }
 
 - (void) setupNavigationBarWithTitle:(NSString *) titleText {
@@ -151,7 +137,18 @@
         [[self navigationItem] setRightBarButtonItem:nil];
     }
     
-    
+    //For iOS6
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+        
+        [[[self navigationController] navigationBar] setTintColor:[self navigationBackgroundColor]];
+        
+        [[UIBarButtonItem appearance] setBackgroundImage:[UIImage imageNamed:@"Transparent"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+        [[UIBarButtonItem appearance] setBackgroundImage:[UIImage imageNamed:@"Transparent"] forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
+        
+    } else {
+        
+        [[[self navigationController] navigationBar] setBarTintColor:[self navigationBackgroundColor]];
+    }   
 }
 
 -(void)changeBadge{
