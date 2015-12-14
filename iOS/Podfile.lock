@@ -1,19 +1,19 @@
 PODS:
   - MKNetworkKit (0.87):
     - Reachability (~> 3.1.0)
-  - notificare-push-lib (1.5.9)
+  - notificare-push-lib (1.6.4)
   - Reachability (3.1.1)
   - ViewDeck (2.3.1)
 
 DEPENDENCIES:
   - MKNetworkKit (~> 0.87)
-  - notificare-push-lib (~> 1.5.9)
+  - notificare-push-lib (~> 1.6.4)
   - ViewDeck (~> 2.3.1)
 
 SPEC CHECKSUMS:
   MKNetworkKit: 60ad3c83b62183e40ba75ce772c9427c25b520de
-  notificare-push-lib: 7906d5994f5138311c68cd2084b4f1ab79ed81de
+  notificare-push-lib: 6e5f92a760fce9b89b98943c31dc8b5e4f9b74d9
   Reachability: dd9aa4fb6667b9f787690a74f53cb7634ce99893
   ViewDeck: 3e9bfcc36d889155d77ae47811a4d48714ee8d0c
 
-COCOAPODS: 0.39.0.beta.4
+COCOAPODS: 0.39.0
