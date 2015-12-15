@@ -18,6 +18,6 @@
                placeHolderText:(NSString *) placeholderText;
 
 - (void) setPlaceholderText:(NSString *) placeholderString
-         withRGBaDictionary:(NSDictionary *) colorDictionary;
+         withColorHexString:(NSString *) colorHexString;
 
 @end

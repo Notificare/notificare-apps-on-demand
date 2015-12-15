@@ -24,7 +24,8 @@
 #import "NSData+Hex.h"
 #import "Configuration.h"
 #import "NotificareDevice.h"
-#import "UIColor+NSDictionary.h"
+#import "UIColor+Hex.h"
+
 
 
 
@@ -195,12 +196,12 @@
             [main setViewTitle:LSSTRING([item objectForKey:@"label"])];
             [main setTargetUrl:[item objectForKey:@"url"]];
             [main setTitleFont:[UIFont fontWithName:[item objectForKey:@"titleFont"] size:[[item objectForKey:@"titleSize"] doubleValue]]];
-            [main setTitleColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"titleColor"]]];
-            [main setNavigationBackgroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"navigationBgColor"]]];
-            [main setNavigationForegroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"navigationFgColor"]]];
-            [main setLoadingViewColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"loadingViewColor"]]];
-            [main setToolbarBackgroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"toolbarBgColor"]]];
-            [main setToolbarForegroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"toolbarFgColor"]]];
+            [main setTitleColor:[UIColor colorWithHexString:[item objectForKey:@"titleColor"]]];
+            [main setNavigationBackgroundColor:[UIColor colorWithHexString:[item objectForKey:@"navigationBgColor"]]];
+            [main setNavigationForegroundColor:[UIColor colorWithHexString:[item objectForKey:@"navigationFgColor"]]];
+            [main setLoadingViewColor:[UIColor colorWithHexString:[item objectForKey:@"loadingViewColor"]]];
+            [main setToolbarBackgroundColor:[UIColor colorWithHexString:[item objectForKey:@"toolbarBgColor"]]];
+            [main setToolbarForegroundColor:[UIColor colorWithHexString:[item objectForKey:@"toolbarFgColor"]]];
             
             [self setCenterController:[[UINavigationController alloc] initWithRootViewController:main]];
             
@@ -227,10 +228,10 @@
                     UserDetailsViewController * userDetails = [[UserDetailsViewController alloc] initWithNibName:@"UserDetailsViewController" bundle:nil];
                     
                     [userDetails setTitleFont:[UIFont fontWithName:[item objectForKey:@"titleFont"] size:[[item objectForKey:@"titleSize"] doubleValue]]];
-                    [userDetails setTitleColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"titleColor"]]];
-                    [userDetails setNavigationBackgroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"navigationBgColor"]]];
-                    [userDetails setNavigationForegroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"navigationFgColor"]]];
-                    [userDetails setViewBackgroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"backgroundColor"]]];
+                    [userDetails setTitleColor:[UIColor colorWithHexString:[item objectForKey:@"titleColor"]]];
+                    [userDetails setNavigationBackgroundColor:[UIColor colorWithHexString:[item objectForKey:@"navigationBgColor"]]];
+                    [userDetails setNavigationForegroundColor:[UIColor colorWithHexString:[item objectForKey:@"navigationFgColor"]]];
+                    [userDetails setViewBackgroundColor:[UIColor colorWithHexString:[item objectForKey:@"backgroundColor"]]];
                     [userDetails setUserDetailsProperties:[item objectForKey:@"userDetails"]];
                   
                     [self setCenterController:[[UINavigationController alloc] initWithRootViewController:userDetails]];
@@ -240,10 +241,10 @@
                     SignInViewController * login = [[SignInViewController alloc] initWithNibName:@"SignInViewController" bundle:nil];
                     
                     [login setTitleFont:[UIFont fontWithName:[item objectForKey:@"titleFont"] size:[[item objectForKey:@"titleSize"] doubleValue]]];
-                    [login setTitleColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"titleColor"]]];
-                    [login setNavigationBackgroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"navigationBgColor"]]];
-                    [login setNavigationForegroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"navigationFgColor"]]];
-                    [login setViewBackgroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"backgroundColor"]]];
+                    [login setTitleColor:[UIColor colorWithHexString:[item objectForKey:@"titleColor"]]];
+                    [login setNavigationBackgroundColor:[UIColor colorWithHexString:[item objectForKey:@"navigationBgColor"]]];
+                    [login setNavigationForegroundColor:[UIColor colorWithHexString:[item objectForKey:@"navigationFgColor"]]];
+                    [login setViewBackgroundColor:[UIColor colorWithHexString:[item objectForKey:@"backgroundColor"]]];
                     [login setSignInProperties:[item objectForKey:@"signIn"]];
                     [login setSignUpProperties:[item objectForKey:@"signUp"]];
                     [login setLostPassProperties:[item objectForKey:@"forgottenPassword"]];
@@ -263,10 +264,10 @@
                 [map setShowCircles:(BOOL)[item objectForKey:@"showCircles"]];
                 [map setViewTitle:LSSTRING([item objectForKey:@"label"])];
                 [map setTitleFont:[UIFont fontWithName:[item objectForKey:@"titleFont"] size:[[item objectForKey:@"titleSize"] doubleValue]]];
-                [map setTitleColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"titleColor"]]];
-                [map setNavigationBackgroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"navigationBgColor"]]];
-                [map setNavigationForegroundColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"navigationFgColor"]]];
-                [map setCircleColor:[UIColor colorFromRgbaDictionary:[item objectForKey:@"circleColor"]]];
+                [map setTitleColor:[UIColor colorWithHexString:[item objectForKey:@"titleColor"]]];
+                [map setNavigationBackgroundColor:[UIColor colorWithHexString:[item objectForKey:@"navigationBgColor"]]];
+                [map setNavigationForegroundColor:[UIColor colorWithHexString:[item objectForKey:@"navigationFgColor"]]];
+                [map setCircleColor:[UIColor colorWithHexString:[item objectForKey:@"circleColor"]]];
                 
                 [self setCenterController:[[UINavigationController alloc] initWithRootViewController:map]];
                 [[self deckController] setCenterController:[self centerController]];
@@ -366,10 +367,10 @@
         NSDictionary *accountViewProperties = [setting objectForKey:@"accountView"];
         
         [userDetailsView setTitleFont:[UIFont fontWithName:[accountViewProperties objectForKey:@"titleFont"] size:[[accountViewProperties objectForKey:@"titleSize"] doubleValue]]];
-        [userDetailsView setTitleColor:[UIColor colorFromRgbaDictionary:[accountViewProperties objectForKey:@"titleColor"]]];
-        [userDetailsView setNavigationBackgroundColor:[UIColor colorFromRgbaDictionary:[accountViewProperties objectForKey:@"navigationBgColor"]]];
-        [userDetailsView setNavigationForegroundColor:[UIColor colorFromRgbaDictionary:[accountViewProperties objectForKey:@"navigationFgColor"]]];
-        [userDetailsView setViewBackgroundColor:[UIColor colorFromRgbaDictionary:[accountViewProperties objectForKey:@"backgroundColor"]]];
+        [userDetailsView setTitleColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"titleColor"]]];
+        [userDetailsView setNavigationBackgroundColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"navigationBgColor"]]];
+        [userDetailsView setNavigationForegroundColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"navigationFgColor"]]];
+        [userDetailsView setViewBackgroundColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"backgroundColor"]]];
         [userDetailsView setUserDetailsProperties:(NSDictionary *)[accountViewProperties objectForKey:@"userDetails"]];
     }
     
@@ -403,10 +404,10 @@
             NSDictionary *lostPassProperties = [accountViewProperties objectForKey:@"forgottenPassword"];
             
             [signInView setTitleFont:[UIFont fontWithName:[accountViewProperties objectForKey:@"titleFont"] size:[[accountViewProperties objectForKey:@"titleSize"] doubleValue]]];
-            [signInView setTitleColor:[UIColor colorFromRgbaDictionary:[accountViewProperties objectForKey:@"titleColor"]]];
-            [signInView setNavigationBackgroundColor:[UIColor colorFromRgbaDictionary:[accountViewProperties objectForKey:@"navigationBgColor"]]];
-            [signInView setNavigationForegroundColor:[UIColor colorFromRgbaDictionary:[accountViewProperties objectForKey:@"navigationFgColor"]]];
-            [signInView setViewBackgroundColor:[UIColor colorFromRgbaDictionary:[accountViewProperties objectForKey:@"backgroundColor"]]];
+            [signInView setTitleColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"titleColor"]]];
+            [signInView setNavigationBackgroundColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"navigationBgColor"]]];
+            [signInView setNavigationForegroundColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"navigationFgColor"]]];
+            [signInView setViewBackgroundColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"backgroundColor"]]];
             [signInView setSignInProperties:(NSDictionary *)[signInProperties objectForKey:@"signIn"]];
             [signInView setSignUpProperties:[signUpProperties objectForKey:@"signUp"]];
             [signInView setLostPassProperties:[lostPassProperties objectForKey:@"forgottenPassword"]];
@@ -468,10 +469,10 @@
             NSDictionary *lostPassProperties = [accountViewProperties objectForKey:@"forgottenPassword"];
             
             [signInView setTitleFont:[UIFont fontWithName:[accountViewProperties objectForKey:@"titleFont"] size:[[accountViewProperties objectForKey:@"titleSize"] doubleValue]]];
-            [signInView setTitleColor:[UIColor colorFromRgbaDictionary:[accountViewProperties objectForKey:@"titleColor"]]];
-            [signInView setNavigationBackgroundColor:[UIColor colorFromRgbaDictionary:[accountViewProperties objectForKey:@"navigationBgColor"]]];
-            [signInView setNavigationForegroundColor:[UIColor colorFromRgbaDictionary:[accountViewProperties objectForKey:@"navigationFgColor"]]];
-            [signInView setViewBackgroundColor:[UIColor colorFromRgbaDictionary:[accountViewProperties objectForKey:@"backgroundColor"]]];
+            [signInView setTitleColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"titleColor"]]];
+            [signInView setNavigationBackgroundColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"navigationBgColor"]]];
+            [signInView setNavigationForegroundColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"navigationFgColor"]]];
+            [signInView setViewBackgroundColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"backgroundColor"]]];
             [signInView setSignInProperties:(NSDictionary *)[signInProperties objectForKey:@"signIn"]];
             [signInView setSignUpProperties:[signUpProperties objectForKey:@"signUp"]];
             [signInView setLostPassProperties:[lostPassProperties objectForKey:@"forgottenPassword"]];
@@ -512,10 +513,10 @@
         NSDictionary *lostPassProperties = [accountViewProperties objectForKey:@"forgottenPassword"];
         
         [login setTitleFont:[UIFont fontWithName:[accountViewProperties objectForKey:@"titleFont"] size:[[accountViewProperties objectForKey:@"titleSize"] doubleValue]]];
-        [login setTitleColor:[UIColor colorFromRgbaDictionary:[accountViewProperties objectForKey:@"titleColor"]]];
-        [login setNavigationBackgroundColor:[UIColor colorFromRgbaDictionary:[accountViewProperties objectForKey:@"navigationBgColor"]]];
-        [login setNavigationForegroundColor:[UIColor colorFromRgbaDictionary:[accountViewProperties objectForKey:@"navigationFgColor"]]];
-        [login setViewBackgroundColor:[UIColor colorFromRgbaDictionary:[accountViewProperties objectForKey:@"backgroundColor"]]];
+        [login setTitleColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"titleColor"]]];
+        [login setNavigationBackgroundColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"navigationBgColor"]]];
+        [login setNavigationForegroundColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"navigationFgColor"]]];
+        [login setViewBackgroundColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"backgroundColor"]]];
         [login setSignInProperties:(NSDictionary *)[signInProperties objectForKey:@"signIn"]];
         [login setSignUpProperties:[signUpProperties objectForKey:@"signUp"]];
         [login setLostPassProperties:[lostPassProperties objectForKey:@"forgottenPassword"]];
@@ -527,10 +528,10 @@
                                         signInProperties:signInProperties
                                         signUpProperties:signUpProperties
                                                titleFont:[UIFont fontWithName:[accountViewProperties objectForKey:@"titleFont"] size:[[accountViewProperties objectForKey:@"titleSize"] doubleValue]]
-                                              titleColor:[UIColor colorFromRgbaDictionary:[accountViewProperties objectForKey:@"titleColor"]]
-                                    navigationBarBgColor:[UIColor colorFromRgbaDictionary:[accountViewProperties objectForKey:@"navigationBgColor"]]
-                                    navigationBarFgColor:[UIColor colorFromRgbaDictionary:[accountViewProperties objectForKey:@"navigationFgColor"]]
-                                             viewBgColor:[UIColor colorFromRgbaDictionary:[accountViewProperties objectForKey:@"backgroundColor"]]];
+                                              titleColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"titleColor"]]
+                                    navigationBarBgColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"navigationBgColor"]]
+                                    navigationBarFgColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"navigationFgColor"]]
+                                             viewBgColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"backgroundColor"]]];
         
         [resetPassView setToken:token];
         [navigationController pushViewController:resetPassView animated:YES];

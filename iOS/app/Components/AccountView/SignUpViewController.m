@@ -10,7 +10,7 @@
 #import "NotificarePushLib.h"
 #import "AppDelegate.h"
 #import "IIViewDeckController.h"
-#import "UIColor+NSDictionary.h"
+#import "UIColor+Hex.h"
 
 @interface SignUpViewController ()
 

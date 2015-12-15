@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 #import "NotificarePushLib.h"
 #import "IIViewDeckController.h"
-#import "UIColor+NSDictionary.h"
+#import "UIColor+Hex.h"
 
 @interface SignInViewController ()
 
@@ -64,7 +64,7 @@
     [[self forgotPasswordButton] setTitle:LSSTRING(@"button_forgotpass") forState:UIControlStateNormal];
     [[[self forgotPasswordButton] titleLabel] setFont:[UIFont fontWithName:[forgottenPasswordButtonProperties objectForKey:@"textFont"]
                                                                       size:[[forgottenPasswordButtonProperties objectForKey:@"textSize"] doubleValue]]];
-    [[self forgotPasswordButton] setTitleColor:[UIColor colorFromRgbaDictionary:[forgottenPasswordButtonProperties objectForKey:@"textColor"]] forState:UIControlStateNormal];
+    [[self forgotPasswordButton] setTitleColor:[UIColor colorWithHexString:[forgottenPasswordButtonProperties objectForKey:@"textColor"]] forState:UIControlStateNormal];
     
     // Sign In Button
     [[self signinButton] configureWithProperties:[[self signInProperties] objectForKey:@"signInButton"]

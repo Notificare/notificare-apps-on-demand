@@ -16,7 +16,7 @@
 #import "NotificareUser.h"
 #import "NotificareUserPreference.h"
 #import "NotificareSegment.h"
-#import "UIColor+NSDictionary.h"
+#import "UIColor+Hex.h"
 
 @interface UserDetailsViewController ()
 
@@ -419,14 +419,14 @@
             UILabel * name = (UILabel *)[cell viewWithTag:100];
             [name setText:[item objectForKey:@"name"]];
             [name setFont:[UIFont fontWithName:[nameProperties objectForKey:@"textFont"] size:[[nameProperties objectForKey:@"textSize"] doubleValue]]];
-            [name setTextColor:[UIColor colorFromRgbaDictionary:[nameProperties objectForKey:@"textColor"]]];
+            [name setTextColor:[UIColor colorWithHexString:[nameProperties objectForKey:@"textColor"]]];
             
             NSDictionary * emailProperties = [[self userDetailsProperties] objectForKey:@"profileEmail"];
             
             UILabel * email = (UILabel *)[cell viewWithTag:101];
             [email setText:[item objectForKey:@"email"]];
             [email setFont:[UIFont fontWithName:[emailProperties objectForKey:@"textFont"] size:[[emailProperties objectForKey:@"textSize"] doubleValue]]];
-            [email setTextColor:[UIColor colorFromRgbaDictionary:[emailProperties objectForKey:@"textColor"]]];
+            [email setTextColor:[UIColor colorWithHexString:[emailProperties objectForKey:@"textColor"]]];
             
             NSDictionary * tokenProperties = [[self userDetailsProperties] objectForKey:@"profileToken"];
             UILabel * token = (UILabel *)[cell viewWithTag:102];
@@ -439,7 +439,7 @@
                 [token setText:@""];
             }
             [token setFont:[UIFont fontWithName:[tokenProperties objectForKey:@"textFont"] size:[[tokenProperties objectForKey:@"textSize"] doubleValue]]];
-            [token setTextColor:[UIColor colorFromRgbaDictionary:[tokenProperties objectForKey:@"textColor"]]];
+            [token setTextColor:[UIColor colorWithHexString:[tokenProperties objectForKey:@"textColor"]]];
             
             UIImageView * image = (UIImageView *)[cell viewWithTag:103];
             [image setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[GravatarHelper getGravatarURL:[item objectForKey:@"email"]]]]];
@@ -448,7 +448,7 @@
             image.layer.masksToBounds = YES;
             
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-            [cell setBackgroundColor:[UIColor colorFromRgbaDictionary:[[self userDetailsProperties] objectForKey:@"profileBackgroundColor"]]];
+            [cell setBackgroundColor:[UIColor colorWithHexString:[[self userDetailsProperties] objectForKey:@"profileBackgroundColor"]]];
             return cell;
             
         } else {
@@ -467,9 +467,9 @@
             
             [[cell textLabel] setText:[item objectForKey:@"label"]];
             [[cell textLabel] setFont:[UIFont fontWithName:[properties objectForKey:@"textFont"] size:[[properties objectForKey:@"textSize"] doubleValue]]];
-            [[cell textLabel] setTextColor:[UIColor colorFromRgbaDictionary:[properties objectForKey:@"textColor"]]];
+            [[cell textLabel] setTextColor:[UIColor colorWithHexString:[properties objectForKey:@"textColor"]]];
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-            [cell setBackgroundColor:[UIColor colorFromRgbaDictionary:[properties objectForKey:@"backgroundColor"]]];
+            [cell setBackgroundColor:[UIColor colorWithHexString:[properties objectForKey:@"backgroundColor"]]];
             return cell;
         }
         
@@ -488,7 +488,7 @@
         
         [[cell textLabel] setText:[item preferenceLabel]];
         [[cell textLabel] setFont:[UIFont fontWithName:[profilePreferences objectForKey:@"textFont"] size:[[profilePreferences objectForKey:@"textSize"] doubleValue]]];
-        [[cell textLabel] setTextColor:[UIColor colorFromRgbaDictionary:[profilePreferences objectForKey:@"textColor"]]];
+        [[cell textLabel] setTextColor:[UIColor colorWithHexString:[profilePreferences objectForKey:@"textColor"]]];
         
         
         if([[item preferenceType] isEqualToString:@"single"]){
@@ -499,7 +499,7 @@
             UISwitch *mySwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
             [cell setAccessoryView:mySwitch];
             [mySwitch setTag:(([indexPath section] * 100) + [indexPath row])];
-            [mySwitch setOnTintColor:[UIColor colorFromRgbaDictionary:[profilePreferences objectForKey:@"selectionColor"]]];
+            [mySwitch setOnTintColor:[UIColor colorWithHexString:[profilePreferences objectForKey:@"selectionColor"]]];
             
             if([seg selected]){
                 
@@ -585,12 +585,12 @@
     if(section == 0){
         
         UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, USER_HEADER_HEIGHT)];
-        headerView.backgroundColor = [UIColor colorFromRgbaDictionary:[sectionProperties objectForKey:@"backgroundColor"]];
+        headerView.backgroundColor = [UIColor colorWithHexString:[sectionProperties objectForKey:@"backgroundColor"]];
         
         UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, self.view.frame.size.width - 10, USER_HEADER_HEIGHT)];
         [label setText:[[self sectionTitles] objectAtIndex:section]];
         [label setFont:[UIFont fontWithName:[sectionProperties objectForKey:@"textFont"] size:[[sectionProperties objectForKey:@"textSize"] doubleValue]]];
-        [label setTextColor:[UIColor colorFromRgbaDictionary:[sectionProperties objectForKey:@"textColor"]]];
+        [label setTextColor:[UIColor colorWithHexString:[sectionProperties objectForKey:@"textColor"]]];
         [label setBackgroundColor:[UIColor clearColor]];
         label.autoresizingMask = UIViewAutoresizingFlexibleRightMargin;
         
@@ -600,12 +600,12 @@
     } else {
         
         UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, SEGMENT_HEADER_HEIGHT)];
-        headerView.backgroundColor = [UIColor colorFromRgbaDictionary:[sectionProperties objectForKey:@"backgroundColor"]];
+        headerView.backgroundColor = [UIColor colorWithHexString:[sectionProperties objectForKey:@"backgroundColor"]];
         
         UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, self.view.frame.size.width - 10, SEGMENT_HEADER_HEIGHT)];
         [label setText:[[self sectionTitles] objectAtIndex:section]];
         [label setFont:[UIFont fontWithName:[sectionProperties objectForKey:@"textFont"] size:[[sectionProperties objectForKey:@"textSize"] doubleValue]]];
-        [label setTextColor:[UIColor colorFromRgbaDictionary:[sectionProperties objectForKey:@"textColor"]]];
+        [label setTextColor:[UIColor colorWithHexString:[sectionProperties objectForKey:@"textColor"]]];
         [label setBackgroundColor:[UIColor clearColor]];
         label.autoresizingMask = UIViewAutoresizingFlexibleRightMargin;
         

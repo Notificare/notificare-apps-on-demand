@@ -8,7 +8,7 @@
 
 #import "FormField.h"
 #import <QuartzCore/QuartzCore.h>
-#import "UIColor+NSDictionary.h"
+#import "UIColor+Hex.h"
 
 @implementation FormField
 
@@ -45,22 +45,22 @@
     [self setDelegate:delegate];
     [self setSecureTextEntry:secureText];
     [self setFont:[UIFont fontWithName:[formProperties objectForKey:@"textFont"] size:[[formProperties objectForKey:@"textSize"] doubleValue]]];
-    [self setBackgroundColor:[UIColor colorFromRgbaDictionary:[formProperties objectForKey:@"backgroundColor"]]];
-    [self setTextColor:[UIColor colorFromRgbaDictionary:[formProperties objectForKey:@"textColor"]]];
-    [self setTintColor:[UIColor colorFromRgbaDictionary:[formProperties objectForKey:@"tintColor"]]];
+    [self setBackgroundColor:[UIColor colorWithHexString:[formProperties objectForKey:@"backgroundColor"]]];
+    [self setTextColor:[UIColor colorWithHexString:[formProperties objectForKey:@"textColor"]]];
+    [self setTintColor:[UIColor colorWithHexString:[formProperties objectForKey:@"tintColor"]]];
     self.layer.cornerRadius = [[formProperties objectForKey:@"cornerRadius"] doubleValue];
-    self.layer.borderColor = [[UIColor colorFromRgbaDictionary:[formProperties objectForKey:@"borderColor"]] CGColor];
+    self.layer.borderColor = [[UIColor colorWithHexString:[formProperties objectForKey:@"borderColor"]] CGColor];
     self.layer.borderWidth = [[formProperties objectForKey:@"borderWidth"] doubleValue];
     [self setPlaceholderText:placeholderText
-          withRGBaDictionary:[formProperties objectForKey:@"placeholderColor"]];
+          withColorHexString:[formProperties objectForKey:@"placeholderColor"]];
 }
 
-- (void) setPlaceholderText:(NSString *) placeholderString
-         withRGBaDictionary:(NSDictionary *) colorDictionary {
+- (void) setPlaceholderText:(NSString *)placeholderString
+         withColorHexString:(NSString *)colorHexString {
     
     if ([self respondsToSelector:@selector(setAttributedPlaceholder:)]) {
         
-        self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeholderString attributes:@{NSForegroundColorAttributeName: [UIColor colorFromRgbaDictionary:colorDictionary]}];
+        self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeholderString attributes:@{NSForegroundColorAttributeName: [UIColor colorWithHexString:colorHexString]}];
         
     } else {
         
