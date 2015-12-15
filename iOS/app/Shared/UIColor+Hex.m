@@ -62,7 +62,7 @@
     return color;
 }
 
-+ (float)valueFromHexString:(NSString *)hexString withRange:(NSRange)range {
++ (double)valueFromHexString:(NSString *)hexString withRange:(NSRange)range {
     NSString *valueString;
     
     if (range.length == 1) {
