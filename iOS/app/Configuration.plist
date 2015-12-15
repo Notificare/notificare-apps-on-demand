@@ -16,38 +16,11 @@
 			<key>layout</key>
 			<string>sideBarLayout</string>
 			<key>mainColor</key>
-			<dict>
-				<key>red</key>
-				<integer>0</integer>
-				<key>green</key>
-				<integer>0</integer>
-				<key>blue</key>
-				<integer>0</integer>
-				<key>alpha</key>
-				<integer>1</integer>
-			</dict>
+			<string>#000000</string>
 			<key>secondaryColor</key>
-			<dict>
-				<key>red</key>
-				<integer>0</integer>
-				<key>green</key>
-				<integer>0</integer>
-				<key>blue</key>
-				<integer>0</integer>
-				<key>alpha</key>
-				<integer>1</integer>
-			</dict>
+			<string>#000000</string>
 			<key>auxiliaryColor</key>
-			<dict>
-				<key>red</key>
-				<integer>0</integer>
-				<key>green</key>
-				<integer>0</integer>
-				<key>blue</key>
-				<integer>0</integer>
-				<key>alpha</key>
-				<integer>1</integer>
-			</dict>
+			<string>#000000</string>
 			<key>statusBarWhite</key>
 			<true/>
 			<key>accountView</key>
@@ -61,49 +34,13 @@
 				<key>titleSize</key>
 				<integer>20</integer>
 				<key>titleColor</key>
-				<dict>
-					<key>red</key>
-					<integer>230</integer>
-					<key>green</key>
-					<integer>230</integer>
-					<key>blue</key>
-					<integer>230</integer>
-					<key>alpha</key>
-					<integer>1</integer>
-				</dict>
+				<string>#E6E6E6</string>
 				<key>navigationBgColor</key>
-				<dict>
-					<key>red</key>
-					<integer>20</integer>
-					<key>green</key>
-					<integer>20</integer>
-					<key>blue</key>
-					<integer>20</integer>
-					<key>alpha</key>
-					<integer>1</integer>
-				</dict>
+				<string>#141414</string>
 				<key>navigationFgColor</key>
-				<dict>
-					<key>red</key>
-					<integer>230</integer>
-					<key>green</key>
-					<integer>230</integer>
-					<key>blue</key>
-					<integer>230</integer>
-					<key>alpha</key>
-					<integer>1</integer>
-				</dict>
+				<string>#E6E6E6</string>
 				<key>backgroundColor</key>
-				<dict>
-					<key>red</key>
-					<integer>245</integer>
-					<key>green</key>
-					<integer>245</integer>
-					<key>blue</key>
-					<integer>245</integer>
-					<key>alpha</key>
-					<integer>1</integer>
-				</dict>
+				<string>#F5F5F5</string>
 				<key>signIn</key>
 				<dict>
 					<key>emailForm</key>
@@ -113,60 +50,15 @@
 						<key>textSize</key>
 						<integer>20</integer>
 						<key>textColor</key>
-						<dict>
-							<key>red</key>
-							<integer>250</integer>
-							<key>green</key>
-							<integer>60</integer>
-							<key>blue</key>
-							<integer>60</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#FA3C3C</string>
 						<key>placeholderColor</key>
-						<dict>
-							<key>red</key>
-							<integer>250</integer>
-							<key>green</key>
-							<integer>60</integer>
-							<key>blue</key>
-							<integer>60</integer>
-							<key>alpha</key>
-							<real>0.5</real>
-						</dict>
+						<string>#FA3C3C80</string>
 						<key>backgroundColor</key>
-						<dict>
-							<key>red</key>
-							<integer>255</integer>
-							<key>green</key>
-							<integer>255</integer>
-							<key>blue</key>
-							<integer>255</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#FFFFFF</string>
 						<key>tintColor</key>
-						<dict>
-							<key>red</key>
-							<integer>160</integer>
-							<key>green</key>
-							<integer>20</integer>
-							<key>blue</key>
-							<integer>20</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#A01414</string>
 						<key>borderColor</key>
-						<dict>
-							<key>red</key>
-							<integer>230</integer>
-							<key>green</key>
-							<integer>20</integer>
-							<key>blue</key>
-							<integer>20</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#E61414</string>
 						<key>cornerRadius</key>
 						<integer>10</integer>
 						<key>borderWidth</key>
@@ -179,60 +71,15 @@
 						<key>textSize</key>
 						<integer>20</integer>
 						<key>textColor</key>
-						<dict>
-							<key>red</key>
-							<integer>250</integer>
-							<key>green</key>
-							<integer>60</integer>
-							<key>blue</key>
-							<integer>60</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#FA3C3C</string>
 						<key>placeholderColor</key>
-						<dict>
-							<key>red</key>
-							<integer>250</integer>
-							<key>green</key>
-							<integer>60</integer>
-							<key>blue</key>
-							<integer>60</integer>
-							<key>alpha</key>
-							<real>0.5</real>
-						</dict>
+						<string>#FA3C3C80</string>
 						<key>backgroundColor</key>
-						<dict>
-							<key>red</key>
-							<integer>255</integer>
-							<key>green</key>
-							<integer>255</integer>
-							<key>blue</key>
-							<integer>255</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#FFFFFF</string>
 						<key>tintColor</key>
-						<dict>
-							<key>red</key>
-							<integer>160</integer>
-							<key>green</key>
-							<integer>20</integer>
-							<key>blue</key>
-							<integer>20</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#A01414</string>
 						<key>borderColor</key>
-						<dict>
-							<key>red</key>
-							<integer>230</integer>
-							<key>green</key>
-							<integer>20</integer>
-							<key>blue</key>
-							<integer>20</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#E61414</string>
 						<key>cornerRadius</key>
 						<integer>10</integer>
 						<key>borderWidth</key>
@@ -245,16 +92,7 @@
 						<key>textSize</key>
 						<integer>16</integer>
 						<key>textColor</key>
-						<dict>
-							<key>red</key>
-							<integer>160</integer>
-							<key>green</key>
-							<integer>40</integer>
-							<key>blue</key>
-							<integer>40</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#A02828</string>
 					</dict>
 					<key>signInButton</key>
 					<dict>
@@ -263,38 +101,11 @@
 						<key>textSize</key>
 						<integer>20</integer>
 						<key>textColor</key>
-						<dict>
-							<key>red</key>
-							<integer>250</integer>
-							<key>green</key>
-							<integer>250</integer>
-							<key>blue</key>
-							<integer>250</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#FAFAFA</string>
 						<key>backgroundColor</key>
-						<dict>
-							<key>red</key>
-							<integer>160</integer>
-							<key>green</key>
-							<integer>60</integer>
-							<key>blue</key>
-							<integer>60</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#A03C3C</string>
 						<key>borderColor</key>
-						<dict>
-							<key>red</key>
-							<integer>20</integer>
-							<key>green</key>
-							<integer>20</integer>
-							<key>blue</key>
-							<integer>20</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#141414</string>
 						<key>cornerRadius</key>
 						<integer>10</integer>
 						<key>borderWidth</key>
@@ -307,38 +118,11 @@
 						<key>textSize</key>
 						<integer>20</integer>
 						<key>textColor</key>
-						<dict>
-							<key>red</key>
-							<integer>250</integer>
-							<key>green</key>
-							<integer>250</integer>
-							<key>blue</key>
-							<integer>250</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#FAFAFA</string>
 						<key>backgroundColor</key>
-						<dict>
-							<key>red</key>
-							<integer>160</integer>
-							<key>green</key>
-							<integer>60</integer>
-							<key>blue</key>
-							<integer>60</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#A03C3C</string>
 						<key>borderColor</key>
-						<dict>
-							<key>red</key>
-							<integer>20</integer>
-							<key>green</key>
-							<integer>20</integer>
-							<key>blue</key>
-							<integer>20</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#141414</string>
 						<key>cornerRadius</key>
 						<integer>10</integer>
 						<key>borderWidth</key>
@@ -354,60 +138,15 @@
 						<key>textSize</key>
 						<integer>20</integer>
 						<key>textColor</key>
-						<dict>
-							<key>red</key>
-							<integer>250</integer>
-							<key>green</key>
-							<integer>60</integer>
-							<key>blue</key>
-							<integer>60</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#FA3C3C</string>
 						<key>placeholderColor</key>
-						<dict>
-							<key>red</key>
-							<integer>250</integer>
-							<key>green</key>
-							<integer>60</integer>
-							<key>blue</key>
-							<integer>60</integer>
-							<key>alpha</key>
-							<real>0.5</real>
-						</dict>
+						<string>#FA3C3C80</string>
 						<key>backgroundColor</key>
-						<dict>
-							<key>red</key>
-							<integer>255</integer>
-							<key>green</key>
-							<integer>255</integer>
-							<key>blue</key>
-							<integer>255</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#FFFFFF</string>
 						<key>tintColor</key>
-						<dict>
-							<key>red</key>
-							<integer>160</integer>
-							<key>green</key>
-							<integer>20</integer>
-							<key>blue</key>
-							<integer>20</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#A01414</string>
 						<key>borderColor</key>
-						<dict>
-							<key>red</key>
-							<integer>230</integer>
-							<key>green</key>
-							<integer>20</integer>
-							<key>blue</key>
-							<integer>20</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#E61414</string>
 						<key>cornerRadius</key>
 						<integer>10</integer>
 						<key>borderWidth</key>
@@ -420,60 +159,15 @@
 						<key>textSize</key>
 						<integer>20</integer>
 						<key>textColor</key>
-						<dict>
-							<key>red</key>
-							<integer>250</integer>
-							<key>green</key>
-							<integer>60</integer>
-							<key>blue</key>
-							<integer>60</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#FA3C3C</string>
 						<key>placeholderColor</key>
-						<dict>
-							<key>red</key>
-							<integer>250</integer>
-							<key>green</key>
-							<integer>60</integer>
-							<key>blue</key>
-							<integer>60</integer>
-							<key>alpha</key>
-							<real>0.5</real>
-						</dict>
+						<string>#FA3C3C80</string>
 						<key>backgroundColor</key>
-						<dict>
-							<key>red</key>
-							<integer>255</integer>
-							<key>green</key>
-							<integer>255</integer>
-							<key>blue</key>
-							<integer>255</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#FFFFFF</string>
 						<key>tintColor</key>
-						<dict>
-							<key>red</key>
-							<integer>160</integer>
-							<key>green</key>
-							<integer>20</integer>
-							<key>blue</key>
-							<integer>20</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#A01414</string>
 						<key>borderColor</key>
-						<dict>
-							<key>red</key>
-							<integer>230</integer>
-							<key>green</key>
-							<integer>20</integer>
-							<key>blue</key>
-							<integer>20</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#E61414</string>
 						<key>cornerRadius</key>
 						<integer>10</integer>
 						<key>borderWidth</key>
@@ -486,60 +180,15 @@
 						<key>textSize</key>
 						<integer>20</integer>
 						<key>textColor</key>
-						<dict>
-							<key>red</key>
-							<integer>250</integer>
-							<key>green</key>
-							<integer>60</integer>
-							<key>blue</key>
-							<integer>60</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#FA3C3C</string>
 						<key>placeholderColor</key>
-						<dict>
-							<key>red</key>
-							<integer>250</integer>
-							<key>green</key>
-							<integer>60</integer>
-							<key>blue</key>
-							<integer>60</integer>
-							<key>alpha</key>
-							<real>0.5</real>
-						</dict>
+						<string>#FA3C3C80</string>
 						<key>backgroundColor</key>
-						<dict>
-							<key>red</key>
-							<integer>255</integer>
-							<key>green</key>
-							<integer>255</integer>
-							<key>blue</key>
-							<integer>255</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#FFFFFF</string>
 						<key>tintColor</key>
-						<dict>
-							<key>red</key>
-							<integer>160</integer>
-							<key>green</key>
-							<integer>20</integer>
-							<key>blue</key>
-							<integer>20</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#A01414</string>
 						<key>borderColor</key>
-						<dict>
-							<key>red</key>
-							<integer>230</integer>
-							<key>green</key>
-							<integer>20</integer>
-							<key>blue</key>
-							<integer>20</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#E61414</string>
 						<key>cornerRadius</key>
 						<integer>10</integer>
 						<key>borderWidth</key>
@@ -552,60 +201,15 @@
 						<key>textSize</key>
 						<integer>20</integer>
 						<key>textColor</key>
-						<dict>
-							<key>red</key>
-							<integer>250</integer>
-							<key>green</key>
-							<integer>60</integer>
-							<key>blue</key>
-							<integer>60</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#FA3C3C</string>
 						<key>placeholderColor</key>
-						<dict>
-							<key>red</key>
-							<integer>250</integer>
-							<key>green</key>
-							<integer>60</integer>
-							<key>blue</key>
-							<integer>60</integer>
-							<key>alpha</key>
-							<real>0.5</real>
-						</dict>
+						<string>#FA3C3C80</string>
 						<key>backgroundColor</key>
-						<dict>
-							<key>red</key>
-							<integer>255</integer>
-							<key>green</key>
-							<integer>255</integer>
-							<key>blue</key>
-							<integer>255</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#FFFFFF</string>
 						<key>tintColor</key>
-						<dict>
-							<key>red</key>
-							<integer>160</integer>
-							<key>green</key>
-							<integer>20</integer>
-							<key>blue</key>
-							<integer>20</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#A01414</string>
 						<key>borderColor</key>
-						<dict>
-							<key>red</key>
-							<integer>230</integer>
-							<key>green</key>
-							<integer>20</integer>
-							<key>blue</key>
-							<integer>20</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#E61414</string>
 						<key>cornerRadius</key>
 						<integer>10</integer>
 						<key>borderWidth</key>
@@ -618,38 +222,11 @@
 						<key>textSize</key>
 						<integer>20</integer>
 						<key>textColor</key>
-						<dict>
-							<key>red</key>
-							<integer>250</integer>
-							<key>green</key>
-							<integer>250</integer>
-							<key>blue</key>
-							<integer>250</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#FAFAFA</string>
 						<key>backgroundColor</key>
-						<dict>
-							<key>red</key>
-							<integer>160</integer>
-							<key>green</key>
-							<integer>60</integer>
-							<key>blue</key>
-							<integer>60</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#A03C3C</string>
 						<key>borderColor</key>
-						<dict>
-							<key>red</key>
-							<integer>20</integer>
-							<key>green</key>
-							<integer>20</integer>
-							<key>blue</key>
-							<integer>20</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#141414</string>
 						<key>cornerRadius</key>
 						<integer>10</integer>
 						<key>borderWidth</key>
@@ -665,60 +242,15 @@
 						<key>textSize</key>
 						<integer>20</integer>
 						<key>textColor</key>
-						<dict>
-							<key>red</key>
-							<integer>250</integer>
-							<key>green</key>
-							<integer>60</integer>
-							<key>blue</key>
-							<integer>60</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#FA3C3C</string>
 						<key>placeholderColor</key>
-						<dict>
-							<key>red</key>
-							<integer>250</integer>
-							<key>green</key>
-							<integer>60</integer>
-							<key>blue</key>
-							<integer>60</integer>
-							<key>alpha</key>
-							<real>0.5</real>
-						</dict>
+						<string>#FA3C3C80</string>
 						<key>backgroundColor</key>
-						<dict>
-							<key>red</key>
-							<integer>255</integer>
-							<key>green</key>
-							<integer>255</integer>
-							<key>blue</key>
-							<integer>255</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#FFFFFF</string>
 						<key>tintColor</key>
-						<dict>
-							<key>red</key>
-							<integer>160</integer>
-							<key>green</key>
-							<integer>20</integer>
-							<key>blue</key>
-							<integer>20</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#A01414</string>
 						<key>borderColor</key>
-						<dict>
-							<key>red</key>
-							<integer>230</integer>
-							<key>green</key>
-							<integer>20</integer>
-							<key>blue</key>
-							<integer>20</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#E61414</string>
 						<key>cornerRadius</key>
 						<integer>10</integer>
 						<key>borderWidth</key>
@@ -731,38 +263,11 @@
 						<key>textSize</key>
 						<integer>20</integer>
 						<key>textColor</key>
-						<dict>
-							<key>red</key>
-							<integer>250</integer>
-							<key>green</key>
-							<integer>250</integer>
-							<key>blue</key>
-							<integer>250</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#FAFAFA</string>
 						<key>backgroundColor</key>
-						<dict>
-							<key>red</key>
-							<integer>160</integer>
-							<key>green</key>
-							<integer>60</integer>
-							<key>blue</key>
-							<integer>60</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#A03C3C</string>
 						<key>borderColor</key>
-						<dict>
-							<key>red</key>
-							<integer>20</integer>
-							<key>green</key>
-							<integer>20</integer>
-							<key>blue</key>
-							<integer>20</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#141414</string>
 						<key>cornerRadius</key>
 						<integer>10</integer>
 						<key>borderWidth</key>
@@ -778,27 +283,9 @@
 						<key>textSize</key>
 						<integer>14</integer>
 						<key>textColor</key>
-						<dict>
-							<key>red</key>
-							<integer>250</integer>
-							<key>green</key>
-							<integer>60</integer>
-							<key>blue</key>
-							<integer>60</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#FA3C3C</string>
 						<key>backgroundColor</key>
-						<dict>
-							<key>red</key>
-							<integer>60</integer>
-							<key>green</key>
-							<integer>60</integer>
-							<key>blue</key>
-							<integer>60</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#3C3C3C</string>
 					</dict>
 					<key>profileName</key>
 					<dict>
@@ -807,16 +294,7 @@
 						<key>textSize</key>
 						<integer>16</integer>
 						<key>textColor</key>
-						<dict>
-							<key>red</key>
-							<integer>60</integer>
-							<key>green</key>
-							<integer>60</integer>
-							<key>blue</key>
-							<integer>60</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#3C3C3C</string>
 					</dict>
 					<key>profileEmail</key>
 					<dict>
@@ -825,16 +303,7 @@
 						<key>textSize</key>
 						<integer>14</integer>
 						<key>textColor</key>
-						<dict>
-							<key>red</key>
-							<integer>250</integer>
-							<key>green</key>
-							<integer>60</integer>
-							<key>blue</key>
-							<integer>60</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#FA3C3C</string>
 					</dict>
 					<key>profileToken</key>
 					<dict>
@@ -843,28 +312,10 @@
 						<key>textSize</key>
 						<integer>9</integer>
 						<key>textColor</key>
-						<dict>
-							<key>red</key>
-							<integer>250</integer>
-							<key>green</key>
-							<integer>60</integer>
-							<key>blue</key>
-							<integer>60</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#FA3C3C</string>
 					</dict>
 					<key>profileBackgroundColor</key>
-					<dict>
-						<key>red</key>
-						<integer>255</integer>
-						<key>green</key>
-						<integer>255</integer>
-						<key>blue</key>
-						<integer>255</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FFFFFF</string>
 					<key>profileOptions</key>
 					<dict>
 						<key>textFont</key>
@@ -872,27 +323,9 @@
 						<key>textSize</key>
 						<integer>18</integer>
 						<key>textColor</key>
-						<dict>
-							<key>red</key>
-							<integer>250</integer>
-							<key>green</key>
-							<integer>60</integer>
-							<key>blue</key>
-							<integer>60</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#FA3C3C</string>
 						<key>backgroundColor</key>
-						<dict>
-							<key>red</key>
-							<integer>255</integer>
-							<key>green</key>
-							<integer>255</integer>
-							<key>blue</key>
-							<integer>255</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#FFFFFF</string>
 					</dict>
 					<key>infoOptions</key>
 					<dict>
@@ -901,38 +334,11 @@
 						<key>textSize</key>
 						<integer>20</integer>
 						<key>textColor</key>
-						<dict>
-							<key>red</key>
-							<integer>250</integer>
-							<key>green</key>
-							<integer>60</integer>
-							<key>blue</key>
-							<integer>60</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#FA3C3C</string>
 						<key>selectionColor</key>
-						<dict>
-							<key>red</key>
-							<integer>255</integer>
-							<key>green</key>
-							<integer>50</integer>
-							<key>blue</key>
-							<integer>50</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#FF3232</string>
 						<key>backgroundColor</key>
-						<dict>
-							<key>red</key>
-							<integer>255</integer>
-							<key>green</key>
-							<integer>255</integer>
-							<key>blue</key>
-							<integer>255</integer>
-							<key>alpha</key>
-							<integer>1</integer>
-						</dict>
+						<string>#FFFFFF</string>
 					</dict>
 				</dict>
 			</dict>
@@ -945,60 +351,15 @@
 					<key>textSize</key>
 					<integer>20</integer>
 					<key>textColor</key>
-					<dict>
-						<key>red</key>
-						<integer>60</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#3C3C3C</string>
 					<key>placeholderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<real>0.5</real>
-					</dict>
+					<string>#3C3C3C80</string>
 					<key>backgroundColor</key>
-					<dict>
-						<key>red</key>
-						<integer>255</integer>
-						<key>green</key>
-						<integer>255</integer>
-						<key>blue</key>
-						<integer>255</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FFFFFF</string>
 					<key>tintColor</key>
-					<dict>
-						<key>red</key>
-						<integer>20</integer>
-						<key>green</key>
-						<integer>160</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#14A014</string>
 					<key>borderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>230</integer>
-						<key>green</key>
-						<integer>20</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#E61414</string>
 					<key>cornerRadius</key>
 					<integer>10</integer>
 					<key>borderWidth</key>
@@ -1011,60 +372,15 @@
 					<key>textSize</key>
 					<integer>20</integer>
 					<key>textColor</key>
-					<dict>
-						<key>red</key>
-						<integer>60</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#3C3C3C</string>
 					<key>placeholderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<real>0.5</real>
-					</dict>
+					<string>#3C3C3C80</string>
 					<key>backgroundColor</key>
-					<dict>
-						<key>red</key>
-						<integer>255</integer>
-						<key>green</key>
-						<integer>255</integer>
-						<key>blue</key>
-						<integer>255</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FFFFFF</string>
 					<key>tintColor</key>
-					<dict>
-						<key>red</key>
-						<integer>20</integer>
-						<key>green</key>
-						<integer>160</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#14A014</string>
 					<key>borderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>230</integer>
-						<key>green</key>
-						<integer>20</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#E61414</string>
 					<key>cornerRadius</key>
 					<integer>10</integer>
 					<key>borderWidth</key>
@@ -1077,38 +393,11 @@
 					<key>textSize</key>
 					<integer>20</integer>
 					<key>textColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>250</integer>
-						<key>blue</key>
-						<integer>250</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FFFFFF</string>
 					<key>backgroundColor</key>
-					<dict>
-						<key>red</key>
-						<integer>160</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#A03C3C</string>
 					<key>borderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>20</integer>
-						<key>green</key>
-						<integer>20</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#141414</string>
 					<key>cornerRadius</key>
 					<integer>10</integer>
 					<key>borderWidth</key>
@@ -1141,71 +430,17 @@
 			<key>titleSize</key>
 			<integer>20</integer>
 			<key>titleColor</key>
-			<dict>
-				<key>red</key>
-				<integer>230</integer>
-				<key>green</key>
-				<integer>230</integer>
-				<key>blue</key>
-				<integer>230</integer>
-				<key>alpha</key>
-				<integer>1</integer>
-			</dict>
+			<string>#E6E6E6</string>
 			<key>navigationBgColor</key>
-			<dict>
-				<key>red</key>
-				<integer>20</integer>
-				<key>green</key>
-				<integer>20</integer>
-				<key>blue</key>
-				<integer>20</integer>
-				<key>alpha</key>
-				<integer>1</integer>
-			</dict>
+			<string>#141414</string>
 			<key>navigationFgColor</key>
-			<dict>
-				<key>red</key>
-				<integer>230</integer>
-				<key>green</key>
-				<integer>230</integer>
-				<key>blue</key>
-				<integer>230</integer>
-				<key>alpha</key>
-				<integer>1</integer>
-			</dict>
+			<string>#E6E6E6</string>
 			<key>loadingViewColor</key>
-			<dict>
-				<key>red</key>
-				<integer>230</integer>
-				<key>green</key>
-				<integer>230</integer>
-				<key>blue</key>
-				<integer>230</integer>
-				<key>alpha</key>
-				<integer>1</integer>
-			</dict>
+			<string>#E6E6E6</string>
 			<key>toolbarBgColor</key>
-			<dict>
-				<key>red</key>
-				<integer>230</integer>
-				<key>green</key>
-				<integer>230</integer>
-				<key>blue</key>
-				<integer>230</integer>
-				<key>alpha</key>
-				<integer>1</integer>
-			</dict>
+			<string>#E6E6E6</string>
 			<key>toolbarFgColor</key>
-			<dict>
-				<key>red</key>
-				<integer>20</integer>
-				<key>green</key>
-				<integer>20</integer>
-				<key>blue</key>
-				<integer>20</integer>
-				<key>alpha</key>
-				<integer>1</integer>
-			</dict>
+			<string>#141414</string>
 		</dict>
 		<dict>
 			<key>label</key>
@@ -1219,49 +454,13 @@
 			<key>titleSize</key>
 			<integer>20</integer>
 			<key>titleColor</key>
-			<dict>
-				<key>red</key>
-				<integer>230</integer>
-				<key>green</key>
-				<integer>230</integer>
-				<key>blue</key>
-				<integer>230</integer>
-				<key>alpha</key>
-				<integer>1</integer>
-			</dict>
+			<string>#E6E6E6</string>
 			<key>navigationBgColor</key>
-			<dict>
-				<key>red</key>
-				<integer>20</integer>
-				<key>green</key>
-				<integer>20</integer>
-				<key>blue</key>
-				<integer>20</integer>
-				<key>alpha</key>
-				<integer>1</integer>
-			</dict>
+			<string>#141414</string>
 			<key>navigationFgColor</key>
-			<dict>
-				<key>red</key>
-				<integer>230</integer>
-				<key>green</key>
-				<integer>230</integer>
-				<key>blue</key>
-				<integer>230</integer>
-				<key>alpha</key>
-				<integer>1</integer>
-			</dict>
+			<string>#E6E6E6</string>
 			<key>circleColor</key>
-			<dict>
-				<key>red</key>
-				<integer>20</integer>
-				<key>green</key>
-				<integer>20</integer>
-				<key>blue</key>
-				<integer>155</integer>
-				<key>alpha</key>
-				<integer>1</integer>
-			</dict>
+			<string>#14149B</string>
 		</dict>
 		<dict>
 			<key>label</key>
@@ -1279,49 +478,13 @@
 			<key>titleSize</key>
 			<integer>20</integer>
 			<key>titleColor</key>
-			<dict>
-				<key>red</key>
-				<integer>230</integer>
-				<key>green</key>
-				<integer>230</integer>
-				<key>blue</key>
-				<integer>230</integer>
-				<key>alpha</key>
-				<integer>1</integer>
-			</dict>
+			<string>#E6E6E6</string>
 			<key>navigationBgColor</key>
-			<dict>
-				<key>red</key>
-				<integer>20</integer>
-				<key>green</key>
-				<integer>20</integer>
-				<key>blue</key>
-				<integer>20</integer>
-				<key>alpha</key>
-				<integer>1</integer>
-			</dict>
+			<string>#141414</string>
 			<key>navigationFgColor</key>
-			<dict>
-				<key>red</key>
-				<integer>230</integer>
-				<key>green</key>
-				<integer>230</integer>
-				<key>blue</key>
-				<integer>230</integer>
-				<key>alpha</key>
-				<integer>1</integer>
-			</dict>
+			<string>#E6E6E6</string>
 			<key>backgroundColor</key>
-			<dict>
-				<key>red</key>
-				<integer>245</integer>
-				<key>green</key>
-				<integer>245</integer>
-				<key>blue</key>
-				<integer>245</integer>
-				<key>alpha</key>
-				<integer>1</integer>
-			</dict>
+			<string>#F5F5F5</string>
 			<key>signIn</key>
 			<dict>
 				<key>emailForm</key>
@@ -1331,60 +494,15 @@
 					<key>textSize</key>
 					<integer>20</integer>
 					<key>textColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FA3C3C</string>
 					<key>placeholderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<real>0.5</real>
-					</dict>
+					<string>#FA3C3C80</string>
 					<key>backgroundColor</key>
-					<dict>
-						<key>red</key>
-						<integer>255</integer>
-						<key>green</key>
-						<integer>255</integer>
-						<key>blue</key>
-						<integer>255</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FFFFFF</string>
 					<key>tintColor</key>
-					<dict>
-						<key>red</key>
-						<integer>160</integer>
-						<key>green</key>
-						<integer>20</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#A01414</string>
 					<key>borderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>230</integer>
-						<key>green</key>
-						<integer>20</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#E61414</string>
 					<key>cornerRadius</key>
 					<integer>10</integer>
 					<key>borderWidth</key>
@@ -1397,60 +515,15 @@
 					<key>textSize</key>
 					<integer>20</integer>
 					<key>textColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FA3C3C</string>
 					<key>placeholderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<real>0.5</real>
-					</dict>
+					<string>#FA3C3C80</string>
 					<key>backgroundColor</key>
-					<dict>
-						<key>red</key>
-						<integer>255</integer>
-						<key>green</key>
-						<integer>255</integer>
-						<key>blue</key>
-						<integer>255</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FFFFFF</string>
 					<key>tintColor</key>
-					<dict>
-						<key>red</key>
-						<integer>160</integer>
-						<key>green</key>
-						<integer>20</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#A01414</string>
 					<key>borderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>230</integer>
-						<key>green</key>
-						<integer>20</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#E61414</string>
 					<key>cornerRadius</key>
 					<integer>10</integer>
 					<key>borderWidth</key>
@@ -1463,16 +536,7 @@
 					<key>textSize</key>
 					<integer>16</integer>
 					<key>textColor</key>
-					<dict>
-						<key>red</key>
-						<integer>160</integer>
-						<key>green</key>
-						<integer>40</integer>
-						<key>blue</key>
-						<integer>40</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#A02828</string>
 				</dict>
 				<key>signInButton</key>
 				<dict>
@@ -1481,38 +545,11 @@
 					<key>textSize</key>
 					<integer>20</integer>
 					<key>textColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>250</integer>
-						<key>blue</key>
-						<integer>250</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FAFAFA</string>
 					<key>backgroundColor</key>
-					<dict>
-						<key>red</key>
-						<integer>160</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#A03C3C</string>
 					<key>borderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>20</integer>
-						<key>green</key>
-						<integer>20</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#141414</string>
 					<key>cornerRadius</key>
 					<integer>10</integer>
 					<key>borderWidth</key>
@@ -1525,38 +562,11 @@
 					<key>textSize</key>
 					<integer>20</integer>
 					<key>textColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>250</integer>
-						<key>blue</key>
-						<integer>250</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FAFAFA</string>
 					<key>backgroundColor</key>
-					<dict>
-						<key>red</key>
-						<integer>160</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#A03C3C</string>
 					<key>borderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>20</integer>
-						<key>green</key>
-						<integer>20</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#141414</string>
 					<key>cornerRadius</key>
 					<integer>10</integer>
 					<key>borderWidth</key>
@@ -1572,60 +582,15 @@
 					<key>textSize</key>
 					<integer>20</integer>
 					<key>textColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FA3C3C</string>
 					<key>placeholderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<real>0.5</real>
-					</dict>
+					<string>#FA3C3C80</string>
 					<key>backgroundColor</key>
-					<dict>
-						<key>red</key>
-						<integer>255</integer>
-						<key>green</key>
-						<integer>255</integer>
-						<key>blue</key>
-						<integer>255</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FFFFFF</string>
 					<key>tintColor</key>
-					<dict>
-						<key>red</key>
-						<integer>160</integer>
-						<key>green</key>
-						<integer>20</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#A01414</string>
 					<key>borderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>230</integer>
-						<key>green</key>
-						<integer>20</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#E61414</string>
 					<key>cornerRadius</key>
 					<integer>10</integer>
 					<key>borderWidth</key>
@@ -1638,60 +603,15 @@
 					<key>textSize</key>
 					<integer>20</integer>
 					<key>textColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FA3C3C</string>
 					<key>placeholderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<real>0.5</real>
-					</dict>
+					<string>#FA3C3C80</string>
 					<key>backgroundColor</key>
-					<dict>
-						<key>red</key>
-						<integer>255</integer>
-						<key>green</key>
-						<integer>255</integer>
-						<key>blue</key>
-						<integer>255</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FFFFFF</string>
 					<key>tintColor</key>
-					<dict>
-						<key>red</key>
-						<integer>160</integer>
-						<key>green</key>
-						<integer>20</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#A01414</string>
 					<key>borderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>230</integer>
-						<key>green</key>
-						<integer>20</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#E61414</string>
 					<key>cornerRadius</key>
 					<integer>10</integer>
 					<key>borderWidth</key>
@@ -1704,60 +624,15 @@
 					<key>textSize</key>
 					<integer>20</integer>
 					<key>textColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FA3C3C</string>
 					<key>placeholderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<real>0.5</real>
-					</dict>
+					<string>#FA3C3C80</string>
 					<key>backgroundColor</key>
-					<dict>
-						<key>red</key>
-						<integer>255</integer>
-						<key>green</key>
-						<integer>255</integer>
-						<key>blue</key>
-						<integer>255</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FFFFFF</string>
 					<key>tintColor</key>
-					<dict>
-						<key>red</key>
-						<integer>160</integer>
-						<key>green</key>
-						<integer>20</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#A01414</string>
 					<key>borderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>230</integer>
-						<key>green</key>
-						<integer>20</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#E61414</string>
 					<key>cornerRadius</key>
 					<integer>10</integer>
 					<key>borderWidth</key>
@@ -1770,60 +645,15 @@
 					<key>textSize</key>
 					<integer>20</integer>
 					<key>textColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FA3C3C</string>
 					<key>placeholderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<real>0.5</real>
-					</dict>
+					<string>#FA3C3C80</string>
 					<key>backgroundColor</key>
-					<dict>
-						<key>red</key>
-						<integer>255</integer>
-						<key>green</key>
-						<integer>255</integer>
-						<key>blue</key>
-						<integer>255</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FFFFFF</string>
 					<key>tintColor</key>
-					<dict>
-						<key>red</key>
-						<integer>160</integer>
-						<key>green</key>
-						<integer>20</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#A01414</string>
 					<key>borderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>230</integer>
-						<key>green</key>
-						<integer>20</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#E61414</string>
 					<key>cornerRadius</key>
 					<integer>10</integer>
 					<key>borderWidth</key>
@@ -1836,38 +666,11 @@
 					<key>textSize</key>
 					<integer>20</integer>
 					<key>textColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>250</integer>
-						<key>blue</key>
-						<integer>250</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FAFAFA</string>
 					<key>backgroundColor</key>
-					<dict>
-						<key>red</key>
-						<integer>160</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#A03C3C</string>
 					<key>borderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>20</integer>
-						<key>green</key>
-						<integer>20</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#141414</string>
 					<key>cornerRadius</key>
 					<integer>10</integer>
 					<key>borderWidth</key>
@@ -1883,60 +686,15 @@
 					<key>textSize</key>
 					<integer>20</integer>
 					<key>textColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FA3C3C</string>
 					<key>placeholderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<real>0.5</real>
-					</dict>
+					<string>#FA3C3C80</string>
 					<key>backgroundColor</key>
-					<dict>
-						<key>red</key>
-						<integer>255</integer>
-						<key>green</key>
-						<integer>255</integer>
-						<key>blue</key>
-						<integer>255</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FFFFFF</string>
 					<key>tintColor</key>
-					<dict>
-						<key>red</key>
-						<integer>160</integer>
-						<key>green</key>
-						<integer>20</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#A01414</string>
 					<key>borderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>230</integer>
-						<key>green</key>
-						<integer>20</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#E61414</string>
 					<key>cornerRadius</key>
 					<integer>10</integer>
 					<key>borderWidth</key>
@@ -1949,38 +707,11 @@
 					<key>textSize</key>
 					<integer>20</integer>
 					<key>textColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>250</integer>
-						<key>blue</key>
-						<integer>250</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FAFAFA</string>
 					<key>backgroundColor</key>
-					<dict>
-						<key>red</key>
-						<integer>160</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#A03C3C</string>
 					<key>borderColor</key>
-					<dict>
-						<key>red</key>
-						<integer>20</integer>
-						<key>green</key>
-						<integer>20</integer>
-						<key>blue</key>
-						<integer>20</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#141414</string>
 					<key>cornerRadius</key>
 					<integer>10</integer>
 					<key>borderWidth</key>
@@ -1996,27 +727,9 @@
 					<key>textSize</key>
 					<integer>14</integer>
 					<key>textColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FA3C3C</string>
 					<key>backgroundColor</key>
-					<dict>
-						<key>red</key>
-						<integer>60</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#3C3C3C</string>
 				</dict>
 				<key>profileName</key>
 				<dict>
@@ -2025,16 +738,7 @@
 					<key>textSize</key>
 					<integer>16</integer>
 					<key>textColor</key>
-					<dict>
-						<key>red</key>
-						<integer>60</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#3C3C3C</string>
 				</dict>
 				<key>profileEmail</key>
 				<dict>
@@ -2043,16 +747,7 @@
 					<key>textSize</key>
 					<integer>14</integer>
 					<key>textColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FA3C3C</string>
 				</dict>
 				<key>profileToken</key>
 				<dict>
@@ -2061,28 +756,10 @@
 					<key>textSize</key>
 					<integer>9</integer>
 					<key>textColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FA3C3C</string>
 				</dict>
 				<key>profileBackgroundColor</key>
-				<dict>
-					<key>red</key>
-					<integer>255</integer>
-					<key>green</key>
-					<integer>255</integer>
-					<key>blue</key>
-					<integer>255</integer>
-					<key>alpha</key>
-					<integer>1</integer>
-				</dict>
+				<string>#FFFFFF</string>
 				<key>profileOptions</key>
 				<dict>
 					<key>textFont</key>
@@ -2090,27 +767,9 @@
 					<key>textSize</key>
 					<integer>18</integer>
 					<key>textColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FA3C3C</string>
 					<key>backgroundColor</key>
-					<dict>
-						<key>red</key>
-						<integer>255</integer>
-						<key>green</key>
-						<integer>255</integer>
-						<key>blue</key>
-						<integer>255</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FFFFFF</string>
 				</dict>
 				<key>infoOptions</key>
 				<dict>
@@ -2119,38 +778,11 @@
 					<key>textSize</key>
 					<integer>20</integer>
 					<key>textColor</key>
-					<dict>
-						<key>red</key>
-						<integer>250</integer>
-						<key>green</key>
-						<integer>60</integer>
-						<key>blue</key>
-						<integer>60</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FA3C3C</string>
 					<key>selectionColor</key>
-					<dict>
-						<key>red</key>
-						<integer>255</integer>
-						<key>green</key>
-						<integer>50</integer>
-						<key>blue</key>
-						<integer>50</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FF3232</string>
 					<key>backgroundColor</key>
-					<dict>
-						<key>red</key>
-						<integer>255</integer>
-						<key>green</key>
-						<integer>255</integer>
-						<key>blue</key>
-						<integer>255</integer>
-						<key>alpha</key>
-						<integer>1</integer>
-					</dict>
+					<string>#FFFFFF</string>
 				</dict>
 			</dict>
 		</dict>
