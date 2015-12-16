@@ -12,8 +12,11 @@
 @interface Configuration : NSObject
 
 
-+(Configuration*)shared;
--(NSString*)getProperty:(NSString *)key;
--(NSArray*)getArray:(NSString *)key;
++ (Configuration*)shared;
+
+- (NSString*)getProperty:(NSString *)key;
+- (NSArray*)getArray:(NSString *)key;
+- (NSDictionary *)getDictionary:(NSString *)key;
+- (NSNumber *)getNumber:(NSString *)key;
 
 @end

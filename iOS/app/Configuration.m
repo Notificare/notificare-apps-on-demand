@@ -44,4 +44,19 @@
     return [pfile objectForKey:key];
 }
 
+- (NSDictionary *)getDictionary:(NSString *)key {
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Configuration" ofType:@"plist"];
+    NSDictionary *pFile = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+    
+    return [pFile objectForKey:key];
+}
+
+- (NSNumber *)getNumber:(NSString *)key
+{
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Configuration" ofType:@"plist"];
+    NSDictionary *pFile = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+    
+    return [pFile objectForKey:key];
+}
+
 @end
