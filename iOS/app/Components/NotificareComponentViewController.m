@@ -14,8 +14,6 @@
 
 @interface NotificareComponentViewController ()
 
-@property NSDictionary *configuration;
-
 @end
 
 
@@ -40,7 +38,7 @@
     
     if (self) {
         // set configuration to empty dictionary first
-        self.configuration = [NSDictionary dictionary];
+        _configuration = [NSDictionary dictionary];
         
         //try to get default configuration
         NSString *configurationKey = [[self class] configurationKey];
@@ -48,7 +46,7 @@
         if (configurationKey && configurationKey.length > 0) {
             NSDictionary *componentConfigurations = [[Configuration shared] getDictionary:@"components"];
             if (componentConfigurations[configurationKey]) {
-                self.configuration = componentConfigurations[configurationKey];
+                _configuration = componentConfigurations[configurationKey];
             }
             else {
                 NSLog(@"Could not load default configuration for component: %@", configurationKey);
@@ -76,15 +74,10 @@
         }
         
         // set configuration to non-mutable copy of configurationCopy
-        self.configuration = [configurationCopy copy];
+        _configuration = [configurationCopy copy];
     }
     
     return self;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 
