@@ -20,15 +20,8 @@
 
 @implementation SignUpViewController
 
-
-- (AppDelegate *)appDelegate {
-    
-    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
-}
-
-- (NotificarePushLib *)notificare {
-    
-    return (NotificarePushLib *)[[self appDelegate] notificarePushLib];
++ (NSString *)configurationKey {
+    return @"signUp";
 }
 
 - (id)initWithNibName:(NSString *) nibNameOrNil
@@ -143,7 +136,7 @@
         [[self signupButton] setEnabled:YES];
     } else {
         
-        [[self notificare] createAccount:[[self email] text]
+        [self.notificarePushLib createAccount:[[self email] text]
                                 withName:[[self name] text]
                              andPassword:[[self password] text]
                        completionHandler:^(NSDictionary *info) {

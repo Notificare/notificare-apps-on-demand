@@ -18,16 +18,9 @@
 
 @implementation ResetPassViewController
 
-
-
-- (AppDelegate *)appDelegate {
-    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
++ (NSString *)configurationKey {
+    return @"resetPass";
 }
-
-- (NotificarePushLib *)notificare {
-    return (NotificarePushLib *)[[self appDelegate] notificarePushLib];
-}
-
 
 - (id)initWithNibName:(NSString *) nibNameOrNil
                bundle:(NSBundle *) nibBundleOrNil
@@ -127,7 +120,7 @@
         [[self resetPassButton] setEnabled:YES];
     } else {
 
-        [[self notificare] resetPassword:[[self password] text] withToken:[self token] completionHandler:^(NSDictionary *info) {
+        [self.notificarePushLib resetPassword:[[self password] text] withToken:[self token] completionHandler:^(NSDictionary *info) {
             APP_ALERT_DIALOG(LSSTRING(@"success_resetpass"));
             [[self resetPassButton] setEnabled:YES];
             [[self password] setText:@""];

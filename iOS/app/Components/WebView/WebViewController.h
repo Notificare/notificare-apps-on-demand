@@ -6,10 +6,11 @@
 //  Copyright (c) 2014 Notificare. All rights reserved.
 //
 
+#import "NotificareComponentViewController.h"
 #import <UIKit/UIKit.h>
 #import "BadgeLabel.h"
 
-@interface WebViewController : UIViewController <UIWebViewDelegate>
+@interface WebViewController : NotificareComponentViewController <UIWebViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UIWebView * webView;
 @property (nonatomic, strong) IBOutlet UIToolbar * toolbar;

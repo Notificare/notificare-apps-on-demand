@@ -6,12 +6,12 @@
 //  Copyright (c) 2014 Notificare. All rights reserved.
 //
 
+#import "NotificareComponentViewController.h"
 #import <UIKit/UIKit.h>
 #import "NotificareUserPreference.h"
 #import "NotificareSegment.h"
 
-
-@interface UserDetailsOptionsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface UserDetailsOptionsViewController : NotificareComponentViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) IBOutlet UITableView * tableView;
 @property (nonatomic, strong) IBOutlet UITableViewController * tableViewController;

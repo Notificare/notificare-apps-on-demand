@@ -24,13 +24,8 @@
 
 @implementation UserDetailsViewController
 
-
-- (AppDelegate *)appDelegate {
-    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
-}
-
-- (NotificarePushLib *)notificare {
-    return (NotificarePushLib *)[[self appDelegate] notificarePushLib];
++ (NSString *)configurationKey {
+    return @"userDetails";
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -106,7 +101,7 @@
 
 -(void)loadAccount{
     
-    [[self notificare] fetchAccountDetails:^(NSDictionary *info) {
+    [self.notificarePushLib fetchAccountDetails:^(NSDictionary *info) {
         //
 
         NotificareUser * tmpUser = [NotificareUser new];
@@ -134,7 +129,7 @@
     
     [self setSegments:[NSMutableArray array]];
     
-    [[self notificare] fetchUserPreferences:^(NSArray *info) {
+    [self.notificarePushLib fetchUserPreferences:^(NSArray *info) {
         
         for (NotificareUserPreference * preference in info){
             
@@ -259,7 +254,7 @@
 
 -(IBAction)generateToken:(id)sender{
     [[self generateTokenButton] setEnabled:NO];
-    [[self notificare] generateAccessToken:^(NSDictionary *info) {
+    [self.notificarePushLib generateAccessToken:^(NSDictionary *info) {
         //
         NSDictionary * user = [info objectForKey:@"user"];
         [[self userToken] setText:[NSString stringWithFormat:@"%@@pushmail.notifica.re",[user objectForKey:@"accessToken"]]];
@@ -275,7 +270,7 @@
 
 -(void)generateNewToken{
 
-    [[self notificare] generateAccessToken:^(NSDictionary *info) {
+    [self.notificarePushLib generateAccessToken:^(NSDictionary *info) {
         [self loadAccount];
         APP_ALERT_DIALOG(LSSTRING(@"success_message_generate_token"));
     } errorHandler:^(NSError *error) {
@@ -294,7 +289,7 @@
         } else if ([[[alertView textFieldAtIndex:0] text] length] <= 4) {
             APP_ALERT_DIALOG(LSSTRING(@"error_create_account_small_password"));
         } else {
-            [[self notificare] changePassword:[NSString stringWithFormat:@"%@", [[alertView textFieldAtIndex:0] text]] completionHandler:^(NSDictionary *info) {
+            [self.notificarePushLib changePassword:[NSString stringWithFormat:@"%@", [[alertView textFieldAtIndex:0] text]] completionHandler:^(NSDictionary *info) {
                 
                 APP_ALERT_DIALOG(LSSTRING(@"success_message_changepass"));
             } errorHandler:^(NSError *error) {
@@ -329,7 +324,7 @@
         
     } else {
         
-        [[self notificare] changePassword:[[self password] text]  completionHandler:^(NSDictionary *info) {
+        [self.notificarePushLib changePassword:[[self password] text]  completionHandler:^(NSDictionary *info) {
             //
             [self resetForm];
             [[self changePassButton] setEnabled:YES];
@@ -349,14 +344,14 @@
 -(IBAction)logout:(id)sender{
     [[self loadingView] addSubview:[self activityIndicatorView]];
     [[self view] addSubview:[self loadingView]];
-    [[self notificare] logoutAccount];
+    [self.notificarePushLib logoutAccount];
 }
 
 
 -(void)logout{
     [[self loadingView] addSubview:[self activityIndicatorView]];
     [[self view] addSubview:[self loadingView]];
-    [[self notificare] logoutAccount];
+    [self.notificarePushLib logoutAccount];
 }
 
 -(void)resetForm{
@@ -741,7 +736,7 @@
         
         if([tempSwitch isOn]){
             
-            [[self notificare] addSegment:seg toPreference:item completionHandler:^(NSDictionary *info) {
+            [self.notificarePushLib addSegment:seg toPreference:item completionHandler:^(NSDictionary *info) {
                 //
                 NSLog(@"%@", info);
             } errorHandler:^(NSError *error) {
@@ -751,7 +746,7 @@
             
         }else{
             
-            [[self notificare] removeSegment:seg fromPreference:item completionHandler:^(NSDictionary *info) {
+            [self.notificarePushLib removeSegment:seg fromPreference:item completionHandler:^(NSDictionary *info) {
                 //
                 NSLog(@"%@", info);
             } errorHandler:^(NSError *error) {

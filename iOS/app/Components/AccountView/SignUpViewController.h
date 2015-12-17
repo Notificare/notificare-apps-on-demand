@@ -6,12 +6,13 @@
 //  Copyright (c) 2014 Notificare. All rights reserved.
 //
 
+#import "NotificareComponentViewController.h"
 #import <UIKit/UIKit.h>
 #import "FormButton.h"
 #import "FormField.h"
 #import "InfoLabel.h"
 
-@interface SignUpViewController : UIViewController <UITextFieldDelegate>
+@interface SignUpViewController : NotificareComponentViewController <UITextFieldDelegate>
 
 - (id)initWithNibName:(NSString *) nibNameOrNil
                bundle:(NSBundle *) nibBundleOrNil

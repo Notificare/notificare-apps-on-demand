@@ -22,14 +22,10 @@
 
 @implementation LocationViewController
 
-- (AppDelegate *)appDelegate {
-    
-    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
++ (NSString *)configurationKey {
+    return @"location";
 }
-- (NotificarePushLib *)notificare {
-    
-    return (NotificarePushLib *)[[self appDelegate] notificarePushLib];
-}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -59,7 +55,7 @@
     
     [[self mapView] setDelegate:self];
     
-    if([[self notificare] checkLocationUpdates]){
+    if([self.notificarePushLib checkLocationUpdates]){
         
         [[self mapView] setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
         [[self mapView] setShowsUserLocation:YES];
@@ -85,7 +81,7 @@
 }
 
 -(void)setupNavigationBar{
-    int count = [[[self appDelegate] notificarePushLib] myBadge];
+    int count = self.notificarePushLib.myBadge;
     
     if(count > 0){
         [[self buttonIcon] setTintColor:[self navigationForegroundColor]];
@@ -134,9 +130,9 @@
     NSMutableArray * markers = [NSMutableArray array];
     NSMutableArray * regions = [NSMutableArray array];
     
-    NSLog(@"Regions %li regions", (unsigned long)[[[[self notificare] locationManager] monitoredRegions] count]);
+    NSLog(@"Regions %li regions", (unsigned long)self.notificarePushLib.locationManager.monitoredRegions.count);
     
-    for (CLRegion * region in [[[self notificare] locationManager] monitoredRegions]) {
+    for (CLRegion * region in self.notificarePushLib.locationManager.monitoredRegions) {
 
         RegionsMarker *annotation = [[RegionsMarker alloc] initWithName:[region identifier] address:@"" coordinate:[region center]] ;
         [markers addObject:annotation];

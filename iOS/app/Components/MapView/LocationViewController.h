@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Notificare. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "NotificareComponentViewController.h"
 #import <MapKit/MapKit.h>
 #import "BadgeLabel.h"
 
-@interface LocationViewController : UIViewController <MKMapViewDelegate>
+@interface LocationViewController : NotificareComponentViewController <MKMapViewDelegate>
 
 
 @property (nonatomic, strong) IBOutlet MKMapView * mapView;

@@ -6,10 +6,11 @@
 //  Copyright (c) 2014 Notificare. All rights reserved.
 //
 
+#import "NotificareComponentViewController.h"
 #import <UIKit/UIKit.h>
 #import "BadgeLabel.h"
 
-@interface ProductsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface ProductsViewController : NotificareComponentViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) IBOutlet UITableView * tableView;
 @property (nonatomic, strong) IBOutlet UITableViewController * tableViewController;

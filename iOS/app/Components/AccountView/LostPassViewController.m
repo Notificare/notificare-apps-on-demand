@@ -18,16 +18,9 @@
 
 @implementation LostPassViewController
 
-
-
-- (AppDelegate *)appDelegate {
-    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
++ (NSString *)configurationKey {
+    return @"lostPass";
 }
-
-- (NotificarePushLib *)notificare {
-    return (NotificarePushLib *)[[self appDelegate] notificarePushLib];
-}
-
 
 - (id)initWithNibName:(NSString *) nibNameOrNil
                bundle:(NSBundle *) nibBundleOrNil
@@ -113,7 +106,7 @@
         APP_ALERT_DIALOG(LSSTRING(@"error_forgotpass_invalid_email"));
         [[self forgotPassButton] setEnabled:YES];
     } else {
-        [[self notificare] sendPassword:[[self email] text] completionHandler:^(NSDictionary *info) {
+        [self.notificarePushLib sendPassword:[[self email] text] completionHandler:^(NSDictionary *info) {
 
             APP_ALERT_DIALOG(LSSTRING(@"success_forgotpass"));
             [[self forgotPassButton] setEnabled:YES];

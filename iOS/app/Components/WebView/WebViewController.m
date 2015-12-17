@@ -17,8 +17,8 @@
 
 @implementation WebViewController
 
-- (AppDelegate *)appDelegate {
-    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
++ (NSString *)configurationKey {
+    return @"web";
 }
 
 - (void)viewDidLoad

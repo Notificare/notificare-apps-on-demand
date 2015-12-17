@@ -115,6 +115,7 @@
 		4EB1856D1C1F1116008811BE /* Notificare.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EB1856B1C1F1116008811BE /* Notificare.plist */; };
 		4EB1856E1C1F1116008811BE /* NotificareTags.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EB1856C1C1F1116008811BE /* NotificareTags.plist */; };
 		4EB185861C1F1FCF008811BE /* appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB185851C1F1FCF008811BE /* appTests.m */; };
+		4EB185931C219735008811BE /* NotificareComponentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB185921C219735008811BE /* NotificareComponentViewController.m */; };
 		A089D3A41BA9A53400060399 /* regionsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = A089D3A31BA9A53400060399 /* regionsMock.json */; };
 		A0A9CA9C1BA2F53C004E2A98 /* LostPassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A9CA561BA2F53C004E2A98 /* LostPassViewController.m */; };
 		A0A9CA9D1BA2F53C004E2A98 /* LostPassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0A9CA571BA2F53C004E2A98 /* LostPassViewController.xib */; };
@@ -297,6 +298,8 @@
 		4EB185831C1F1FCF008811BE /* appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB185851C1F1FCF008811BE /* appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = appTests.m; sourceTree = "<group>"; };
 		4EB185871C1F1FCF008811BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EB185911C219735008811BE /* NotificareComponentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificareComponentViewController.h; sourceTree = "<group>"; };
+		4EB185921C219735008811BE /* NotificareComponentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificareComponentViewController.m; sourceTree = "<group>"; };
 		A089D3A31BA9A53400060399 /* regionsMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = regionsMock.json; sourceTree = "<group>"; };
 		A0A9CA551BA2F53C004E2A98 /* LostPassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LostPassViewController.h; sourceTree = "<group>"; };
 		A0A9CA561BA2F53C004E2A98 /* LostPassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LostPassViewController.m; sourceTree = "<group>"; };
@@ -645,6 +648,8 @@
 				A0A9CA6B1BA2F53C004E2A98 /* MapView */,
 				A0A9CA6F1BA2F53C004E2A98 /* ProductsView */,
 				A0A9CA731BA2F53C004E2A98 /* WebView */,
+				4EB185911C219735008811BE /* NotificareComponentViewController.h */,
+				4EB185921C219735008811BE /* NotificareComponentViewController.m */,
 			);
 			name = Components;
 			path = app/Components;
@@ -1034,6 +1039,7 @@
 				A0A9CAB41BA2F53C004E2A98 /* DefaultCell.m in Sources */,
 				4EB1856A1C1EF45A008811BE /* UIColor+Hex.m in Sources */,
 				4083857A18FF132C000DC352 /* RightViewController.m in Sources */,
+				4EB185931C219735008811BE /* NotificareComponentViewController.m in Sources */,
 				4083858718FF2192000DC352 /* Configuration.m in Sources */,
 				4083849B18FF015C000DC352 /* AppDelegate.m in Sources */,
 				A0A9CAA61BA2F53C004E2A98 /* UserDetailsViewController.m in Sources */,

@@ -19,12 +19,8 @@
 
 @implementation LogViewController
 
-- (AppDelegate *)appDelegate {
-    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
-}
-
-- (NotificarePushLib *)notificare {
-    return (NotificarePushLib *)[[self appDelegate] notificarePushLib];
++ (NSString *)configurationKey {
+    return @"log";
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -131,13 +127,13 @@
         NSString *appFile = [documentsDirectory stringByAppendingPathComponent:@"log.txt"];
         
         NSMutableString * data = [NSMutableString string];
-        NSDictionary * info = [NSDictionary dictionaryWithDictionary:[[self notificare] applicationInfo]];
+        NSDictionary * info = [NSDictionary dictionaryWithDictionary:[self.notificarePushLib applicationInfo]];
 
         [data appendFormat:@"App: %@ (%@)\n",[info objectForKey:@"name"],[info objectForKey:@"_id"]];
         
         [data appendFormat:@"--------------------------------------------------------\n"];
         
-        NotificareDevice * device = [[self notificare] myDevice];
+        NotificareDevice * device = self.notificarePushLib.myDevice;
         
         [data appendFormat:@"Device: %@\nOS: %@\nSDK: %@\nApp Version: %@\n",[device deviceID],[device osVersion],[device sdkVersion],[device appVersion]];
         

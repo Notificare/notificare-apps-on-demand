@@ -19,16 +19,9 @@
 
 @implementation UserDetailsOptionsViewController
 
-
-
-- (AppDelegate *)appDelegate {
-    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
++ (NSString *)configurationKey {
+    return @"userDetailsOptions";
 }
-
-- (NotificarePushLib *)notificare {
-    return (NotificarePushLib *)[[self appDelegate] notificarePushLib];
-}
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -150,7 +143,7 @@
     
     if([tempSwitch isOn]){
         
-        [[self notificare] addSegment:item toPreference:[self preference] completionHandler:^(NSDictionary *info) {
+        [self.notificarePushLib addSegment:item toPreference:[self preference] completionHandler:^(NSDictionary *info) {
             //
         } errorHandler:^(NSError *error) {
             //
@@ -158,7 +151,7 @@
         
     }else{
 
-        [[self notificare] removeSegment:item fromPreference:[self preference] completionHandler:^(NSDictionary *info) {
+        [self.notificarePushLib removeSegment:item fromPreference:[self preference] completionHandler:^(NSDictionary *info) {
             //
         } errorHandler:^(NSError *error) {
             //
@@ -210,7 +203,7 @@
         if([checkCell accessoryType] != UITableViewCellAccessoryCheckmark){
 
             checkCell.accessoryType = UITableViewCellAccessoryCheckmark;
-            [[self notificare] addSegment:item toPreference:[self preference] completionHandler:^(NSDictionary *info) {
+            [self.notificarePushLib addSegment:item toPreference:[self preference] completionHandler:^(NSDictionary *info) {
                 [[self navigationController] popToRootViewControllerAnimated:YES];
             } errorHandler:^(NSError *error) {
                 //

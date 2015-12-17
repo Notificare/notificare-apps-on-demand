@@ -6,11 +6,12 @@
 //  Copyright (c) 2015 Notificare. All rights reserved.
 //
 
+#import "NotificareComponentViewController.h"
 #import <UIKit/UIKit.h>
 #import "BadgeLabel.h"
 #import <MessageUI/MessageUI.h>
 
-@interface LogViewController : UIViewController <UITableViewDelegate, UITableViewDataSource,MFMailComposeViewControllerDelegate>
+@interface LogViewController : NotificareComponentViewController <UITableViewDelegate, UITableViewDataSource,MFMailComposeViewControllerDelegate>
 
 @property (nonatomic, strong) IBOutlet UITableView * tableView;
 @property (nonatomic, strong) IBOutlet UITableViewController * tableViewController;

@@ -20,12 +20,8 @@
 
 @implementation ProductsViewController
 
-- (AppDelegate *)appDelegate {
-    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
-}
-
-- (NotificarePushLib *)notificare {
-    return (NotificarePushLib *)[[self appDelegate] notificarePushLib];
++ (NSString *)configurationKey {
+    return @"products";
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -46,7 +42,7 @@
     
     [[self sectionTitles] addObject:LSSTRING(@"title_section_products")];
     
-    [[self notificare] fetchProducts:^(NSArray *info) {
+    [self.notificarePushLib fetchProducts:^(NSArray *info) {
         
         if([info count] > 0){
             [[self navSections] addObject:info];
@@ -222,7 +218,7 @@
             
         } else {
 
-            if(![[[self notificare] purchasedProducts] containsObject:[item identifier]]){
+            if(![self.notificarePushLib.purchasedProducts containsObject:[item identifier]]){
                 [type setText:LSSTRING(@"Buy")];
                 [type setFont:LATO_FONT(14)];
                 [price setText:[item priceLocale]];
@@ -308,8 +304,8 @@
     
     NotificareProduct * item = (NotificareProduct *)[[[self navSections] objectAtIndex:[indexPath section]] objectAtIndex:[indexPath row]];
     
-    if(![[[self notificare] purchasedProducts] containsObject:[item identifier]]){
-        [[self notificare] buyProduct:item];
+    if(![self.notificarePushLib.purchasedProducts containsObject:[item identifier]]){
+        [self.notificarePushLib buyProduct:item];
     } else {
         
         ///The item was purchased show all the content for this purchase
@@ -322,7 +318,7 @@
 }
 
 -(void)getProductDownloadedContent:(NotificareProduct *)product{
-    NSString * dir = [[self notificare] contentPathForProduct:[product identifier]];
+    NSString * dir = [self.notificarePushLib contentPathForProduct:[product identifier]];
     NSError * error;
     NSArray * directoryContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:dir error:&error];
 

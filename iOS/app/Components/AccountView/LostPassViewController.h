@@ -6,12 +6,13 @@
 //  Copyright (c) 2014 Notificare. All rights reserved.
 //
 
+#import "NotificareComponentViewController.h"
 #import <UIKit/UIKit.h>
 #import "FormField.h"
 #import "FormButton.h"
 #import "InfoLabel.h"
 
-@interface LostPassViewController : UIViewController <UITextFieldDelegate>
+@interface LostPassViewController : NotificareComponentViewController <UITextFieldDelegate>
 
 - (id)initWithNibName:(NSString *) nibNameOrNil
                bundle:(NSBundle *) nibBundleOrNil

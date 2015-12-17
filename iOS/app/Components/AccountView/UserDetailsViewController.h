@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Notificare. All rights reserved.
 //
 
+#import "NotificareComponentViewController.h"
 #import <UIKit/UIKit.h>
 #import "InfoLabel.h"
 #import "FormButton.h"
@@ -16,11 +17,10 @@
 #import "NotificareUser.h"
 #import <MessageUI/MessageUI.h>
 
-
 @class SignInViewController;
 @class UserDetailsOptionsViewController;
 
-@interface UserDetailsViewController : UIViewController <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate, MFMailComposeViewControllerDelegate>
+@interface UserDetailsViewController : NotificareComponentViewController <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate, MFMailComposeViewControllerDelegate>
 
 @property (nonatomic, strong) IBOutlet InfoLabel * userName;
 @property (nonatomic, strong) IBOutlet InfoLabel * userToken;

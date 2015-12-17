@@ -18,13 +18,8 @@
 
 @implementation SignInViewController
 
-
-- (AppDelegate *)appDelegate {
-    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
-}
-
-- (NotificarePushLib *)notificare {
-    return (NotificarePushLib *)[[self appDelegate] notificarePushLib];
++ (NSString *)configurationKey {
+    return @"signIn";
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -171,16 +166,16 @@
         [[self signinButton] setEnabled:YES];
     } else {
         
-        [[self notificare] loginWithUsername:[[self email] text] andPassword:[[self password] text] completionHandler:^(NSDictionary *info) {
+        [self.notificarePushLib loginWithUsername:[[self email] text] andPassword:[[self password] text] completionHandler:^(NSDictionary *info) {
             //
 
-            [[self notificare] fetchAccountDetails:^(NSDictionary *info) {
+            [self.notificarePushLib fetchAccountDetails:^(NSDictionary *info) {
                 
                 NSDictionary * user = [info objectForKey:@"user"];
 
                 if([[user objectForKey:@"token"] isKindOfClass:[NSNull class]]){
                     
-                    [[self notificare] generateAccessToken:^(NSDictionary *info) {
+                    [self.notificarePushLib generateAccessToken:^(NSDictionary *info) {
                         //
                     } errorHandler:^(NSError *error) {
                         //

@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Notificare. All rights reserved.
 //
 
+#import "NotificareComponentViewController.h"
 #import <UIKit/UIKit.h>
 #import "SignUpViewController.h"
 #import "LostPassViewController.h"
@@ -18,7 +19,7 @@
 @class SignUpViewController;
 @class LostPassViewController;
 
-@interface SignInViewController : UIViewController <UITextFieldDelegate>
+@interface SignInViewController : NotificareComponentViewController <UITextFieldDelegate>
 
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) IBOutlet FormField * email;
