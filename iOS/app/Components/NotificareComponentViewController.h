@@ -20,5 +20,8 @@
 + (NSString *)configurationKey;
 
 - (instancetype)initWithConfiguration:(NSDictionary *)configuration;
+- (void)setupTitle;
+- (void)setupNavigationBar;
+- (void)setupBackground;
 
 @end
