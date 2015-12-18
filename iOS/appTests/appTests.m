@@ -9,6 +9,7 @@
 #import <XCTest/XCTest.h>
 
 #import "UIColor+Hex.h"
+#import "NSDictionary+Merge.h"
 
 @interface appTests : XCTestCase
 
@@ -53,6 +54,27 @@
     XCTAssertEqualObjects([UIColor colorWithHexString:shortBlueTransparentString], blueTransparentColor);
     XCTAssertEqualObjects([UIColor colorWithHexString:longGreenString], greenColor);
     XCTAssertEqualObjects([UIColor colorWithHexString:longPinkTransparentString], pinkTransparentColor);
+}
+
+- (void)testNSDictionaryAndMerge {
+    NSDictionary *baseDictionary = @{@"one": @NO,
+                                     @"two": @{@"twoOne": @NO,
+                                               @"twoTwo": @NO},
+                                     @"three": @NO};
+    
+    NSDictionary *newDictionary = @{@"one": @YES,
+                                    @"two": @{@"twoOne": @YES,
+                                              @"twoThree": @YES},
+                                    @"four": @YES};
+    
+    NSDictionary *referenceDictionary = @{@"one": @YES,
+                                          @"two": @{@"twoOne": @YES,
+                                                    @"twoTwo": @NO,
+                                                    @"twoThree": @YES},
+                                          @"three": @NO,
+                                          @"four": @YES};
+    
+    XCTAssertEqualObjects([baseDictionary merge:newDictionary], referenceDictionary);
 }
 
 @end
