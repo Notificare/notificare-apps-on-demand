@@ -261,13 +261,13 @@
                 
                 LocationViewController * map = [[LocationViewController alloc] initWithNibName:@"LocationViewController" bundle:nil];
                 
-                [map setShowCircles:(BOOL)[item objectForKey:@"showCircles"]];
+                /*[map setShowCircles:(BOOL)[item objectForKey:@"showCircles"]];
                 [map setViewTitle:LSSTRING([item objectForKey:@"label"])];
                 [map setTitleFont:[UIFont fontWithName:[item objectForKey:@"titleFont"] size:[[item objectForKey:@"titleSize"] doubleValue]]];
                 [map setTitleColor:[UIColor colorWithHexString:[item objectForKey:@"titleColor"]]];
                 [map setNavigationBackgroundColor:[UIColor colorWithHexString:[item objectForKey:@"navigationBgColor"]]];
                 [map setNavigationForegroundColor:[UIColor colorWithHexString:[item objectForKey:@"navigationFgColor"]]];
-                [map setCircleColor:[UIColor colorWithHexString:[item objectForKey:@"circleColor"]]];
+                [map setCircleColor:[UIColor colorWithHexString:[item objectForKey:@"circleColor"]]];*/
                 
                 [self setCenterController:[[UINavigationController alloc] initWithRootViewController:map]];
                 [[self deckController] setCenterController:[self centerController]];

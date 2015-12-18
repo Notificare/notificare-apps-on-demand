@@ -17,6 +17,13 @@
 
 @interface LocationViewController ()
 
+@property (nonatomic, strong) IBOutlet MKMapView *mapView;
+
+@property (nonatomic, strong) NSMutableArray * circles;
+@property (nonatomic, strong) NSMutableArray * markers;
+@property (nonatomic, strong) UIColor *circleColor;
+@property (nonatomic, assign, getter=shouldShowCircles) BOOL showCircles;
+
 @end
 
 
@@ -26,36 +33,12 @@
     return @"location";
 }
 
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    
-    if (self) {
-        // Custom initialization
-    }
-    
-    return self;
-}
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     
-    UILabel * title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 40)];
-    [title setText:[self viewTitle]];
-    [title setFont:[self titleFont]];
-    [title setTextAlignment:NSTextAlignmentCenter];
-    [title setTextColor:[self titleColor]];
-    [[self navigationItem] setTitleView:title];
+    self.mapView.delegate = self;
     
-    [self setupNavigationBar];
-    
-    [[self mapView] setDelegate:self];
-    
-    if([self.notificarePushLib checkLocationUpdates]){
+    if ([self.notificarePushLib checkLocationUpdates]) {
         
         [[self mapView] setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
         [[self mapView] setShowsUserLocation:YES];
@@ -63,57 +46,9 @@
 
     [[self mapView] setMapType:MKMapTypeStandard];
 
-    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
-        
-        [[[self navigationController] navigationBar] setTintColor:[self navigationBackgroundColor]];
-        
-        [[UIBarButtonItem appearance] setBackgroundImage:[UIImage imageNamed:@"Transparent"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-        [[UIBarButtonItem appearance] setBackgroundImage:[UIImage imageNamed:@"Transparent"] forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
-        
-    } else {
-        
-        [[self mapView] setShowsPointsOfInterest:YES];
-        [[self mapView] setShowsBuildings:NO];
-        
-        [[[self navigationController] navigationBar] setBarTintColor:[self navigationBackgroundColor]];
-    }
+    [[self mapView] setShowsPointsOfInterest:YES];
+    [[self mapView] setShowsBuildings:NO];
 
-}
-
--(void)setupNavigationBar{
-    int count = self.notificarePushLib.myBadge;
-    
-    if(count > 0){
-        [[self buttonIcon] setTintColor:[self navigationForegroundColor]];
-        [[self badgeButton] addTarget:[self viewDeckController] action:@selector(toggleLeftView) forControlEvents:UIControlEventTouchUpInside];
-        
-        NSString * badge = [NSString stringWithFormat:@"%i", count];
-        [[self badgeNr] setText:badge];
-        
-        UIBarButtonItem * leftButton = [[UIBarButtonItem alloc] initWithCustomView:[self badge]];
-        [leftButton setTarget:[self viewDeckController]];
-        [leftButton setAction:@selector(toggleLeftView)];
-        [leftButton setTintColor:[self navigationForegroundColor]];
-        [[self navigationItem] setLeftBarButtonItem:leftButton];
-    } else {
-        
-        UIBarButtonItem * leftButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"LeftMenuIcon"] style:UIBarButtonItemStylePlain target:[self viewDeckController] action:@selector(toggleLeftView)];
-        [leftButton setTintColor:[self navigationForegroundColor]];
-        [[self navigationItem] setLeftBarButtonItem:leftButton];
-    }
-
-    UIBarButtonItem * rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"RightMenuIcon"] style:UIBarButtonItemStylePlain target:[self viewDeckController] action:@selector(toggleRightView)];
-    
-    [rightButton setTintColor:[self navigationForegroundColor]];
-    
-    if([[[self appDelegate] beacons] count] > 0) {
-        
-        [[self navigationItem] setRightBarButtonItem:rightButton];
-        
-    } else {
-        
-        [[self navigationItem] setRightBarButtonItem:nil];
-    }
 }
 
 -(void)changeBadge{
@@ -122,7 +57,7 @@
     
 }
 
--(void)populateMap{
+-(void)populateMap {
     
     [[self mapView] removeOverlays:[self circles]];
     [[self mapView] removeAnnotations:[self markers]];
