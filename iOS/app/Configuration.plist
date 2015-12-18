@@ -8,6 +8,30 @@
 	<string>http://notifica.re/apps-content/notificare/</string>
 	<key>components</key>
 	<dict>
+		<key>default</key>
+		<dict>
+			<key>title</key>
+			<dict>
+				<key>font</key>
+				<string>Lato-Light</string>
+				<key>fontSize</key>
+				<integer>20</integer>
+				<key>color</key>
+				<string>#E6E6E6</string>
+			</dict>
+			<key>navigationBar</key>
+			<dict>
+				<key>backgroundColor</key>
+				<string>#141414</string>
+				<key>foregroundColor</key>
+				<string>#E6E6E6</string>
+			</dict>
+			<key>background</key>
+			<dict>
+				<key>color</key>
+				<string>#F5F5F5</string>
+			</dict>
+		</dict>
 		<key>lostPass</key>
 		<dict>
 			<key>emailForm</key>
