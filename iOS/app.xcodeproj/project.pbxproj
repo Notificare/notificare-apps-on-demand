@@ -117,6 +117,15 @@
 		4E87EF2E1C3D6D7A00FC8609 /* PassesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E87EF291C3D6D7A00FC8609 /* PassesViewController.xib */; };
 		4E87EF2F1C3D6D7A00FC8609 /* PassesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E87EF2B1C3D6D7A00FC8609 /* PassesCell.m */; };
 		4E87EF301C3D6D7A00FC8609 /* PassesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E87EF2C1C3D6D7A00FC8609 /* PassesCell.xib */; };
+		4E87EF351C3D711000FC8609 /* TableComponentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E87EF331C3D711000FC8609 /* TableComponentViewController.m */; };
+		4E87EF361C3D711000FC8609 /* TableComponentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E87EF341C3D711000FC8609 /* TableComponentViewController.xib */; };
+		4E87EF3A1C3D72A300FC8609 /* FormComponentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E87EF381C3D72A300FC8609 /* FormComponentViewController.m */; };
+		4E87EF3B1C3D72A300FC8609 /* FormComponentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E87EF391C3D72A300FC8609 /* FormComponentViewController.xib */; };
+		4E87EF3F1C3D76B200FC8609 /* CollectionComponentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E87EF3D1C3D76B200FC8609 /* CollectionComponentViewController.m */; };
+		4E87EF401C3D76B200FC8609 /* CollectionComponentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E87EF3E1C3D76B200FC8609 /* CollectionComponentViewController.xib */; };
+		4E87EF431C3D77D400FC8609 /* CustomSafariViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E87EF421C3D77D400FC8609 /* CustomSafariViewController.m */; };
+		4E87EF471C3D7A4B00FC8609 /* BadgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E87EF451C3D7A4B00FC8609 /* BadgeViewController.m */; };
+		4E87EF481C3D7A4B00FC8609 /* BadgeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E87EF461C3D7A4B00FC8609 /* BadgeViewController.xib */; };
 		4EB1856D1C1F1116008811BE /* Notificare.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EB1856B1C1F1116008811BE /* Notificare.plist */; };
 		4EB1856E1C1F1116008811BE /* NotificareTags.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EB1856C1C1F1116008811BE /* NotificareTags.plist */; };
 		4EB185861C1F1FCF008811BE /* appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB185851C1F1FCF008811BE /* appTests.m */; };
@@ -306,6 +315,20 @@
 		4E87EF2A1C3D6D7A00FC8609 /* PassesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassesCell.h; sourceTree = "<group>"; };
 		4E87EF2B1C3D6D7A00FC8609 /* PassesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PassesCell.m; sourceTree = "<group>"; };
 		4E87EF2C1C3D6D7A00FC8609 /* PassesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PassesCell.xib; sourceTree = "<group>"; };
+		4E87EF321C3D711000FC8609 /* TableComponentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableComponentViewController.h; sourceTree = "<group>"; };
+		4E87EF331C3D711000FC8609 /* TableComponentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableComponentViewController.m; sourceTree = "<group>"; };
+		4E87EF341C3D711000FC8609 /* TableComponentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableComponentViewController.xib; sourceTree = "<group>"; };
+		4E87EF371C3D72A300FC8609 /* FormComponentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormComponentViewController.h; sourceTree = "<group>"; };
+		4E87EF381C3D72A300FC8609 /* FormComponentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormComponentViewController.m; sourceTree = "<group>"; };
+		4E87EF391C3D72A300FC8609 /* FormComponentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FormComponentViewController.xib; sourceTree = "<group>"; };
+		4E87EF3C1C3D76B200FC8609 /* CollectionComponentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionComponentViewController.h; sourceTree = "<group>"; };
+		4E87EF3D1C3D76B200FC8609 /* CollectionComponentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionComponentViewController.m; sourceTree = "<group>"; };
+		4E87EF3E1C3D76B200FC8609 /* CollectionComponentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionComponentViewController.xib; sourceTree = "<group>"; };
+		4E87EF411C3D77D400FC8609 /* CustomSafariViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSafariViewController.h; sourceTree = "<group>"; };
+		4E87EF421C3D77D400FC8609 /* CustomSafariViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSafariViewController.m; sourceTree = "<group>"; };
+		4E87EF441C3D7A4B00FC8609 /* BadgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeViewController.h; sourceTree = "<group>"; };
+		4E87EF451C3D7A4B00FC8609 /* BadgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeViewController.m; sourceTree = "<group>"; };
+		4E87EF461C3D7A4B00FC8609 /* BadgeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BadgeViewController.xib; sourceTree = "<group>"; };
 		4EB1856B1C1F1116008811BE /* Notificare.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Notificare.plist; sourceTree = "<group>"; };
 		4EB1856C1C1F1116008811BE /* NotificareTags.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NotificareTags.plist; sourceTree = "<group>"; };
 		4EB185831C1F1FCF008811BE /* appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -471,7 +494,6 @@
 				A0A9CA771BA2F53C004E2A98 /* Helpers */,
 				A0A9CA7A1BA2F53C004E2A98 /* Subclasses */,
 				4083856618FF11F4000DC352 /* Resources */,
-				40F226AF1A2DFDE2003A98B1 /* Tutorial */,
 				4E87EF1F1C3D63CA00FC8609 /* Shared */,
 				4083849118FF015C000DC352 /* Supporting Files */,
 				4083849918FF015C000DC352 /* AppDelegate.h */,
@@ -609,7 +631,7 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
-		40F226AF1A2DFDE2003A98B1 /* Tutorial */ = {
+		40F226AF1A2DFDE2003A98B1 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
 				40F226B51A2DFE72003A98B1 /* PageOneViewController.h */,
@@ -622,7 +644,7 @@
 				40F226C01A2E23F2003A98B1 /* PageThreeViewController.m */,
 				40F226C11A2E23F2003A98B1 /* PageThreeViewController.xib */,
 			);
-			path = Tutorial;
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		4E87EF1F1C3D63CA00FC8609 /* Shared */ = {
@@ -649,6 +671,22 @@
 			path = Loyalty;
 			sourceTree = "<group>";
 		};
+		4E87EF311C3D705300FC8609 /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				4E87EF321C3D711000FC8609 /* TableComponentViewController.h */,
+				4E87EF331C3D711000FC8609 /* TableComponentViewController.m */,
+				4E87EF341C3D711000FC8609 /* TableComponentViewController.xib */,
+				4E87EF371C3D72A300FC8609 /* FormComponentViewController.h */,
+				4E87EF381C3D72A300FC8609 /* FormComponentViewController.m */,
+				4E87EF391C3D72A300FC8609 /* FormComponentViewController.xib */,
+				4E87EF3C1C3D76B200FC8609 /* CollectionComponentViewController.h */,
+				4E87EF3D1C3D76B200FC8609 /* CollectionComponentViewController.m */,
+				4E87EF3E1C3D76B200FC8609 /* CollectionComponentViewController.xib */,
+			);
+			path = Generic;
+			sourceTree = "<group>";
+		};
 		4EB185841C1F1FCF008811BE /* appTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -671,6 +709,8 @@
 		A0A9CA531BA2F53C004E2A98 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4E87EF311C3D705300FC8609 /* Generic */,
+				40F226AF1A2DFDE2003A98B1 /* Onboarding */,
 				A0A9CA541BA2F53C004E2A98 /* User */,
 				A0A9CA671BA2F53C004E2A98 /* Log */,
 				A0A9CA6B1BA2F53C004E2A98 /* Map */,
@@ -745,6 +785,8 @@
 				A0A9CA741BA2F53C004E2A98 /* WebViewController.h */,
 				A0A9CA751BA2F53C004E2A98 /* WebViewController.m */,
 				A0A9CA761BA2F53C004E2A98 /* WebViewController.xib */,
+				4E87EF411C3D77D400FC8609 /* CustomSafariViewController.h */,
+				4E87EF421C3D77D400FC8609 /* CustomSafariViewController.m */,
 			);
 			path = Web;
 			sourceTree = "<group>";
@@ -762,6 +804,9 @@
 		A0A9CA7A1BA2F53C004E2A98 /* Subclasses */ = {
 			isa = PBXGroup;
 			children = (
+				4E87EF441C3D7A4B00FC8609 /* BadgeViewController.h */,
+				4E87EF451C3D7A4B00FC8609 /* BadgeViewController.m */,
+				4E87EF461C3D7A4B00FC8609 /* BadgeViewController.xib */,
 				A0A9CA7B1BA2F53C004E2A98 /* BadgeLabel.h */,
 				A0A9CA7C1BA2F53C004E2A98 /* BadgeLabel.m */,
 				A0A9CA7D1BA2F53C004E2A98 /* BeaconCell.h */,
@@ -933,6 +978,7 @@
 				4083856F18FF11F4000DC352 /* Lato-Regular.ttf in Resources */,
 				A0A9CA9D1BA2F53C004E2A98 /* LostPassViewController.xib in Resources */,
 				40BF798B1902B2C300622FA5 /* ForwardButton.png in Resources */,
+				4E87EF3B1C3D72A300FC8609 /* FormComponentViewController.xib in Resources */,
 				40961FB41A33C672009218FF /* Twitter.png in Resources */,
 				40BF79911902B3F100622FA5 /* RefreshButton.png in Resources */,
 				40F226AA1A2DF58B003A98B1 /* MapMarker@3x.png in Resources */,
@@ -957,6 +1003,7 @@
 				4083859B18FF3778000DC352 /* Logo.png in Resources */,
 				40F226C81A2E3437003A98B1 /* TutorialLocationIcon@2x.png in Resources */,
 				40F226A71A2DF58B003A98B1 /* TutorialDialogIcon.png in Resources */,
+				4E87EF401C3D76B200FC8609 /* CollectionComponentViewController.xib in Resources */,
 				A0A9CAAB1BA2F53C004E2A98 /* LocationViewController.xib in Resources */,
 				40F226AD1A2DF58B003A98B1 /* TutorialDialogIcon@2x.png in Resources */,
 				40961FC11A33DD73009218FF /* LaunchScreen.png in Resources */,
@@ -973,6 +1020,7 @@
 				40BF79921902B3F100622FA5 /* RefreshButton@2x.png in Resources */,
 				401D41D31A3743F30003AF38 /* Mail@3x.png in Resources */,
 				408384A318FF015C000DC352 /* Images.xcassets in Resources */,
+				4E87EF481C3D7A4B00FC8609 /* BadgeViewController.xib in Resources */,
 				40F226C91A2E3437003A98B1 /* TutorialLocationIcon@3x.png in Resources */,
 				A0A9CAA91BA2F53C004E2A98 /* LogViewController.xib in Resources */,
 				40F226CD1A2E375F003A98B1 /* TutorialDoneIcon.png in Resources */,
@@ -988,6 +1036,7 @@
 				A0A9CAB51BA2F53C004E2A98 /* DefaultCell.xib in Resources */,
 				4E87EF2E1C3D6D7A00FC8609 /* PassesViewController.xib in Resources */,
 				40BB57D01B02CF8400DE74C9 /* IconMail@2x.png in Resources */,
+				4E87EF361C3D711000FC8609 /* TableComponentViewController.xib in Resources */,
 				40F226C31A2E23F2003A98B1 /* PageThreeViewController.xib in Resources */,
 				40BF798D1902B2C300622FA5 /* BackButton@2x.png in Resources */,
 				40BF798C1902B2C300622FA5 /* BackButton.png in Resources */,
@@ -1060,6 +1109,7 @@
 			files = (
 				408384A118FF015C000DC352 /* MainViewController.m in Sources */,
 				A0A9CAB61BA2F53C004E2A98 /* EmptyBeaconsCell.m in Sources */,
+				4E87EF431C3D77D400FC8609 /* CustomSafariViewController.m in Sources */,
 				4E87EF251C3D63CA00FC8609 /* UIColor+Hex.m in Sources */,
 				A0A9CABC1BA2F53C004E2A98 /* LogCell.m in Sources */,
 				A0A9CABB1BA2F53C004E2A98 /* InfoLabel.m in Sources */,
@@ -1071,12 +1121,14 @@
 				A0A9CA9E1BA2F53C004E2A98 /* ResetPassViewController.m in Sources */,
 				A0A9CAA01BA2F53C004E2A98 /* SignInViewController.m in Sources */,
 				A0A9CABA1BA2F53C004E2A98 /* FormField.m in Sources */,
+				4E87EF3A1C3D72A300FC8609 /* FormComponentViewController.m in Sources */,
 				A0A9CAB41BA2F53C004E2A98 /* DefaultCell.m in Sources */,
 				4083857A18FF132C000DC352 /* RightViewController.m in Sources */,
 				4EB185931C219735008811BE /* NotificareComponentViewController.m in Sources */,
 				4083858718FF2192000DC352 /* Configuration.m in Sources */,
 				4083849B18FF015C000DC352 /* AppDelegate.m in Sources */,
 				A0A9CAA61BA2F53C004E2A98 /* UserDetailsViewController.m in Sources */,
+				4E87EF3F1C3D76B200FC8609 /* CollectionComponentViewController.m in Sources */,
 				A0A9CAC01BA2F53C004E2A98 /* RegionsMarker.m in Sources */,
 				4083857D18FF1340000DC352 /* LeftViewController.m in Sources */,
 				4083849718FF015C000DC352 /* main.m in Sources */,
@@ -1085,6 +1137,8 @@
 				A0A9CA9C1BA2F53C004E2A98 /* LostPassViewController.m in Sources */,
 				4E87EF2D1C3D6D7A00FC8609 /* PassesViewController.m in Sources */,
 				A0A9CAB91BA2F53C004E2A98 /* FormButtonTransparent.m in Sources */,
+				4E87EF471C3D7A4B00FC8609 /* BadgeViewController.m in Sources */,
+				4E87EF351C3D711000FC8609 /* TableComponentViewController.m in Sources */,
 				4E87EF2F1C3D6D7A00FC8609 /* PassesCell.m in Sources */,
 				A0A9CAB01BA2F53C004E2A98 /* GravatarHelper.m in Sources */,
 				A0A9CAC31BA2F53C004E2A98 /* UserCell.m in Sources */,
