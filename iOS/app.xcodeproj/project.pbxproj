@@ -111,12 +111,12 @@
 		40F226CD1A2E375F003A98B1 /* TutorialDoneIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F226CA1A2E375F003A98B1 /* TutorialDoneIcon.png */; };
 		40F226CE1A2E375F003A98B1 /* TutorialDoneIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F226CB1A2E375F003A98B1 /* TutorialDoneIcon@2x.png */; };
 		40F226CF1A2E375F003A98B1 /* TutorialDoneIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F226CC1A2E375F003A98B1 /* TutorialDoneIcon@3x.png */; };
-		4EB1856A1C1EF45A008811BE /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB185691C1EF45A008811BE /* UIColor+Hex.m */; };
+		4E87EF241C3D63CA00FC8609 /* NSDictionary+Merge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E87EF211C3D63CA00FC8609 /* NSDictionary+Merge.m */; };
+		4E87EF251C3D63CA00FC8609 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E87EF231C3D63CA00FC8609 /* UIColor+Hex.m */; };
 		4EB1856D1C1F1116008811BE /* Notificare.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EB1856B1C1F1116008811BE /* Notificare.plist */; };
 		4EB1856E1C1F1116008811BE /* NotificareTags.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EB1856C1C1F1116008811BE /* NotificareTags.plist */; };
 		4EB185861C1F1FCF008811BE /* appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB185851C1F1FCF008811BE /* appTests.m */; };
 		4EB185931C219735008811BE /* NotificareComponentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB185921C219735008811BE /* NotificareComponentViewController.m */; };
-		4EB185961C242ED4008811BE /* NSDictionary+Merge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB185951C242ED4008811BE /* NSDictionary+Merge.m */; };
 		A089D3A41BA9A53400060399 /* regionsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = A089D3A31BA9A53400060399 /* regionsMock.json */; };
 		A0A9CA9C1BA2F53C004E2A98 /* LostPassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A9CA561BA2F53C004E2A98 /* LostPassViewController.m */; };
 		A0A9CA9D1BA2F53C004E2A98 /* LostPassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0A9CA571BA2F53C004E2A98 /* LostPassViewController.xib */; };
@@ -292,8 +292,10 @@
 		40F226CA1A2E375F003A98B1 /* TutorialDoneIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TutorialDoneIcon.png; sourceTree = "<group>"; };
 		40F226CB1A2E375F003A98B1 /* TutorialDoneIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TutorialDoneIcon@2x.png"; sourceTree = "<group>"; };
 		40F226CC1A2E375F003A98B1 /* TutorialDoneIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TutorialDoneIcon@3x.png"; sourceTree = "<group>"; };
-		4EB185681C1EF45A008811BE /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Hex.h"; path = "Shared/UIColor+Hex.h"; sourceTree = "<group>"; };
-		4EB185691C1EF45A008811BE /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Hex.m"; path = "Shared/UIColor+Hex.m"; sourceTree = "<group>"; };
+		4E87EF201C3D63CA00FC8609 /* NSDictionary+Merge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Merge.h"; sourceTree = "<group>"; };
+		4E87EF211C3D63CA00FC8609 /* NSDictionary+Merge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Merge.m"; sourceTree = "<group>"; };
+		4E87EF221C3D63CA00FC8609 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		4E87EF231C3D63CA00FC8609 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		4EB1856B1C1F1116008811BE /* Notificare.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Notificare.plist; sourceTree = "<group>"; };
 		4EB1856C1C1F1116008811BE /* NotificareTags.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NotificareTags.plist; sourceTree = "<group>"; };
 		4EB185831C1F1FCF008811BE /* appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -301,8 +303,6 @@
 		4EB185871C1F1FCF008811BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EB185911C219735008811BE /* NotificareComponentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificareComponentViewController.h; sourceTree = "<group>"; };
 		4EB185921C219735008811BE /* NotificareComponentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificareComponentViewController.m; sourceTree = "<group>"; };
-		4EB185941C242ED4008811BE /* NSDictionary+Merge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Merge.h"; path = "Shared/NSDictionary+Merge.h"; sourceTree = "<group>"; };
-		4EB185951C242ED4008811BE /* NSDictionary+Merge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Merge.m"; path = "Shared/NSDictionary+Merge.m"; sourceTree = "<group>"; };
 		A089D3A31BA9A53400060399 /* regionsMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = regionsMock.json; sourceTree = "<group>"; };
 		A0A9CA551BA2F53C004E2A98 /* LostPassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LostPassViewController.h; sourceTree = "<group>"; };
 		A0A9CA561BA2F53C004E2A98 /* LostPassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LostPassViewController.m; sourceTree = "<group>"; };
@@ -462,7 +462,7 @@
 				A0A9CA7A1BA2F53C004E2A98 /* Subclasses */,
 				4083856618FF11F4000DC352 /* Resources */,
 				40F226AF1A2DFDE2003A98B1 /* Tutorial */,
-				A089D39F1BA7345E00060399 /* Shared */,
+				4E87EF1F1C3D63CA00FC8609 /* Shared */,
 				4083849118FF015C000DC352 /* Supporting Files */,
 				4083849918FF015C000DC352 /* AppDelegate.h */,
 				4083849A18FF015C000DC352 /* AppDelegate.m */,
@@ -615,6 +615,17 @@
 			path = Tutorial;
 			sourceTree = "<group>";
 		};
+		4E87EF1F1C3D63CA00FC8609 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				4E87EF201C3D63CA00FC8609 /* NSDictionary+Merge.h */,
+				4E87EF211C3D63CA00FC8609 /* NSDictionary+Merge.m */,
+				4E87EF221C3D63CA00FC8609 /* UIColor+Hex.h */,
+				4E87EF231C3D63CA00FC8609 /* UIColor+Hex.m */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		4EB185841C1F1FCF008811BE /* appTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -634,25 +645,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		A089D39F1BA7345E00060399 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				4EB185681C1EF45A008811BE /* UIColor+Hex.h */,
-				4EB185691C1EF45A008811BE /* UIColor+Hex.m */,
-				4EB185941C242ED4008811BE /* NSDictionary+Merge.h */,
-				4EB185951C242ED4008811BE /* NSDictionary+Merge.m */,
-			);
-			name = Shared;
-			sourceTree = "<group>";
-		};
 		A0A9CA531BA2F53C004E2A98 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				A0A9CA541BA2F53C004E2A98 /* AccountView */,
-				A0A9CA671BA2F53C004E2A98 /* LogView */,
-				A0A9CA6B1BA2F53C004E2A98 /* MapView */,
-				A0A9CA6F1BA2F53C004E2A98 /* ProductsView */,
-				A0A9CA731BA2F53C004E2A98 /* WebView */,
+				A0A9CA541BA2F53C004E2A98 /* AccountComponent */,
+				A0A9CA671BA2F53C004E2A98 /* LogComponent */,
+				A0A9CA6B1BA2F53C004E2A98 /* MapComponent */,
+				A0A9CA6F1BA2F53C004E2A98 /* ProductsComponent */,
+				A0A9CA731BA2F53C004E2A98 /* WebComponent */,
 				4EB185911C219735008811BE /* NotificareComponentViewController.h */,
 				4EB185921C219735008811BE /* NotificareComponentViewController.m */,
 			);
@@ -660,7 +660,7 @@
 			path = app/Components;
 			sourceTree = SOURCE_ROOT;
 		};
-		A0A9CA541BA2F53C004E2A98 /* AccountView */ = {
+		A0A9CA541BA2F53C004E2A98 /* AccountComponent */ = {
 			isa = PBXGroup;
 			children = (
 				A0A9CA551BA2F53C004E2A98 /* LostPassViewController.h */,
@@ -682,47 +682,47 @@
 				A0A9CA651BA2F53C004E2A98 /* UserDetailsViewController.m */,
 				A0A9CA661BA2F53C004E2A98 /* UserDetailsViewController.xib */,
 			);
-			path = AccountView;
+			path = AccountComponent;
 			sourceTree = "<group>";
 		};
-		A0A9CA671BA2F53C004E2A98 /* LogView */ = {
+		A0A9CA671BA2F53C004E2A98 /* LogComponent */ = {
 			isa = PBXGroup;
 			children = (
 				A0A9CA681BA2F53C004E2A98 /* LogViewController.h */,
 				A0A9CA691BA2F53C004E2A98 /* LogViewController.m */,
 				A0A9CA6A1BA2F53C004E2A98 /* LogViewController.xib */,
 			);
-			path = LogView;
+			path = LogComponent;
 			sourceTree = "<group>";
 		};
-		A0A9CA6B1BA2F53C004E2A98 /* MapView */ = {
+		A0A9CA6B1BA2F53C004E2A98 /* MapComponent */ = {
 			isa = PBXGroup;
 			children = (
 				A0A9CA6C1BA2F53C004E2A98 /* LocationViewController.h */,
 				A0A9CA6D1BA2F53C004E2A98 /* LocationViewController.m */,
 				A0A9CA6E1BA2F53C004E2A98 /* LocationViewController.xib */,
 			);
-			path = MapView;
+			path = MapComponent;
 			sourceTree = "<group>";
 		};
-		A0A9CA6F1BA2F53C004E2A98 /* ProductsView */ = {
+		A0A9CA6F1BA2F53C004E2A98 /* ProductsComponent */ = {
 			isa = PBXGroup;
 			children = (
 				A0A9CA701BA2F53C004E2A98 /* ProductsViewController.h */,
 				A0A9CA711BA2F53C004E2A98 /* ProductsViewController.m */,
 				A0A9CA721BA2F53C004E2A98 /* ProductsViewController.xib */,
 			);
-			path = ProductsView;
+			path = ProductsComponent;
 			sourceTree = "<group>";
 		};
-		A0A9CA731BA2F53C004E2A98 /* WebView */ = {
+		A0A9CA731BA2F53C004E2A98 /* WebComponent */ = {
 			isa = PBXGroup;
 			children = (
 				A0A9CA741BA2F53C004E2A98 /* WebViewController.h */,
 				A0A9CA751BA2F53C004E2A98 /* WebViewController.m */,
 				A0A9CA761BA2F53C004E2A98 /* WebViewController.xib */,
 			);
-			path = WebView;
+			path = WebComponent;
 			sourceTree = "<group>";
 		};
 		A0A9CA771BA2F53C004E2A98 /* Helpers */ = {
@@ -1034,6 +1034,7 @@
 			files = (
 				408384A118FF015C000DC352 /* MainViewController.m in Sources */,
 				A0A9CAB61BA2F53C004E2A98 /* EmptyBeaconsCell.m in Sources */,
+				4E87EF251C3D63CA00FC8609 /* UIColor+Hex.m in Sources */,
 				A0A9CABC1BA2F53C004E2A98 /* LogCell.m in Sources */,
 				A0A9CABB1BA2F53C004E2A98 /* InfoLabel.m in Sources */,
 				A0A9CAA81BA2F53C004E2A98 /* LogViewController.m in Sources */,
@@ -1045,7 +1046,6 @@
 				A0A9CAA01BA2F53C004E2A98 /* SignInViewController.m in Sources */,
 				A0A9CABA1BA2F53C004E2A98 /* FormField.m in Sources */,
 				A0A9CAB41BA2F53C004E2A98 /* DefaultCell.m in Sources */,
-				4EB1856A1C1EF45A008811BE /* UIColor+Hex.m in Sources */,
 				4083857A18FF132C000DC352 /* RightViewController.m in Sources */,
 				4EB185931C219735008811BE /* NotificareComponentViewController.m in Sources */,
 				4083858718FF2192000DC352 /* Configuration.m in Sources */,
@@ -1066,7 +1066,7 @@
 				A0A9CAAE1BA2F53C004E2A98 /* WebViewController.m in Sources */,
 				40F226C21A2E23F2003A98B1 /* PageThreeViewController.m in Sources */,
 				A0A9CAAA1BA2F53C004E2A98 /* LocationViewController.m in Sources */,
-				4EB185961C242ED4008811BE /* NSDictionary+Merge.m in Sources */,
+				4E87EF241C3D63CA00FC8609 /* NSDictionary+Merge.m in Sources */,
 				A0A9CAC11BA2F53C004E2A98 /* SegmentCell.m in Sources */,
 				4083857718FF1262000DC352 /* ApiEngine.m in Sources */,
 			);
@@ -1118,8 +1118,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Notificare B.V.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Notificare B.V.";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1159,8 +1159,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Notificare B.V.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Notificare B.V.";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1208,8 +1208,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = app/app.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "app/app-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
@@ -1241,8 +1241,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Notificare B.V.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Notificare B.V.";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1266,8 +1266,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = app/app.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "app/app-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
