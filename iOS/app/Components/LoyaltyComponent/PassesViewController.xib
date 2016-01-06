@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PassesViewController">
+            <connections>
+                <outlet property="noCouponsYetView" destination="rcB-F0-8Jt" id="K5W-8j-MGL"/>
+                <outlet property="tableView" destination="o9U-nl-ZEf" id="mci-eb-O8Y"/>
+                <outlet property="view" destination="iN0-l3-epB" id="ene-x1-jdL"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="o9U-nl-ZEf">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="s8x-Hn-iPt"/>
+                        <outlet property="delegate" destination="-1" id="xvK-h5-QfX"/>
+                    </connections>
+                </tableView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcB-F0-8Jt">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="rNF-fV-ZOl">
+                            <rect key="frame" x="40" y="254" width="240" height="116.5"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="240" id="FQF-pB-sJz"/>
+                            </constraints>
+                            <string key="text">You don't own any coupons yet.
+
+Once you receive a coupon it will show up here.</string>
+                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                            <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeaderCouponsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="vUX-65-I2X">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                            <animations/>
+                            <color key="backgroundColor" red="0.28627450980000002" green="0.63921568630000003" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="vUX-65-I2X" secondAttribute="height" multiplier="1:1" id="Wyp-B5-TGR"/>
+                                <constraint firstAttribute="width" constant="160" id="XqT-0z-Qdj"/>
+                                <constraint firstAttribute="height" constant="120" id="cOi-oM-R28"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="Wyp-B5-TGR"/>
+                                    <exclude reference="XqT-0z-Qdj"/>
+                                </mask>
+                            </variation>
+                        </imageView>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" white="0.95000000000000007" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="vUX-65-I2X" firstAttribute="leading" secondItem="rcB-F0-8Jt" secondAttribute="leading" id="P7r-mm-ylB"/>
+                        <constraint firstItem="rNF-fV-ZOl" firstAttribute="centerX" secondItem="rcB-F0-8Jt" secondAttribute="centerX" id="amh-Tp-xpz"/>
+                        <constraint firstAttribute="trailing" secondItem="vUX-65-I2X" secondAttribute="trailing" id="cd2-CD-98e"/>
+                        <constraint firstItem="rNF-fV-ZOl" firstAttribute="centerY" secondItem="rcB-F0-8Jt" secondAttribute="centerY" constant="60" id="s9H-6a-swc"/>
+                        <constraint firstItem="vUX-65-I2X" firstAttribute="top" secondItem="rcB-F0-8Jt" secondAttribute="top" id="z04-Em-WD3"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="o9U-nl-ZEf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0Pk-eG-dLy"/>
+                <constraint firstAttribute="trailing" secondItem="o9U-nl-ZEf" secondAttribute="trailing" id="2Jg-bo-pTM"/>
+                <constraint firstAttribute="bottom" secondItem="rcB-F0-8Jt" secondAttribute="bottom" id="2ns-PI-WpV"/>
+                <constraint firstAttribute="bottom" secondItem="o9U-nl-ZEf" secondAttribute="bottom" id="3Gu-6i-ZEe"/>
+                <constraint firstItem="o9U-nl-ZEf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ESX-hi-AyG"/>
+                <constraint firstItem="rcB-F0-8Jt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Mck-RO-K8f"/>
+                <constraint firstItem="rcB-F0-8Jt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Uke-we-0lS"/>
+                <constraint firstAttribute="trailing" secondItem="rcB-F0-8Jt" secondAttribute="trailing" id="avY-bn-CcI"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="HeaderCouponsIcon" width="96" height="96"/>
+    </resources>
+</document>
