@@ -31,7 +31,11 @@
                 }
             }
             else {
-                NSLog(@"Warning: could not merge dictionaries because of a class mismatch, overwriting...\nOld:%@\nNew:%@", self, dictionary);
+                NSLog(@"Warning: could not merge dictionaries because of a class mismatch, overwriting...\nOld (%@): %@\nNew (%@): %@",
+                      [self[key] class],
+                      self[key],
+                      [dictionary[key] class],
+                      dictionary[key]);
                 
                 // Overwrite existing value
                 mergedDictionary[key] = dictionary[key];
