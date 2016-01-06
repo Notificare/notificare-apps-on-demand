@@ -1,6 +1,5 @@
 //
 //  PassesViewController.m
-//  rcd
 //
 //  Created by Aernout Peeters on 17-08-2015.
 //  Copyright (c) 2015 Notificare. All rights reserved.
