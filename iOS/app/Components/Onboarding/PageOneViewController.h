@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Notificare. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "NotificareComponentViewController.h"
 
 @class PageTwoViewController;
 
-@interface PageOneViewController : UIViewController
+@interface PageOneViewController : NotificareComponentViewController
 
 @property(nonatomic, strong) IBOutlet UILabel * welcome;
 @property(nonatomic, strong) IBOutlet UILabel * message;

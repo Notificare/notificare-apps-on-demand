@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Notificare. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "NotificareComponentViewController.h"
 #import "BadgeLabel.h"
 #import <MessageUI/MessageUI.h>
 
-@interface PageThreeViewController : UIViewController <MFMailComposeViewControllerDelegate>
+@interface PageThreeViewController : NotificareComponentViewController <MFMailComposeViewControllerDelegate>
 
 @property(nonatomic, strong) IBOutlet UILabel * welcome;
 @property(nonatomic, strong) IBOutlet UILabel * message;

@@ -52,20 +52,9 @@
     [[self navigationItem] setHidesBackButton:YES];
     [[self navigationItem] setLeftBarButtonItem:nil];
     [[self navigationItem] setRightBarButtonItem:nil];
-    [[self navigationItem] setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:nil]];
+    [[self navigationItem] setLeftBarButtonItem:nil];
     
-    //For iOS6
-    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
-        [[[self navigationController] navigationBar] setTintColor:MAIN_COLOR];
-        
-        
-        [[UIBarButtonItem appearance] setBackgroundImage:[UIImage imageNamed:@"Transparent"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-        [[UIBarButtonItem appearance] setBackgroundImage:[UIImage imageNamed:@"Transparent"] forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
-        
-    } else {
-        
-        [[[self navigationController] navigationBar] setBarTintColor:MAIN_COLOR];
-    }
+    self.navigationController.navigationBar.barTintColor = MAIN_COLOR;
     
     
     [[self view] setBackgroundColor:WILD_SAND_COLOR];
@@ -81,7 +70,7 @@
     [[self navigationItem] setHidesBackButton:YES];
     [[self navigationItem] setLeftBarButtonItem:nil];
     [[self navigationItem] setRightBarButtonItem:nil];
-    [[self navigationItem] setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:nil]];
+    [[self navigationItem] setLeftBarButtonItem:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(registeredDevice) name:@"registeredDevice" object:nil];
 }
