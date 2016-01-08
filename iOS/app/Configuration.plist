@@ -84,7 +84,7 @@
 				<key>font</key>
 				<string>Lato-Light</string>
 				<key>fontSize</key>
-				<string>20</string>
+				<integer>20</integer>
 				<key>color</key>
 				<string>#E6E6E6</string>
 			</dict>
@@ -183,7 +183,7 @@
 				<key>font</key>
 				<string>Lato-Light</string>
 				<key>fontSize</key>
-				<string>20</string>
+				<integer>20</integer>
 				<key>color</key>
 				<string>#E6E6E6</string>
 			</dict>
@@ -458,98 +458,55 @@
 		</dict>
 	</dict>
 	<key>appSettings</key>
-	<array>
+	<dict>
+		<key>id</key>
+		<string>baseSettings</string>
+		<key>template</key>
+		<string>cyanide</string>
+		<key>layout</key>
+		<string>sideBarLayout</string>
+		<key>mainColor</key>
+		<string>#000000</string>
+		<key>secondaryColor</key>
+		<string>#000000</string>
+		<key>auxiliaryColor</key>
+		<string>#000000</string>
+		<key>statusBarWhite</key>
+		<true/>
+		<key>accountView</key>
 		<dict>
-			<key>id</key>
-			<string>baseSettings</string>
-			<key>template</key>
-			<string>cyanide</string>
-			<key>layout</key>
-			<string>sideBarLayout</string>
-			<key>mainColor</key>
-			<string>#000000</string>
-			<key>secondaryColor</key>
-			<string>#000000</string>
-			<key>auxiliaryColor</key>
-			<string>#000000</string>
-			<key>statusBarWhite</key>
-			<true/>
-			<key>accountView</key>
+			<key>label</key>
+			<string>menu_item_user</string>
+			<key>url</key>
+			<string>Auth:</string>
+			<key>titleFont</key>
+			<string>Lato-Light</string>
+			<key>titleSize</key>
+			<integer>20</integer>
+			<key>titleColor</key>
+			<string>#E6E6E6</string>
+			<key>navigationBgColor</key>
+			<string>#141414</string>
+			<key>navigationFgColor</key>
+			<string>#E6E6E6</string>
+			<key>backgroundColor</key>
+			<string>#F5F5F5</string>
+			<key>forgottenPassword</key>
 			<dict>
-				<key>label</key>
-				<string>menu_item_user</string>
-				<key>url</key>
-				<string>Auth:</string>
-				<key>titleFont</key>
-				<string>Lato-Light</string>
-				<key>titleSize</key>
-				<integer>20</integer>
-				<key>titleColor</key>
-				<string>#E6E6E6</string>
-				<key>navigationBgColor</key>
-				<string>#141414</string>
-				<key>navigationFgColor</key>
-				<string>#E6E6E6</string>
-				<key>backgroundColor</key>
-				<string>#F5F5F5</string>
-				<key>forgottenPassword</key>
-				<dict>
-					<key>emailForm</key>
-					<dict>
-						<key>textFont</key>
-						<string>Lato-Light</string>
-						<key>textSize</key>
-						<integer>20</integer>
-						<key>textColor</key>
-						<string>#FA3C3C</string>
-						<key>placeholderColor</key>
-						<string>#FA3C3C80</string>
-						<key>backgroundColor</key>
-						<string>#FFFFFF</string>
-						<key>tintColor</key>
-						<string>#A01414</string>
-						<key>borderColor</key>
-						<string>#E61414</string>
-						<key>cornerRadius</key>
-						<integer>10</integer>
-						<key>borderWidth</key>
-						<integer>2</integer>
-					</dict>
-					<key>forgottenPasswordButton</key>
-					<dict>
-						<key>textFont</key>
-						<string>Lato-Light</string>
-						<key>textSize</key>
-						<integer>20</integer>
-						<key>textColor</key>
-						<string>#FAFAFA</string>
-						<key>backgroundColor</key>
-						<string>#A03C3C</string>
-						<key>borderColor</key>
-						<string>#141414</string>
-						<key>cornerRadius</key>
-						<integer>10</integer>
-						<key>borderWidth</key>
-						<integer>2</integer>
-					</dict>
-				</dict>
-			</dict>
-			<key>resetPasswordView</key>
-			<dict>
-				<key>passwordForm</key>
+				<key>emailForm</key>
 				<dict>
 					<key>textFont</key>
 					<string>Lato-Light</string>
 					<key>textSize</key>
 					<integer>20</integer>
 					<key>textColor</key>
-					<string>#3C3C3C</string>
+					<string>#FA3C3C</string>
 					<key>placeholderColor</key>
-					<string>#3C3C3C80</string>
+					<string>#FA3C3C80</string>
 					<key>backgroundColor</key>
 					<string>#FFFFFF</string>
 					<key>tintColor</key>
-					<string>#14A014</string>
+					<string>#A01414</string>
 					<key>borderColor</key>
 					<string>#E61414</string>
 					<key>cornerRadius</key>
@@ -557,35 +514,14 @@
 					<key>borderWidth</key>
 					<integer>2</integer>
 				</dict>
-				<key>confirmPasswordForm</key>
+				<key>forgottenPasswordButton</key>
 				<dict>
 					<key>textFont</key>
 					<string>Lato-Light</string>
 					<key>textSize</key>
 					<integer>20</integer>
 					<key>textColor</key>
-					<string>#3C3C3C</string>
-					<key>placeholderColor</key>
-					<string>#3C3C3C80</string>
-					<key>backgroundColor</key>
-					<string>#FFFFFF</string>
-					<key>tintColor</key>
-					<string>#14A014</string>
-					<key>borderColor</key>
-					<string>#E61414</string>
-					<key>cornerRadius</key>
-					<integer>10</integer>
-					<key>borderWidth</key>
-					<integer>2</integer>
-				</dict>
-				<key>resetPasswordButton</key>
-				<dict>
-					<key>textFont</key>
-					<string>Lato-Light</string>
-					<key>textSize</key>
-					<integer>20</integer>
-					<key>textColor</key>
-					<string>#FFFFFF</string>
+					<string>#FAFAFA</string>
 					<key>backgroundColor</key>
 					<string>#A03C3C</string>
 					<key>borderColor</key>
@@ -597,7 +533,77 @@
 				</dict>
 			</dict>
 		</dict>
-	</array>
+		<key>resetPasswordView</key>
+		<dict>
+			<key>passwordForm</key>
+			<dict>
+				<key>textFont</key>
+				<string>Lato-Light</string>
+				<key>textSize</key>
+				<integer>20</integer>
+				<key>textColor</key>
+				<string>#3C3C3C</string>
+				<key>placeholderColor</key>
+				<string>#3C3C3C80</string>
+				<key>backgroundColor</key>
+				<string>#FFFFFF</string>
+				<key>tintColor</key>
+				<string>#14A014</string>
+				<key>borderColor</key>
+				<string>#E61414</string>
+				<key>cornerRadius</key>
+				<integer>10</integer>
+				<key>borderWidth</key>
+				<integer>2</integer>
+			</dict>
+			<key>confirmPasswordForm</key>
+			<dict>
+				<key>textFont</key>
+				<string>Lato-Light</string>
+				<key>textSize</key>
+				<integer>20</integer>
+				<key>textColor</key>
+				<string>#3C3C3C</string>
+				<key>placeholderColor</key>
+				<string>#3C3C3C80</string>
+				<key>backgroundColor</key>
+				<string>#FFFFFF</string>
+				<key>tintColor</key>
+				<string>#14A014</string>
+				<key>borderColor</key>
+				<string>#E61414</string>
+				<key>cornerRadius</key>
+				<integer>10</integer>
+				<key>borderWidth</key>
+				<integer>2</integer>
+			</dict>
+			<key>resetPasswordButton</key>
+			<dict>
+				<key>textFont</key>
+				<string>Lato-Light</string>
+				<key>textSize</key>
+				<integer>20</integer>
+				<key>textColor</key>
+				<string>#FFFFFF</string>
+				<key>backgroundColor</key>
+				<string>#A03C3C</string>
+				<key>borderColor</key>
+				<string>#141414</string>
+				<key>cornerRadius</key>
+				<integer>10</integer>
+				<key>borderWidth</key>
+				<integer>2</integer>
+			</dict>
+		</dict>
+		<key>onboarding</key>
+		<array>
+			<string>permission_notifications</string>
+			<string>permission_location_services</string>
+			<string>userPreferences</string>
+		</array>
+		<key>userMustBeLoggedIn</key>
+		<false/>
+	</dict>
 	<key>navigation</key>
 	<array>
 		<dict>
@@ -995,6 +1001,12 @@
 			<string>menu_item_log</string>
 			<key>url</key>
 			<string>Log:</string>
+		</dict>
+		<dict>
+			<key>label</key>
+			<string>menu_item_passes</string>
+			<key>url</key>
+			<string>Passes:</string>
 		</dict>
 	</array>
 	<key>host</key>
