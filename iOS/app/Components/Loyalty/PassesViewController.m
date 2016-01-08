@@ -53,14 +53,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // How does having an edit item mix with right side viewdeck button?
-    /*self.editButtonItem.tintColor = [UIColor whiteColor];
+    self.editButtonItem.tintColor = [UIColor whiteColor];
     
     UIFont *editItemFont = [UIFont fontWithName:self.configuration[@"title"][@"font"] size:[self.configuration[@"title"][@"fontSize"] floatValue]];
-    [self.editButtonItem setTitleTextAttributes:@{NSFontAttributeName: editItemFont} forState:UIControlStateNormal];*/
+    [self.editButtonItem setTitleTextAttributes:@{NSFontAttributeName: editItemFont} forState:UIControlStateNormal];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"PassesCell" bundle:nil] forCellReuseIdentifier:@"PassesCell"];
 }
