@@ -24,10 +24,6 @@
 
 @implementation PassesViewController
 
-- (AppDelegate *)appDelegate {
-    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
-}
-
 - (void)setPasses:(NSArray *)passes {
     NSSortDescriptor *descriptionDescriptor = [[NSSortDescriptor alloc] initWithKey:@"localizedDescription"
                                                                           ascending:YES
@@ -60,48 +56,19 @@
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    self.editButtonItem.tintColor = [UIColor whiteColor];
-    [self.editButtonItem setTitleTextAttributes:@{NSFontAttributeName: AVENIR_NEXT_REGULAR(15)} forState:UIControlStateNormal];
+    // How does having an edit item mix with right side viewdeck button?
+    /*self.editButtonItem.tintColor = [UIColor whiteColor];
     
-    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 40)];
-    [title setText:LSSTRING(@"title_passes")];
-    [title setFont:AVENIR_NEXT_REGULAR(18)];
-    [title setTextAlignment:NSTextAlignmentCenter];
-    [title setTextColor:ICONS_COLOR];
-    self.navigationItem.titleView = title;
-    
-    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"LeftMenuIcon"]
-                                                                   style:UIBarButtonItemStylePlain
-                                                                  target:self.viewDeckController
-                                                                  action:@selector(toggleLeftView)];
-    
-    [leftButton setTintColor:[UIColor whiteColor]];
-    
-    [[self navigationItem] setLeftBarButtonItem:leftButton];
-    
-    self.navigationController.navigationBar.barTintColor = MAIN_COLOR;
-    self.navigationController.navigationBar.translucent = NO;
+    UIFont *editItemFont = [UIFont fontWithName:self.configuration[@"title"][@"font"] size:[self.configuration[@"title"][@"fontSize"] floatValue]];
+    [self.editButtonItem setTitleTextAttributes:@{NSFontAttributeName: editItemFont} forState:UIControlStateNormal];*/
     
     [self.tableView registerNib:[UINib nibWithNibName:@"PassesCell" bundle:nil] forCellReuseIdentifier:@"PassesCell"];
-}
-
-- (void)getPasses {
-    NSMutableArray *tempPasses = [NSMutableArray array];
-    
-    for (PKPass *pass in [[NotificarePushLib shared] myPasses]) {
-        if (![[self appDelegate] isMembershipCard:pass]) {
-            [tempPasses addObject:pass];
-        }
-    }
-    
-    self.passes = [tempPasses copy];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self getPasses];
+    self.passes = self.notificarePushLib.myPasses;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -172,11 +139,13 @@
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
     [super setEditing:editing animated:animated];
     
+    UIFont *editItemFont = [UIFont fontWithName:self.configuration[@"title"][@"font"] size:[self.configuration[@"title"][@"fontSize"] floatValue]];
+    
     if (editing) {
-        [self.editButtonItem setTitleTextAttributes:@{NSFontAttributeName: AVENIR_NEXT_DEMIBOLD(15)} forState:UIControlStateNormal];
+        [self.editButtonItem setTitleTextAttributes:@{NSFontAttributeName: editItemFont} forState:UIControlStateNormal];
     }
     else {
-        [self.editButtonItem setTitleTextAttributes:@{NSFontAttributeName: AVENIR_NEXT_REGULAR(15)} forState:UIControlStateNormal];
+        [self.editButtonItem setTitleTextAttributes:@{NSFontAttributeName: editItemFont} forState:UIControlStateNormal];
     }
     
     self.tableView.editing = editing;
