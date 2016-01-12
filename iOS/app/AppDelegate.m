@@ -543,6 +543,8 @@
     //If you don't identify users you can just use this
     [[NotificarePushLib shared] registerDevice:deviceToken completionHandler:^(NSDictionary *info) {
 
+        _deviceIsRegistered = YES;
+        
         [[NSNotificationCenter defaultCenter] postNotificationName:@"registeredDevice" object:nil];
 
         if([[NotificarePushLib shared] checkLocationUpdates]){
