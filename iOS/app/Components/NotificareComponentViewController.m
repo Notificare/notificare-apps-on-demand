@@ -9,8 +9,6 @@
 #import "NotificareComponentViewController.h"
 
 #import "Configuration.h"
-#import "AppDelegate.h"
-#import "NotificarePushLib.h"
 #import "UIColor+Hex.h"
 #import "NSDictionary+Merge.h"
 #import "IIViewDeckController.h"

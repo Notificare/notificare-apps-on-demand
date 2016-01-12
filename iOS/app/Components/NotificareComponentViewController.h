@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#import "NotificarePushLib.h"
+#import "AppDelegate.h"
+
 @class AppDelegate;
 @class NotificarePushLib;
 
