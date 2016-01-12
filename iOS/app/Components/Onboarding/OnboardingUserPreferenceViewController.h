@@ -10,4 +10,10 @@
 
 @interface OnboardingUserPreferenceViewController : NotificareComponentViewController
 
+@property (strong, nonatomic, readonly) NotificareUserPreference *userPreference;
+@property (nonatomic, copy) void (^completionBlock)(void);
+
+- (instancetype)initWithUserPreference:(NotificareUserPreference *)userPreference;
+- (instancetype)initWithConfiguration:(NSDictionary *)configuration andWithUserPreference:(NotificareUserPreference *)userPreference;
+
 @end

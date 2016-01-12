@@ -10,9 +10,45 @@
 
 @interface OnboardingUserPreferenceViewController ()
 
+@property (strong, nonatomic) IBOutlet UIView *choiceView;
+@property (strong, nonatomic) IBOutlet UIView *selectView;
+@property (strong, nonatomic) IBOutlet UIView *singleView;
+
 @end
 
 @implementation OnboardingUserPreferenceViewController
+
+- (instancetype)init {
+    [NSException raise:@"wrong_initializer" format:@"Use [OnboardingUserPreferenceViewController initWithUserPreference:]"];
+    
+    return nil;
+}
+
+- (instancetype)initWithConfiguration:(NSDictionary *)configuration {
+    [NSException raise:@"wrong_initializer" format:@"Use [OnboardingUserPreferenceViewController initWithConfiguration:andWithUserPreference:]"];
+    
+    return nil;
+}
+
+- (instancetype)initWithUserPreference:(NotificareUserPreference *)userPreference {
+    self = [super init];
+    
+    if (self) {
+        _userPreference = userPreference;
+    }
+    
+    return self;
+}
+
+- (instancetype)initWithConfiguration:(NSDictionary *)configuration andWithUserPreference:(NotificareUserPreference *)userPreference {
+    self = [super initWithConfiguration:configuration];
+    
+    if (self) {
+        _userPreference = userPreference;
+    }
+    
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
