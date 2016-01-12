@@ -111,6 +111,17 @@
 		40F226CD1A2E375F003A98B1 /* TutorialDoneIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F226CA1A2E375F003A98B1 /* TutorialDoneIcon.png */; };
 		40F226CE1A2E375F003A98B1 /* TutorialDoneIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F226CB1A2E375F003A98B1 /* TutorialDoneIcon@2x.png */; };
 		40F226CF1A2E375F003A98B1 /* TutorialDoneIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F226CC1A2E375F003A98B1 /* TutorialDoneIcon@3x.png */; };
+		4E103C8E1C457251006F004F /* OnboardingUserPreferenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E103C8C1C457251006F004F /* OnboardingUserPreferenceViewController.m */; };
+		4E103C8F1C457251006F004F /* OnboardingUserPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E103C8D1C457251006F004F /* OnboardingUserPreferenceViewController.xib */; };
+		4E4AF1DF1C400A5B006C4574 /* OnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AF1DE1C400A5B006C4574 /* OnboardingViewController.m */; };
+		4E4AF1E31C400C44006C4574 /* OnboardingWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AF1E11C400C44006C4574 /* OnboardingWelcomeViewController.m */; };
+		4E4AF1E41C400C44006C4574 /* OnboardingWelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E4AF1E21C400C44006C4574 /* OnboardingWelcomeViewController.xib */; };
+		4E4AF1E81C400C4D006C4574 /* OnboardingSignInUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AF1E61C400C4D006C4574 /* OnboardingSignInUpViewController.m */; };
+		4E4AF1E91C400C4D006C4574 /* OnboardingSignInUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E4AF1E71C400C4D006C4574 /* OnboardingSignInUpViewController.xib */; };
+		4E4AF1F01C401BBE006C4574 /* OnboardingNotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AF1EB1C401BBE006C4574 /* OnboardingNotificationsViewController.m */; };
+		4E4AF1F11C401BBE006C4574 /* OnboardingNotificationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E4AF1EC1C401BBE006C4574 /* OnboardingNotificationsViewController.xib */; };
+		4E4AF1F21C401BBE006C4574 /* OnboardingLocationServicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AF1EE1C401BBE006C4574 /* OnboardingLocationServicesViewController.m */; };
+		4E4AF1F31C401BBE006C4574 /* OnboardingLocationServicesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E4AF1EF1C401BBE006C4574 /* OnboardingLocationServicesViewController.xib */; };
 		4E87EF241C3D63CA00FC8609 /* NSDictionary+Merge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E87EF211C3D63CA00FC8609 /* NSDictionary+Merge.m */; };
 		4E87EF251C3D63CA00FC8609 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E87EF231C3D63CA00FC8609 /* UIColor+Hex.m */; };
 		4E87EF2D1C3D6D7A00FC8609 /* PassesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E87EF281C3D6D7A00FC8609 /* PassesViewController.m */; };
@@ -305,6 +316,23 @@
 		40F226CA1A2E375F003A98B1 /* TutorialDoneIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TutorialDoneIcon.png; sourceTree = "<group>"; };
 		40F226CB1A2E375F003A98B1 /* TutorialDoneIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TutorialDoneIcon@2x.png"; sourceTree = "<group>"; };
 		40F226CC1A2E375F003A98B1 /* TutorialDoneIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TutorialDoneIcon@3x.png"; sourceTree = "<group>"; };
+		4E103C8B1C457251006F004F /* OnboardingUserPreferenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnboardingUserPreferenceViewController.h; sourceTree = "<group>"; };
+		4E103C8C1C457251006F004F /* OnboardingUserPreferenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnboardingUserPreferenceViewController.m; sourceTree = "<group>"; };
+		4E103C8D1C457251006F004F /* OnboardingUserPreferenceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingUserPreferenceViewController.xib; sourceTree = "<group>"; };
+		4E4AF1DD1C400A5B006C4574 /* OnboardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnboardingViewController.h; sourceTree = "<group>"; };
+		4E4AF1DE1C400A5B006C4574 /* OnboardingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnboardingViewController.m; sourceTree = "<group>"; };
+		4E4AF1E01C400C44006C4574 /* OnboardingWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnboardingWelcomeViewController.h; sourceTree = "<group>"; };
+		4E4AF1E11C400C44006C4574 /* OnboardingWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnboardingWelcomeViewController.m; sourceTree = "<group>"; };
+		4E4AF1E21C400C44006C4574 /* OnboardingWelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingWelcomeViewController.xib; sourceTree = "<group>"; };
+		4E4AF1E51C400C4D006C4574 /* OnboardingSignInUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnboardingSignInUpViewController.h; sourceTree = "<group>"; };
+		4E4AF1E61C400C4D006C4574 /* OnboardingSignInUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnboardingSignInUpViewController.m; sourceTree = "<group>"; };
+		4E4AF1E71C400C4D006C4574 /* OnboardingSignInUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingSignInUpViewController.xib; sourceTree = "<group>"; };
+		4E4AF1EA1C401BBE006C4574 /* OnboardingNotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnboardingNotificationsViewController.h; sourceTree = "<group>"; };
+		4E4AF1EB1C401BBE006C4574 /* OnboardingNotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnboardingNotificationsViewController.m; sourceTree = "<group>"; };
+		4E4AF1EC1C401BBE006C4574 /* OnboardingNotificationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingNotificationsViewController.xib; sourceTree = "<group>"; };
+		4E4AF1ED1C401BBE006C4574 /* OnboardingLocationServicesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnboardingLocationServicesViewController.h; sourceTree = "<group>"; };
+		4E4AF1EE1C401BBE006C4574 /* OnboardingLocationServicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnboardingLocationServicesViewController.m; sourceTree = "<group>"; };
+		4E4AF1EF1C401BBE006C4574 /* OnboardingLocationServicesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingLocationServicesViewController.xib; sourceTree = "<group>"; };
 		4E87EF201C3D63CA00FC8609 /* NSDictionary+Merge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Merge.h"; sourceTree = "<group>"; };
 		4E87EF211C3D63CA00FC8609 /* NSDictionary+Merge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Merge.m"; sourceTree = "<group>"; };
 		4E87EF221C3D63CA00FC8609 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
@@ -634,6 +662,23 @@
 		40F226AF1A2DFDE2003A98B1 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				4E4AF1DD1C400A5B006C4574 /* OnboardingViewController.h */,
+				4E4AF1DE1C400A5B006C4574 /* OnboardingViewController.m */,
+				4E4AF1E01C400C44006C4574 /* OnboardingWelcomeViewController.h */,
+				4E4AF1E11C400C44006C4574 /* OnboardingWelcomeViewController.m */,
+				4E4AF1E21C400C44006C4574 /* OnboardingWelcomeViewController.xib */,
+				4E4AF1EA1C401BBE006C4574 /* OnboardingNotificationsViewController.h */,
+				4E4AF1EB1C401BBE006C4574 /* OnboardingNotificationsViewController.m */,
+				4E4AF1EC1C401BBE006C4574 /* OnboardingNotificationsViewController.xib */,
+				4E4AF1ED1C401BBE006C4574 /* OnboardingLocationServicesViewController.h */,
+				4E4AF1EE1C401BBE006C4574 /* OnboardingLocationServicesViewController.m */,
+				4E4AF1EF1C401BBE006C4574 /* OnboardingLocationServicesViewController.xib */,
+				4E4AF1E51C400C4D006C4574 /* OnboardingSignInUpViewController.h */,
+				4E4AF1E61C400C4D006C4574 /* OnboardingSignInUpViewController.m */,
+				4E4AF1E71C400C4D006C4574 /* OnboardingSignInUpViewController.xib */,
+				4E103C8B1C457251006F004F /* OnboardingUserPreferenceViewController.h */,
+				4E103C8C1C457251006F004F /* OnboardingUserPreferenceViewController.m */,
+				4E103C8D1C457251006F004F /* OnboardingUserPreferenceViewController.xib */,
 				40F226B51A2DFE72003A98B1 /* PageOneViewController.h */,
 				40F226B61A2DFE72003A98B1 /* PageOneViewController.m */,
 				40F226B71A2DFE72003A98B1 /* PageOneViewController.xib */,
@@ -945,6 +990,7 @@
 				401D41D51A374CBB0003AF38 /* RightMenuIcon@3x.png in Resources */,
 				A0A9CAAF1BA2F53C004E2A98 /* WebViewController.xib in Resources */,
 				408385A418FF4092000DC352 /* LeftViewController.xib in Resources */,
+				4E4AF1F11C401BBE006C4574 /* OnboardingNotificationsViewController.xib in Resources */,
 				4083857118FF11F4000DC352 /* Montserrat-Regular.ttf in Resources */,
 				A0A9CA9F1BA2F53C004E2A98 /* ResetPassViewController.xib in Resources */,
 				40F226C71A2E3437003A98B1 /* TutorialLocationIcon.png in Resources */,
@@ -954,11 +1000,13 @@
 				40BB57CF1B02CF8400DE74C9 /* IconMail.png in Resources */,
 				40961FB61A33C672009218FF /* Facebook@2x.png in Resources */,
 				40961FB81A33C672009218FF /* Twitter@2x.png in Resources */,
+				4E4AF1E91C400C4D006C4574 /* OnboardingSignInUpViewController.xib in Resources */,
 				4E87EF301C3D6D7A00FC8609 /* PassesCell.xib in Resources */,
 				40BF79B119035BF000622FA5 /* SignalUnkown.png in Resources */,
 				A0A9CAA31BA2F53C004E2A98 /* SignUpViewController.xib in Resources */,
 				408385A218FF404E000DC352 /* RightViewController.xib in Resources */,
 				408385A018FF3FE4000DC352 /* MainViewController.xib in Resources */,
+				4E4AF1F31C401BBE006C4574 /* OnboardingLocationServicesViewController.xib in Resources */,
 				40961FB91A33C672009218FF /* Twitter@3x.png in Resources */,
 				40F226AC1A2DF58B003A98B1 /* BackButton@3x.png in Resources */,
 				4EB1856E1C1F1116008811BE /* NotificareTags.plist in Resources */,
@@ -1003,6 +1051,7 @@
 				4083859B18FF3778000DC352 /* Logo.png in Resources */,
 				40F226C81A2E3437003A98B1 /* TutorialLocationIcon@2x.png in Resources */,
 				40F226A71A2DF58B003A98B1 /* TutorialDialogIcon.png in Resources */,
+				4E103C8F1C457251006F004F /* OnboardingUserPreferenceViewController.xib in Resources */,
 				4E87EF401C3D76B200FC8609 /* CollectionComponentViewController.xib in Resources */,
 				A0A9CAAB1BA2F53C004E2A98 /* LocationViewController.xib in Resources */,
 				40F226AD1A2DF58B003A98B1 /* TutorialDialogIcon@2x.png in Resources */,
@@ -1041,6 +1090,7 @@
 				40BF798D1902B2C300622FA5 /* BackButton@2x.png in Resources */,
 				40BF798C1902B2C300622FA5 /* BackButton.png in Resources */,
 				4083849518FF015C000DC352 /* InfoPlist.strings in Resources */,
+				4E4AF1E41C400C44006C4574 /* OnboardingWelcomeViewController.xib in Resources */,
 				40937CE3192B84DB0004499F /* IconSignOut.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1114,6 +1164,7 @@
 				A0A9CABC1BA2F53C004E2A98 /* LogCell.m in Sources */,
 				A0A9CABB1BA2F53C004E2A98 /* InfoLabel.m in Sources */,
 				A0A9CAA81BA2F53C004E2A98 /* LogViewController.m in Sources */,
+				4E4AF1E81C400C4D006C4574 /* OnboardingSignInUpViewController.m in Sources */,
 				A0A9CAAC1BA2F53C004E2A98 /* ProductsViewController.m in Sources */,
 				A0A9CAB21BA2F53C004E2A98 /* BeaconCell.m in Sources */,
 				A0A9CAA21BA2F53C004E2A98 /* SignUpViewController.m in Sources */,
@@ -1121,27 +1172,32 @@
 				A0A9CA9E1BA2F53C004E2A98 /* ResetPassViewController.m in Sources */,
 				A0A9CAA01BA2F53C004E2A98 /* SignInViewController.m in Sources */,
 				A0A9CABA1BA2F53C004E2A98 /* FormField.m in Sources */,
+				4E103C8E1C457251006F004F /* OnboardingUserPreferenceViewController.m in Sources */,
 				4E87EF3A1C3D72A300FC8609 /* FormComponentViewController.m in Sources */,
 				A0A9CAB41BA2F53C004E2A98 /* DefaultCell.m in Sources */,
 				4083857A18FF132C000DC352 /* RightViewController.m in Sources */,
 				4EB185931C219735008811BE /* NotificareComponentViewController.m in Sources */,
 				4083858718FF2192000DC352 /* Configuration.m in Sources */,
 				4083849B18FF015C000DC352 /* AppDelegate.m in Sources */,
+				4E4AF1DF1C400A5B006C4574 /* OnboardingViewController.m in Sources */,
 				A0A9CAA61BA2F53C004E2A98 /* UserDetailsViewController.m in Sources */,
 				4E87EF3F1C3D76B200FC8609 /* CollectionComponentViewController.m in Sources */,
 				A0A9CAC01BA2F53C004E2A98 /* RegionsMarker.m in Sources */,
 				4083857D18FF1340000DC352 /* LeftViewController.m in Sources */,
+				4E4AF1F01C401BBE006C4574 /* OnboardingNotificationsViewController.m in Sources */,
 				4083849718FF015C000DC352 /* main.m in Sources */,
 				A0A9CAB11BA2F53C004E2A98 /* BadgeLabel.m in Sources */,
 				A0A9CAB81BA2F53C004E2A98 /* FormButton.m in Sources */,
 				A0A9CA9C1BA2F53C004E2A98 /* LostPassViewController.m in Sources */,
 				4E87EF2D1C3D6D7A00FC8609 /* PassesViewController.m in Sources */,
+				4E4AF1F21C401BBE006C4574 /* OnboardingLocationServicesViewController.m in Sources */,
 				A0A9CAB91BA2F53C004E2A98 /* FormButtonTransparent.m in Sources */,
 				4E87EF471C3D7A4B00FC8609 /* BadgeViewController.m in Sources */,
 				4E87EF351C3D711000FC8609 /* TableComponentViewController.m in Sources */,
 				4E87EF2F1C3D6D7A00FC8609 /* PassesCell.m in Sources */,
 				A0A9CAB01BA2F53C004E2A98 /* GravatarHelper.m in Sources */,
 				A0A9CAC31BA2F53C004E2A98 /* UserCell.m in Sources */,
+				4E4AF1E31C400C44006C4574 /* OnboardingWelcomeViewController.m in Sources */,
 				A0A9CABE1BA2F53C004E2A98 /* ProductCell.m in Sources */,
 				40F226BD1A2E0231003A98B1 /* PageTwoViewController.m in Sources */,
 				A0A9CAA41BA2F53C004E2A98 /* UserDetailsOptionsViewController.m in Sources */,
