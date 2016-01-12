@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnboardingNotificationsViewController">
+            <connections>
+                <outlet property="allowNotificationsButton" destination="vEb-nV-XPq" id="1pC-Qh-5Ua"/>
+                <outlet property="descriptionLabel" destination="cSf-e5-1jI" id="fqe-Aj-j2L"/>
+                <outlet property="headerImageView" destination="GnJ-lB-GF0" id="KvN-HC-deW"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="odY-Eg-j3F"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEb-nV-XPq">
+                    <rect key="frame" x="0.0" y="508" width="320" height="60"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="ehn-KH-nkp"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="ALLOW NOTIFICATIONS">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="allowNotifications:" destination="-1" eventType="touchUpInside" id="7dK-H2-PZ5"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GnJ-lB-GF0">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="213"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="140" id="iij-09-TBV"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="256" translatesAutoresizingMaskIntoConstraints="NO" id="cSf-e5-1jI">
+                    <rect key="frame" x="32" y="261" width="256" height="107.5"/>
+                    <string key="text">This app uses notifications to recieve updates and coupons.
+
+Tap the button below to allow notifications.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="cSf-e5-1jI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="2Na-hC-MlG"/>
+                <constraint firstItem="GnJ-lB-GF0" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.375" priority="900" id="ASv-7c-Cxm"/>
+                <constraint firstAttribute="trailing" secondItem="GnJ-lB-GF0" secondAttribute="trailing" id="Fub-TB-fLM"/>
+                <constraint firstItem="vEb-nV-XPq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Gf1-J8-9cv"/>
+                <constraint firstAttribute="bottom" secondItem="vEb-nV-XPq" secondAttribute="bottom" id="Ngx-cm-cfi"/>
+                <constraint firstAttribute="trailing" secondItem="vEb-nV-XPq" secondAttribute="trailing" id="WoB-i0-utH"/>
+                <constraint firstItem="GnJ-lB-GF0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YB1-vA-xvT"/>
+                <constraint firstAttribute="trailing" secondItem="cSf-e5-1jI" secondAttribute="trailing" constant="32" id="ht5-cG-Dhm"/>
+                <constraint firstItem="GnJ-lB-GF0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="i5X-fd-i5I"/>
+                <constraint firstItem="cSf-e5-1jI" firstAttribute="top" secondItem="GnJ-lB-GF0" secondAttribute="bottom" constant="48" id="qbX-W9-sIa"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>
