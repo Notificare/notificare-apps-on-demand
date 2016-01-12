@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnboardingLocationServicesViewController">
+            <connections>
+                <outlet property="allowLocationServicesButton" destination="VSI-4v-XfE" id="Way-qT-LI1"/>
+                <outlet property="descriptionLabel" destination="ft5-2Q-SvK" id="v7f-Ru-r7r"/>
+                <outlet property="headerImageView" destination="Cgh-c8-eUM" id="Jld-sy-5Iv"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="256" translatesAutoresizingMaskIntoConstraints="NO" id="ft5-2Q-SvK">
+                    <rect key="frame" x="32" y="261" width="256" height="107.5"/>
+                    <string key="text">This app uses location services to track your location.
+
+Tap the button below to allow location services.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cgh-c8-eUM">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="213"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="140" id="cbl-d9-G3C"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSI-4v-XfE">
+                    <rect key="frame" x="0.0" y="508" width="320" height="60"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="Wiv-0Y-O2X"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="ALLOW LOCATION SERVICES">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="allowLocationServices:" destination="-1" eventType="touchUpInside" id="xo7-Xa-ADd"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="VSI-4v-XfE" secondAttribute="bottom" id="A6g-KT-Z1X"/>
+                <constraint firstItem="Cgh-c8-eUM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="JaA-mm-W22"/>
+                <constraint firstItem="ft5-2Q-SvK" firstAttribute="top" secondItem="Cgh-c8-eUM" secondAttribute="bottom" constant="48" id="LK8-dj-tDS"/>
+                <constraint firstAttribute="trailing" secondItem="VSI-4v-XfE" secondAttribute="trailing" id="SPn-Mt-IGD"/>
+                <constraint firstAttribute="trailing" secondItem="ft5-2Q-SvK" secondAttribute="trailing" constant="32" id="cKd-Mk-qUP"/>
+                <constraint firstItem="Cgh-c8-eUM" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.375" priority="900" id="n67-W7-IeZ"/>
+                <constraint firstItem="Cgh-c8-eUM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nfd-3A-JaR"/>
+                <constraint firstItem="VSI-4v-XfE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uw5-zI-vag"/>
+                <constraint firstItem="ft5-2Q-SvK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="vzF-jv-IZZ"/>
+                <constraint firstAttribute="trailing" secondItem="Cgh-c8-eUM" secondAttribute="trailing" id="y2O-jM-Wla"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>
