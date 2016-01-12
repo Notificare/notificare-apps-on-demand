@@ -595,13 +595,15 @@
 				<integer>2</integer>
 			</dict>
 		</dict>
-		<key>onboarding</key>
+		<key>onboardingSteps</key>
 		<array>
-			<string>permission_notifications</string>
-			<string>permission_location_services</string>
-			<string>userPreferences</string>
+			<string>welcome</string>
+			<string>notifications</string>
+			<string>locationServices</string>
 		</array>
 		<key>userMustBeLoggedIn</key>
+		<false/>
+		<key>userMustCompletePreferences</key>
 		<false/>
 	</dict>
 	<key>navigation</key>
