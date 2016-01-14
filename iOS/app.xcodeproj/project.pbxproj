@@ -113,7 +113,7 @@
 		40F226CF1A2E375F003A98B1 /* TutorialDoneIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F226CC1A2E375F003A98B1 /* TutorialDoneIcon@3x.png */; };
 		4E103C8E1C457251006F004F /* OnboardingUserPreferenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E103C8C1C457251006F004F /* OnboardingUserPreferenceViewController.m */; };
 		4E103C8F1C457251006F004F /* OnboardingUserPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E103C8D1C457251006F004F /* OnboardingUserPreferenceViewController.xib */; };
-		4E4AF1DF1C400A5B006C4574 /* OnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AF1DE1C400A5B006C4574 /* OnboardingViewController.m */; };
+		4E103C921C47FAB8006F004F /* OnboardingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E103C911C47FAB8006F004F /* OnboardingManager.m */; };
 		4E4AF1E31C400C44006C4574 /* OnboardingWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AF1E11C400C44006C4574 /* OnboardingWelcomeViewController.m */; };
 		4E4AF1E41C400C44006C4574 /* OnboardingWelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E4AF1E21C400C44006C4574 /* OnboardingWelcomeViewController.xib */; };
 		4E4AF1E81C400C4D006C4574 /* OnboardingSignInUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AF1E61C400C4D006C4574 /* OnboardingSignInUpViewController.m */; };
@@ -319,8 +319,8 @@
 		4E103C8B1C457251006F004F /* OnboardingUserPreferenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnboardingUserPreferenceViewController.h; sourceTree = "<group>"; };
 		4E103C8C1C457251006F004F /* OnboardingUserPreferenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnboardingUserPreferenceViewController.m; sourceTree = "<group>"; };
 		4E103C8D1C457251006F004F /* OnboardingUserPreferenceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingUserPreferenceViewController.xib; sourceTree = "<group>"; };
-		4E4AF1DD1C400A5B006C4574 /* OnboardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnboardingViewController.h; sourceTree = "<group>"; };
-		4E4AF1DE1C400A5B006C4574 /* OnboardingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnboardingViewController.m; sourceTree = "<group>"; };
+		4E103C901C47FAB8006F004F /* OnboardingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnboardingManager.h; sourceTree = "<group>"; };
+		4E103C911C47FAB8006F004F /* OnboardingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnboardingManager.m; sourceTree = "<group>"; };
 		4E4AF1E01C400C44006C4574 /* OnboardingWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnboardingWelcomeViewController.h; sourceTree = "<group>"; };
 		4E4AF1E11C400C44006C4574 /* OnboardingWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnboardingWelcomeViewController.m; sourceTree = "<group>"; };
 		4E4AF1E21C400C44006C4574 /* OnboardingWelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingWelcomeViewController.xib; sourceTree = "<group>"; };
@@ -662,8 +662,8 @@
 		40F226AF1A2DFDE2003A98B1 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				4E4AF1DD1C400A5B006C4574 /* OnboardingViewController.h */,
-				4E4AF1DE1C400A5B006C4574 /* OnboardingViewController.m */,
+				4E103C901C47FAB8006F004F /* OnboardingManager.h */,
+				4E103C911C47FAB8006F004F /* OnboardingManager.m */,
 				4E4AF1E01C400C44006C4574 /* OnboardingWelcomeViewController.h */,
 				4E4AF1E11C400C44006C4574 /* OnboardingWelcomeViewController.m */,
 				4E4AF1E21C400C44006C4574 /* OnboardingWelcomeViewController.xib */,
@@ -1164,6 +1164,7 @@
 				A0A9CABC1BA2F53C004E2A98 /* LogCell.m in Sources */,
 				A0A9CABB1BA2F53C004E2A98 /* InfoLabel.m in Sources */,
 				A0A9CAA81BA2F53C004E2A98 /* LogViewController.m in Sources */,
+				4E103C921C47FAB8006F004F /* OnboardingManager.m in Sources */,
 				4E4AF1E81C400C4D006C4574 /* OnboardingSignInUpViewController.m in Sources */,
 				A0A9CAAC1BA2F53C004E2A98 /* ProductsViewController.m in Sources */,
 				A0A9CAB21BA2F53C004E2A98 /* BeaconCell.m in Sources */,
@@ -1179,7 +1180,6 @@
 				4EB185931C219735008811BE /* NotificareComponentViewController.m in Sources */,
 				4083858718FF2192000DC352 /* Configuration.m in Sources */,
 				4083849B18FF015C000DC352 /* AppDelegate.m in Sources */,
-				4E4AF1DF1C400A5B006C4574 /* OnboardingViewController.m in Sources */,
 				A0A9CAA61BA2F53C004E2A98 /* UserDetailsViewController.m in Sources */,
 				4E87EF3F1C3D76B200FC8609 /* CollectionComponentViewController.m in Sources */,
 				A0A9CAC01BA2F53C004E2A98 /* RegionsMarker.m in Sources */,
