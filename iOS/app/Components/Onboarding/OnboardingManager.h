@@ -8,13 +8,33 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSInteger, OnboardingStatus) {
+    kOnboardingStatusUnknown,
     kOnboardingStatusMustCompleteSteps,
     kOnboardingStatusMustLogIn,
     kOnboardingStatusMustCompleteUserPrefs,
     kOnboardingStatusAllComplete
 };
 
+
+@class OnboardingManager;
+
+
+@protocol OnboardingManagerDelegate <NSObject>
+
+@optional
+
+- (void)onboardingWillShow:(OnboardingManager *)onboardingManager;
+- (void)onboardingDidShow:(OnboardingManager *)onboardingManager;
+- (void)onboardingWillHide:(OnboardingManager *)onboardingManager;
+- (void)onboardingDidHide:(OnboardingManager *)onboardingManager;
+- (void)onboardingManager:(OnboardingManager *)onboardingManager didUpdateStatus:(OnboardingStatus)status;
+
+@end
+
 @interface OnboardingManager : NSObject
+
+@property (strong, nonatomic) id<OnboardingManagerDelegate> delegate;
+@property (nonatomic, readonly) OnboardingStatus status;
 
 + (instancetype)shared;
 - (void)getStatus:(void (^)(OnboardingStatus status, NSDictionary *info))completionBlock;

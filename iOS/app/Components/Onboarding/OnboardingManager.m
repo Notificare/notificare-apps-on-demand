@@ -28,6 +28,16 @@
 
 @implementation OnboardingManager
 
+- (void)setStatus:(OnboardingStatus)status {
+    OnboardingStatus oldStatus = _status;
+    
+    _status = status;
+    
+    if (status != oldStatus && self.delegate) {
+        [self.delegate onboardingManager:self didUpdateStatus:status];
+    }
+}
+
 - (UIViewController *)windowRootVC {
     return  [[(AppDelegate *)[[UIApplication sharedApplication] delegate] window] rootViewController];
 }
@@ -55,7 +65,7 @@
     self = [super init];
     
     if (self) {
-        
+        _status = kOnboardingStatusUnknown;
     }
     
     return self;
@@ -70,20 +80,31 @@
             ([step isEqualToString:@"notifications"] && ![OnboardingNotificationsViewController isComplete]) ||
             ([step isEqualToString:@"locationServices"] && ![OnboardingLocationServicesViewController isComplete])) {
             
-            completionBlock(kOnboardingStatusMustCompleteSteps, @{@"step": step});
+            self.status = kOnboardingStatusMustCompleteSteps;
+            completionBlock(self.status, @{@"step": step});
+            
             return;
         }
     }
     
     if ([appSettings[@"userMustBeLoggedIn"] boolValue]) {
+        
         if (![[NotificarePushLib shared] isLoggedIn]) {
-            completionBlock(kOnboardingStatusMustLogIn, nil);
+            
+            self.status = kOnboardingStatusMustLogIn;
+            completionBlock(self.status, nil);
+            
             return;
         }
+        
     }
     else {
-        completionBlock(kOnboardingStatusAllComplete, nil);
+        
+        self.status = kOnboardingStatusAllComplete;
+        completionBlock(self.status, nil);
+        
         return;
+        
     }
     
     if ([appSettings[@"userMustCompletePreferences"] boolValue]) {
@@ -91,6 +112,8 @@
         [[NotificarePushLib shared] fetchUserPreferences:^(NSArray *preferences) {
             
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            
+            BOOL allPreferencesComplete = YES;
             
             for (NotificareUserPreference *preference in preferences) {
                 NSString *key = [NSString stringWithFormat:@"onboardingUserPreference(%@)", preference.preferenceId];
@@ -110,10 +133,21 @@
                     preferenceComplete &= aSegmentSelected;
                 }
                 
+                allPreferencesComplete &= preferenceComplete;
+                
                 if (!preferenceComplete) {
-                    completionBlock(kOnboardingStatusMustCompleteUserPrefs, @{@"userPreference": preference});
+                    self.status = kOnboardingStatusMustCompleteUserPrefs;
+                    completionBlock(self.status, @{@"userPreference": preference});
+                    
                     return;
                 }
+            }
+            
+            if (allPreferencesComplete) {
+                self.status = kOnboardingStatusAllComplete;
+                completionBlock(self.status, nil);
+                
+                return;
             }
             
         } errorHandler:^(NSError *error) {
@@ -122,8 +156,12 @@
         }];
     }
     else {
-        completionBlock(kOnboardingStatusAllComplete, nil);
+        
+        self.status = kOnboardingStatusAllComplete;
+        completionBlock(self.status, nil);
+        
         return;
+        
     }
 }
 
@@ -132,33 +170,63 @@
         self.navigationController = [[UINavigationController alloc] init];
     }
     
-    [self update];
-    
     if (self.windowRootVC.presentedViewController) {
         if (self.windowRootVC.presentedViewController == self.navigationController) {
             // No need to show it again
         }
         else {
-            [self.windowRootVC.presentedViewController dismissViewControllerAnimated:animated completion:^{
-                [self.windowRootVC presentViewController:self.navigationController animated:animated completion:NULL];
+            
+            if (self.delegate) {
+                [self.delegate onboardingWillShow:self];
+            }
+            
+            [self.windowRootVC presentViewController:self.navigationController animated:animated completion:^{
+                if (self.delegate) {
+                    [self.delegate onboardingDidShow:self];
+                }
             }];
+            
         }
     }
     else {
-        [self.windowRootVC presentViewController:self.navigationController animated:animated completion:NULL];
+        
+        if (self.delegate) {
+            [self.delegate onboardingWillShow:self];
+        }
+        
+        [self.windowRootVC presentViewController:self.navigationController animated:animated completion:^{
+            if (self.delegate) {
+                [self.delegate onboardingDidShow:self];
+            }
+        }];
+        
     }
+    
+    [self update];
 }
 
 - (void)hide:(BOOL)animated {
     if (self.navigationController) {
+        
         if (self.navigationController == self.windowRootVC.presentedViewController) {
+            
+            if (self.delegate) {
+                [self.delegate onboardingWillHide:self];
+            }
+            
             [self.navigationController dismissViewControllerAnimated:animated completion:^{
                 self.navigationController = nil;
+                
+                if (self.delegate) {
+                    [self.delegate onboardingDidHide:self];
+                }
             }];
+            
         }
         else {
             self.navigationController = nil;
         }
+        
     }
     else {
         NSLog(@"There is no Onboarding Navigation Controller to hide.");
@@ -196,7 +264,7 @@
             }
                 
             case kOnboardingStatusAllComplete:
-                // Should dismiss itself?
+                [self hide:YES];
                 break;
                 
             default:
@@ -204,7 +272,6 @@
         }
         
     }];
-    
 }
 
 - (void)pushStep:(NSString *)step withAnimated:(BOOL)animated {
