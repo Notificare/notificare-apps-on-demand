@@ -10,7 +10,7 @@
 #import "SignInViewController.h"
 #import "SignUpViewController.h"
 #import "UserDetailsViewController.h"
-
+#import "OnboardingManager.h"
 
 @interface OnboardingSignInUpViewController ()
 
@@ -27,6 +27,22 @@
 
 
 @implementation OnboardingSignInUpViewController
+
+- (void)checkDeviceAndUser {
+    if ([[OnboardingManager shared] deviceIsRegistered]) {
+        if (self.notificarePushLib.isLoggedIn) {
+            if (self.completionBlock) {
+                self.completionBlock();
+            }
+        }
+        else {
+            [self showSignInUp:YES];
+        }
+    }
+    else {
+        [self hideSignInUp:NO];
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -65,7 +81,7 @@
     
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     
-    if (self.appDelegate.deviceIsRegistered) {
+    if ([[OnboardingManager shared] deviceIsRegistered]) {
         if (self.notificarePushLib.isLoggedIn) {
             
             if (self.completionBlock) {
@@ -79,17 +95,11 @@
             [self showSignInUp:NO];
         }
     }
-    else {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRegisterDevice) name:@"registeredDevice" object:nil];
-    }
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changedAccount) name:@"changedAccount" object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"registeredDevice" object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"changedAccount" object:nil];
 }
 
@@ -124,14 +134,22 @@
     }
 }
 
-- (void)didRegisterDevice {
-    if (self.notificarePushLib.isLoggedIn) {
-        if (self.completionBlock) {
-            self.completionBlock();
-        }
+- (void)hideSignInUp:(BOOL)animated {
+    [self.activityIndicatorView startAnimating];
+    
+    if (animated) {
+        [UIView animateWithDuration:0.3
+                              delay:0
+                            options:UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+                             self.signInUpView.alpha = 1;
+                         } completion:^(BOOL finished) {
+                             self.signInUpView.hidden = YES;
+                         }];
     }
     else {
-        [self showSignInUp:YES];
+        self.signInUpView.alpha = 0;
+        self.signInUpView.hidden = YES;
     }
 }
 

@@ -9,6 +9,8 @@
 
 @interface OnboardingSignInUpViewController : NotificareComponentViewController
 
+- (void)checkDeviceAndUser;
+
 @property (nonatomic, copy) void (^completionBlock)(void);
 
 @end

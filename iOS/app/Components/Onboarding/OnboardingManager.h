@@ -35,11 +35,12 @@ typedef NS_ENUM(NSInteger, OnboardingStatus) {
 
 @property (strong, nonatomic) id<OnboardingManagerDelegate> delegate;
 @property (nonatomic, readonly) OnboardingStatus status;
+@property (nonatomic) BOOL deviceIsRegistered;
+@property (nonatomic) BOOL visible;
 
 + (instancetype)shared;
 - (void)getStatus:(void (^)(OnboardingStatus status, NSDictionary *info))completionBlock;
-- (void)show:(BOOL)animated;
-- (void)hide:(BOOL)animated;
+- (void)setVisible:(BOOL)visible animated:(BOOL)animated;
 - (void)update;
 - (void)activateAccount:(NSNotification *)notification;
 - (void)resetPassword:(NSNotification *)notification;

@@ -38,6 +38,17 @@
     }
 }
 
+- (void)setDeviceIsRegistered:(BOOL)deviceIsRegistered {
+    _deviceIsRegistered = deviceIsRegistered;
+    
+    for (UIViewController *viewController in self.navigationController.viewControllers) {
+        if ([viewController class] == [OnboardingSignInUpViewController class]) {
+            OnboardingSignInUpViewController *onboardingSignInUpVC = (OnboardingSignInUpViewController *)viewController;
+            [onboardingSignInUpVC checkDeviceAndUser];
+        }
+    }
+}
+
 - (UIViewController *)windowRootVC {
     return  [[(AppDelegate *)[[UIApplication sharedApplication] delegate] window] rootViewController];
 }
@@ -165,6 +176,27 @@
     }
 }
 
+- (BOOL)visible {
+    return self.navigationController != nil && self.windowRootVC.presentedViewController == self.navigationController;
+}
+
+- (void)setVisible {
+    [self setVisible:NO];
+}
+
+- (void)setVisible:(BOOL)visible animated:(BOOL)animated {
+    if (visible == self.visible) {
+        return;
+    }
+    
+    if (visible) {
+        [self show:animated];
+    }
+    else {
+        [self hide:animated];
+    }
+}
+
 - (void)show:(BOOL)animated {
     if (!self.navigationController) {
         self.navigationController = [[UINavigationController alloc] init];
@@ -244,7 +276,7 @@
         
         switch (status) {
             case kOnboardingStatusMustCompleteSteps:
-                [self pushStep:info[@"step"] withAnimated:animated];
+                [self showStep:info[@"step"] animated:animated];
                 break;
                 
             case kOnboardingStatusMustLogIn: {
@@ -252,14 +284,14 @@
                 onboardingSignInUpVC.completionBlock = ^{
                     [self update];
                 };
-                [self.navigationController pushViewController:onboardingSignInUpVC animated:animated];
+                [self showViewController:onboardingSignInUpVC animated:animated];
                 
                 break;
             }
                 
             case kOnboardingStatusMustCompleteUserPrefs: {
                 OnboardingUserPreferenceViewController *onboardingUserPreferenceVC = [[OnboardingUserPreferenceViewController alloc] initWithUserPreference:info[@"userPreference"]];
-                [self.navigationController pushViewController:onboardingUserPreferenceVC animated:animated];
+                [self showViewController:onboardingUserPreferenceVC animated:animated];
                 break;
             }
                 
@@ -274,14 +306,14 @@
     }];
 }
 
-- (void)pushStep:(NSString *)step withAnimated:(BOOL)animated {
+- (void)showStep:(NSString *)step animated:(BOOL)animated {
     if ([step isEqualToString:@"welcome"]) {
         
         OnboardingWelcomeViewController *onboardingWelcomeVC = [[OnboardingWelcomeViewController alloc] init];
         onboardingWelcomeVC.completionBlock = ^{
             [self update];
         };
-        [self.navigationController pushViewController:onboardingWelcomeVC animated:animated];
+        [self showViewController:onboardingWelcomeVC animated:animated];
     }
     else if ([step isEqualToString:@"notifications"]) {
         
@@ -289,7 +321,7 @@
         onboardingNotificationsVC.completionBlock = ^{
             [self update];
         };
-        [self.navigationController pushViewController:onboardingNotificationsVC animated:animated];
+        [self showViewController:onboardingNotificationsVC animated:animated];
     }
     else if ([step isEqualToString:@"locationServices"]) {
         
@@ -297,7 +329,33 @@
         onboardingLocationServicesVC.completionBlock = ^{
             [self update];
         };
-        [self.navigationController pushViewController:onboardingLocationServicesVC animated:animated];
+        [self showViewController:onboardingLocationServicesVC animated:animated];
+    }
+}
+
+- (void)showViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if (!self.navigationController) {
+        return;
+    }
+    
+    NSArray *viewControllers = self.navigationController.viewControllers;
+    
+    if (viewControllers.count == 0) {
+        [self.navigationController pushViewController:viewController animated:animated];
+        return;
+    }
+    
+    // Check if we're not pushing the same view controller twice
+    if ([viewControllers.lastObject class] == [viewController class]) {
+        
+        if ([viewController class] == [OnboardingSignInUpViewController class]) {
+            OnboardingSignInUpViewController *onboardingSignInUpVC = (OnboardingSignInUpViewController *)viewController;
+            [onboardingSignInUpVC checkDeviceAndUser];
+        }
+        
+    }
+    else {
+        [self.navigationController pushViewController:viewController animated:animated];
     }
 }
 
