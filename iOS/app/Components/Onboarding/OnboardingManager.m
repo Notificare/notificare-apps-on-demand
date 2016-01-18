@@ -176,6 +176,14 @@
     }
 }
 
+- (BOOL)completedNotifications {
+    return [OnboardingNotificationsViewController isComplete];
+}
+
+- (BOOL)completedLocationServices {
+    return [OnboardingLocationServicesViewController isComplete];
+}
+
 - (BOOL)visible {
     return self.navigationController != nil && self.windowRootVC.presentedViewController == self.navigationController;
 }

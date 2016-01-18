@@ -36,6 +36,8 @@ typedef NS_ENUM(NSInteger, OnboardingStatus) {
 @property (strong, nonatomic) id<OnboardingManagerDelegate> delegate;
 @property (nonatomic, readonly) OnboardingStatus status;
 @property (nonatomic) BOOL deviceIsRegistered;
+@property (nonatomic, readonly) BOOL completedNotifications;
+@property (nonatomic, readonly) BOOL completedLocationServices;
 @property (nonatomic) BOOL visible;
 
 + (instancetype)shared;
