@@ -12,7 +12,6 @@
 
 @property (nonatomic, assign) UIEdgeInsets edgeInsets;
 
-- (void) configureWithProperties:(NSDictionary *) formProperties
-                       titleText:(NSString *) titleText;
+- (void)setup:(NSDictionary *)configuration;
 
 @end

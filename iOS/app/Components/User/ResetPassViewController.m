@@ -22,7 +22,7 @@
     return @"resetPass";
 }
 
-- (id)initWithNibName:(NSString *) nibNameOrNil
+/*- (id)initWithNibName:(NSString *) nibNameOrNil
                bundle:(NSBundle *) nibBundleOrNil
        viewProperties:(NSDictionary *) resetPassProperties
      signInProperties:(NSDictionary *) signInProperties
@@ -48,7 +48,7 @@
         _viewBackgroundColor = viewBgColor;
     }
     return self;
-}
+}*/
 
 - (void)viewDidLoad
 {
@@ -56,26 +56,17 @@
     // Do any additional setup after loading the view from its nib.
     
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self.view action:@selector(endEditing:)]];
-    
-    [self setupNavigationBarWithTitle:LSSTRING(@"title_resetpass")];
-    [self resetForm];
-    [[self view] setBackgroundColor:[self viewBackgroundColor]];
 
     // Password Form Field
-    [[self password] configureWithDelegate:self
-                           secureTextEntry:YES
-                                properties:[[self resetPassProperties] objectForKey:@"passwordForm"]
-                           placeHolderText:LSSTRING(@"placeholder_newpass")];
+    [self.password setup:self.configuration[@"passwordField"]];
+    self.password.delegate = self;
     
     // Confirm Password Form Field
-    [[self passwordConfirm] configureWithDelegate:self
-                                  secureTextEntry:YES
-                                       properties:[[self resetPassProperties] objectForKey:@"confirmPasswordForm"]
-                                  placeHolderText:LSSTRING(@"placeholder_confirm_newpass")];
+    [self.passwordConfirm setup:self.configuration[@"passwordConfirm"]];
+    self.passwordConfirm.delegate = self;
     
     // Reset Password Button
-    [[self resetPassButton] configureWithProperties:[[self resetPassProperties] objectForKey:@"resetPasswordButton"]
-                                          titleText:LSSTRING(@"button_resetpass")];
+    [self.resetPassButton setup:self.configuration[@"resetPasswordButton"]];
 }
 
 - (void) setupNavigationBarWithTitle:(NSString *) titleText {

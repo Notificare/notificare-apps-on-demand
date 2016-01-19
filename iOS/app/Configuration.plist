@@ -34,20 +34,27 @@
 		</dict>
 		<key>lostPass</key>
 		<dict>
-			<key>emailForm</key>
+			<key>emailField</key>
 			<dict>
-				<key>textFont</key>
+				<key>font</key>
 				<string>Lato-Light</string>
-				<key>textSize</key>
+				<key>fontSize</key>
 				<integer>20</integer>
 				<key>textColor</key>
 				<string>#FA3C3C</string>
-				<key>placeholderColor</key>
-				<string>#FA3C3C80</string>
+				<key>placeholder</key>
+				<dict>
+					<key>text</key>
+					<string>placeholder_email</string>
+					<key>color</key>
+					<string>#FA3C3C80</string>
+				</dict>
 				<key>backgroundColor</key>
 				<string>#FFFFFF</string>
 				<key>tintColor</key>
 				<string>#A01414</string>
+				<key>secureTextEntry</key>
+				<false/>
 				<key>borderColor</key>
 				<string>#E61414</string>
 				<key>cornerRadius</key>
@@ -57,12 +64,17 @@
 			</dict>
 			<key>forgottenPasswordButton</key>
 			<dict>
-				<key>textFont</key>
-				<string>Lato-Light</string>
-				<key>textSize</key>
-				<integer>20</integer>
-				<key>textColor</key>
-				<string>#FAFAFA</string>
+				<key>title</key>
+				<dict>
+					<key>text</key>
+					<string>button_forgotpass</string>
+					<key>font</key>
+					<string>Lato-Light</string>
+					<key>fontSize</key>
+					<integer>20</integer>
+					<key>color</key>
+					<string>#FAFAFA</string>
+				</dict>
 				<key>backgroundColor</key>
 				<string>#A03C3C</string>
 				<key>borderColor</key>
@@ -74,13 +86,11 @@
 			</dict>
 		</dict>
 		<key>resetPass</key>
-		<dict/>
-		<key>signIn</key>
 		<dict>
 			<key>title</key>
 			<dict>
 				<key>text</key>
-				<string>title_component_sign_in</string>
+				<string>title_component_resetpass</string>
 				<key>font</key>
 				<string>Lato-Light</string>
 				<key>fontSize</key>
@@ -88,20 +98,27 @@
 				<key>color</key>
 				<string>#E6E6E6</string>
 			</dict>
-			<key>emailForm</key>
+			<key>passwordField</key>
 			<dict>
-				<key>textFont</key>
+				<key>font</key>
 				<string>Lato-Light</string>
-				<key>textSize</key>
+				<key>fontSize</key>
 				<integer>20</integer>
 				<key>textColor</key>
 				<string>#FA3C3C</string>
-				<key>placeholderColor</key>
-				<string>#FA3C3C80</string>
+				<key>placeholder</key>
+				<dict>
+					<key>text</key>
+					<string>placeholder_newpass</string>
+					<key>color</key>
+					<string>#FA3C3C80</string>
+				</dict>
 				<key>backgroundColor</key>
 				<string>#FFFFFF</string>
 				<key>tintColor</key>
 				<string>#A01414</string>
+				<key>secureTextEntry</key>
+				<true/>
 				<key>borderColor</key>
 				<string>#E61414</string>
 				<key>cornerRadius</key>
@@ -109,20 +126,27 @@
 				<key>borderWidth</key>
 				<integer>2</integer>
 			</dict>
-			<key>passwordForm</key>
+			<key>confirmPasswordField</key>
 			<dict>
-				<key>textFont</key>
+				<key>font</key>
 				<string>Lato-Light</string>
-				<key>textSize</key>
+				<key>fontSize</key>
 				<integer>20</integer>
 				<key>textColor</key>
 				<string>#FA3C3C</string>
-				<key>placeholderColor</key>
-				<string>#FA3C3C80</string>
+				<key>placeholder</key>
+				<dict>
+					<key>text</key>
+					<string>placeholder_confirm_newpass</string>
+					<key>color</key>
+					<string>#FA3C3C80</string>
+				</dict>
 				<key>backgroundColor</key>
 				<string>#FFFFFF</string>
 				<key>tintColor</key>
 				<string>#A01414</string>
+				<key>secureTextEntry</key>
+				<true/>
 				<key>borderColor</key>
 				<string>#E61414</string>
 				<key>cornerRadius</key>
@@ -130,23 +154,19 @@
 				<key>borderWidth</key>
 				<integer>2</integer>
 			</dict>
-			<key>forgottenPasswordButton</key>
+			<key>resetPasswordButton</key>
 			<dict>
-				<key>textFont</key>
-				<string>Lato-Light</string>
-				<key>textSize</key>
-				<integer>16</integer>
-				<key>textColor</key>
-				<string>#A02828</string>
-			</dict>
-			<key>signInButton</key>
-			<dict>
-				<key>textFont</key>
-				<string>Lato-Light</string>
-				<key>textSize</key>
-				<integer>20</integer>
-				<key>textColor</key>
-				<string>#FAFAFA</string>
+				<key>title</key>
+				<dict>
+					<key>text</key>
+					<string>button_resetpass</string>
+					<key>font</key>
+					<string>Lato-Light</string>
+					<key>fontSize</key>
+					<integer>20</integer>
+					<key>color</key>
+					<string>#FAFAFA</string>
+				</dict>
 				<key>backgroundColor</key>
 				<string>#A03C3C</string>
 				<key>borderColor</key>
@@ -156,14 +176,133 @@
 				<key>borderWidth</key>
 				<integer>2</integer>
 			</dict>
-			<key>createAccountButton</key>
+		</dict>
+		<key>signIn</key>
+		<dict>
+			<key>title</key>
 			<dict>
-				<key>textFont</key>
+				<key>text</key>
+				<string>title_component_signin</string>
+				<key>font</key>
 				<string>Lato-Light</string>
-				<key>textSize</key>
+				<key>fontSize</key>
+				<integer>20</integer>
+				<key>color</key>
+				<string>#E6E6E6</string>
+			</dict>
+			<key>emailField</key>
+			<dict>
+				<key>font</key>
+				<string>Lato-Light</string>
+				<key>fontSize</key>
 				<integer>20</integer>
 				<key>textColor</key>
-				<string>#FAFAFA</string>
+				<string>#FA3C3C</string>
+				<key>placeholder</key>
+				<dict>
+					<key>text</key>
+					<string>placeholder_email</string>
+					<key>color</key>
+					<string>#FA3C3C80</string>
+				</dict>
+				<key>backgroundColor</key>
+				<string>#FFFFFF</string>
+				<key>tintColor</key>
+				<string>#A01414</string>
+				<key>secureTextEntry</key>
+				<false/>
+				<key>borderColor</key>
+				<string>#E61414</string>
+				<key>cornerRadius</key>
+				<integer>10</integer>
+				<key>borderWidth</key>
+				<integer>2</integer>
+			</dict>
+			<key>passwordField</key>
+			<dict>
+				<key>font</key>
+				<string>Lato-Light</string>
+				<key>fontSize</key>
+				<integer>20</integer>
+				<key>textColor</key>
+				<string>#FA3C3C</string>
+				<key>placeholder</key>
+				<dict>
+					<key>text</key>
+					<string>placeholder_password</string>
+					<key>color</key>
+					<string>#FA3C3C80</string>
+				</dict>
+				<key>backgroundColor</key>
+				<string>#FFFFFF</string>
+				<key>tintColor</key>
+				<string>#A01414</string>
+				<key>secureTextEntry</key>
+				<true/>
+				<key>borderColor</key>
+				<string>#E61414</string>
+				<key>cornerRadius</key>
+				<integer>10</integer>
+				<key>borderWidth</key>
+				<integer>2</integer>
+			</dict>
+			<key>forgottenPasswordButton</key>
+			<dict>
+				<key>title</key>
+				<dict>
+					<key>text</key>
+					<string>button_lostpass</string>
+					<key>font</key>
+					<string>Lato-Light</string>
+					<key>fontSize</key>
+					<integer>16</integer>
+					<key>color</key>
+					<string>#A02828</string>
+				</dict>
+				<key>backgroundColor</key>
+				<string>#A03C3C</string>
+				<key>borderColor</key>
+				<string>#141414</string>
+				<key>cornerRadius</key>
+				<integer>10</integer>
+				<key>borderWidth</key>
+				<integer>2</integer>
+			</dict>
+			<key>signinButton</key>
+			<dict>
+				<key>title</key>
+				<dict>
+					<key>text</key>
+					<string>button_signin</string>
+					<key>font</key>
+					<string>Lato-Light</string>
+					<key>fontSize</key>
+					<integer>20</integer>
+					<key>color</key>
+					<string>#FAFAFA</string>
+				</dict>
+				<key>backgroundColor</key>
+				<string>#A03C3C</string>
+				<key>borderColor</key>
+				<string>#141414</string>
+				<key>cornerRadius</key>
+				<integer>10</integer>
+				<key>borderWidth</key>
+				<integer>2</integer>
+			</dict>
+			<key>signupButton</key>
+			<dict>
+				<key>title</key>
+				<dict>
+					<key>text</key>
+					<string>button_signup</string>
+					<key>font</key>
+					<string>Lato-Light</string>
+					<key>fontSize</key>
+					<integer>20</integer>
+					<key>color</key>
+					<string>#FAFAFA</string>
+				</dict>
 				<key>backgroundColor</key>
 				<string>#A03C3C</string>
 				<key>borderColor</key>
@@ -179,7 +318,7 @@
 			<key>title</key>
 			<dict>
 				<key>text</key>
-				<string>title_component_sign_up</string>
+				<string>title_component_signup</string>
 				<key>font</key>
 				<string>Lato-Light</string>
 				<key>fontSize</key>
@@ -187,20 +326,27 @@
 				<key>color</key>
 				<string>#E6E6E6</string>
 			</dict>
-			<key>nameForm</key>
+			<key>nameField</key>
 			<dict>
-				<key>textFont</key>
+				<key>font</key>
 				<string>Lato-Light</string>
-				<key>textSize</key>
+				<key>fontSize</key>
 				<integer>20</integer>
 				<key>textColor</key>
 				<string>#FA3C3C</string>
-				<key>placeholderColor</key>
-				<string>#FA3C3C80</string>
+				<key>placeholder</key>
+				<dict>
+					<key>text</key>
+					<string>placeholder_name</string>
+					<key>color</key>
+					<string>#FA3C3C80</string>
+				</dict>
 				<key>backgroundColor</key>
 				<string>#FFFFFF</string>
 				<key>tintColor</key>
 				<string>#A01414</string>
+				<key>secureTextEntry</key>
+				<false/>
 				<key>borderColor</key>
 				<string>#E61414</string>
 				<key>cornerRadius</key>
@@ -208,20 +354,27 @@
 				<key>borderWidth</key>
 				<integer>2</integer>
 			</dict>
-			<key>emailForm</key>
+			<key>emailField</key>
 			<dict>
-				<key>textFont</key>
+				<key>font</key>
 				<string>Lato-Light</string>
-				<key>textSize</key>
+				<key>fontSize</key>
 				<integer>20</integer>
 				<key>textColor</key>
 				<string>#FA3C3C</string>
-				<key>placeholderColor</key>
-				<string>#FA3C3C80</string>
+				<key>placeholder</key>
+				<dict>
+					<key>text</key>
+					<string>placeholder_email</string>
+					<key>color</key>
+					<string>#FA3C3C80</string>
+				</dict>
 				<key>backgroundColor</key>
 				<string>#FFFFFF</string>
 				<key>tintColor</key>
 				<string>#A01414</string>
+				<key>secureTextEntry</key>
+				<false/>
 				<key>borderColor</key>
 				<string>#E61414</string>
 				<key>cornerRadius</key>
@@ -229,20 +382,27 @@
 				<key>borderWidth</key>
 				<integer>2</integer>
 			</dict>
-			<key>passwordForm</key>
+			<key>passwordField</key>
 			<dict>
-				<key>textFont</key>
+				<key>font</key>
 				<string>Lato-Light</string>
-				<key>textSize</key>
+				<key>fontSize</key>
 				<integer>20</integer>
 				<key>textColor</key>
 				<string>#FA3C3C</string>
-				<key>placeholderColor</key>
-				<string>#FA3C3C80</string>
+				<key>placeholder</key>
+				<dict>
+					<key>text</key>
+					<string>placeholder_password</string>
+					<key>color</key>
+					<string>#FA3C3C80</string>
+				</dict>
 				<key>backgroundColor</key>
 				<string>#FFFFFF</string>
 				<key>tintColor</key>
 				<string>#A01414</string>
+				<key>secureTextEntry</key>
+				<true/>
 				<key>borderColor</key>
 				<string>#E61414</string>
 				<key>cornerRadius</key>
@@ -250,20 +410,27 @@
 				<key>borderWidth</key>
 				<integer>2</integer>
 			</dict>
-			<key>confirmPasswordForm</key>
+			<key>confirmPasswordField</key>
 			<dict>
-				<key>textFont</key>
+				<key>font</key>
 				<string>Lato-Light</string>
-				<key>textSize</key>
+				<key>fontSize</key>
 				<integer>20</integer>
 				<key>textColor</key>
 				<string>#FA3C3C</string>
-				<key>placeholderColor</key>
-				<string>#FA3C3C80</string>
+				<key>placeholder</key>
+				<dict>
+					<key>text</key>
+					<string>placeholder_confirm_password</string>
+					<key>color</key>
+					<string>#FA3C3C80</string>
+				</dict>
 				<key>backgroundColor</key>
 				<string>#FFFFFF</string>
 				<key>tintColor</key>
 				<string>#A01414</string>
+				<key>secureTextEntry</key>
+				<true/>
 				<key>borderColor</key>
 				<string>#E61414</string>
 				<key>cornerRadius</key>
@@ -271,14 +438,19 @@
 				<key>borderWidth</key>
 				<integer>2</integer>
 			</dict>
-			<key>createAccountButton</key>
+			<key>signupButton</key>
 			<dict>
-				<key>textFont</key>
-				<string>Lato-Light</string>
-				<key>textSize</key>
-				<integer>20</integer>
-				<key>textColor</key>
-				<string>#FAFAFA</string>
+				<key>title</key>
+				<dict>
+					<key>text</key>
+					<string>button_signup</string>
+					<key>font</key>
+					<string>Lato-Light</string>
+					<key>fontSize</key>
+					<integer>20</integer>
+					<key>color</key>
+					<string>#FAFAFA</string>
+				</dict>
 				<key>backgroundColor</key>
 				<string>#A03C3C</string>
 				<key>borderColor</key>
@@ -602,7 +774,7 @@
 			<string>locationServices</string>
 		</array>
 		<key>userMustBeLoggedIn</key>
-		<false/>
+		<true/>
 		<key>userMustCompletePreferences</key>
 		<false/>
 	</dict>

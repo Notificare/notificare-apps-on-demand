@@ -24,7 +24,7 @@
     return @"signUp";
 }
 
-- (id)initWithNibName:(NSString *) nibNameOrNil
+/*- (id)initWithNibName:(NSString *) nibNameOrNil
                bundle:(NSBundle *) nibBundleOrNil
        viewProperties:(NSDictionary *) signUpProperties
             titleFont:(UIFont *) titleFont
@@ -46,77 +46,45 @@
     }
     
     return self;
-}
+}*/
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self.view action:@selector(endEditing:)]];
     
-    [self setupNavigationBarWithTitle:LSSTRING(@"title_signup")];
-    [self resetForm];
-    [[self view] setBackgroundColor:[self viewBackgroundColor]];
-    
     // Name Form Field
-    [[self name] configureWithDelegate:self
-                       secureTextEntry:NO
-                            properties:[[self signUpProperties] objectForKey:@"nameForm"]
-                       placeHolderText:LSSTRING(@"placeholder_name")];
+    [self.name setup:self.configuration[@"nameField"]];
+    self.name.delegate = self;
     
     // Email Form Field
-    [[self email] configureWithDelegate:self
-                        secureTextEntry:NO
-                             properties:[[self signUpProperties] objectForKey:@"emailForm"]
-                        placeHolderText:LSSTRING(@"placeholder_email")];
+    [self.email setup:self.configuration[@"emailField"]];
+    self.email.delegate = self;
 
     // Password Form Field
-    [[self password] configureWithDelegate:self
-                           secureTextEntry:YES
-                                properties:[[self signUpProperties] objectForKey:@"passwordForm"]
-                           placeHolderText:LSSTRING(@"placeholder_password")];
+    [self.password setup:self.configuration[@"passwordField"]];
+    self.password.delegate = self;
     
     // Confirm Password Form Field
-    [[self passwordConfirm] configureWithDelegate:self
-                           secureTextEntry:YES
-                                properties:[[self signUpProperties] objectForKey:@"confirmPasswordForm"]
-                           placeHolderText:LSSTRING(@"placeholder_confirm_password")];
+    [self.passwordConfirm setup:self.configuration[@"confirmPasswordField"]];
+    self.passwordConfirm.delegate = self;
     
     // Create Account Button
-    [[self signupButton] configureWithProperties:[[self signUpProperties] objectForKey:@"createAccountButton"]
-                                          titleText:LSSTRING(@"button_signup")];
+    [self.signupButton setup:self.configuration[@"signupButton"]];
     
     [self setViewCenter:[[self view] center]];
 }
 
-- (void) setupNavigationBarWithTitle:(NSString *) titleText {
+- (void)setupNavigationBar {
+    [super setupNavigationBar];
     
-    UILabel * title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 40)];
-    [title setText:titleText];
-    [title setFont:[self titleFont]];
-    [title setTextAlignment:NSTextAlignmentCenter];
-    [title setTextColor:[self titleColor]];
-    [[self navigationItem] setTitleView:title];
-    
-    UIBarButtonItem * leftButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"BackButton"] style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
-    
-    [leftButton setTintColor:[self navigationForegroundColor]];
-    
-    [[self navigationItem] setLeftBarButtonItem:leftButton];
-    [[self navigationItem] setRightBarButtonItem:nil];
-    
-    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
-        
-        [[[self navigationController] navigationBar] setTintColor:[self navigationBackgroundColor]];
-        
-        [[UIBarButtonItem appearance] setBackgroundImage:[UIImage imageNamed:@"Transparent"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-        [[UIBarButtonItem appearance] setBackgroundImage:[UIImage imageNamed:@"Transparent"] forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
-        
-    } else {
-        
-        [[[self navigationController] navigationBar] setBarTintColor:[self navigationBackgroundColor]];
-    }
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
+- (void)back {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 -(IBAction)createAccount:(id)sender{
@@ -131,7 +99,7 @@
         
         APP_ALERT_DIALOG(LSSTRING(@"error_create_account_passwords_match"));
         [[self signupButton] setEnabled:YES];
-    }else if ([[[self passwordConfirm] text] length] < 5) {
+    }else if ([[[self passwordConfirm] text] length] < PASSWORD_MIN_LENGTH) {
         APP_ALERT_DIALOG(LSSTRING(@"error_create_account_small_password"));
         [[self signupButton] setEnabled:YES];
     } else {

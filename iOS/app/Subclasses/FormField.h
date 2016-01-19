@@ -12,12 +12,7 @@
 
 @property (nonatomic, assign) UIEdgeInsets edgeInsets;
 
-- (void) configureWithDelegate:(id) delegate
-               secureTextEntry:(BOOL) secureText
-                    properties:(NSDictionary *) formProperties
-               placeHolderText:(NSString *) placeholderText;
-
-- (void) setPlaceholderText:(NSString *) placeholderString
-         withColorHexString:(NSString *) colorHexString;
+- (void)setup:(NSDictionary *)configuration;
+- (void) setPlaceholder:(NSString *)placeholder withColor:(UIColor *)color;
 
 @end

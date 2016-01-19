@@ -48,8 +48,6 @@
 
 @property (strong, nonatomic) ApiEngine * apiEngine;
 
-@property (nonatomic, readonly) BOOL deviceIsRegistered;
-
 
 -(void)handleNavigation:(NSDictionary *)item;
 -(void)refreshMainController;

@@ -274,20 +274,19 @@
 }
 
 - (void)update {
-    if (!self.navigationController) {
-        return;
-    }
-    
     BOOL animated = self.navigationController.viewControllers.count != 0;
     
     [self getStatus:^(OnboardingStatus status, NSDictionary *info) {
         
         switch (status) {
             case kOnboardingStatusMustCompleteSteps:
+                [self setVisible:YES animated:YES];
                 [self showStep:info[@"step"] animated:animated];
                 break;
                 
             case kOnboardingStatusMustLogIn: {
+                [self setVisible:YES animated:YES];
+                
                 OnboardingSignInUpViewController *onboardingSignInUpVC = [[OnboardingSignInUpViewController alloc] init];
                 onboardingSignInUpVC.completionBlock = ^{
                     [self update];
@@ -298,13 +297,16 @@
             }
                 
             case kOnboardingStatusMustCompleteUserPrefs: {
+                [self setVisible:YES animated:YES];
+                
                 OnboardingUserPreferenceViewController *onboardingUserPreferenceVC = [[OnboardingUserPreferenceViewController alloc] initWithUserPreference:info[@"userPreference"]];
                 [self showViewController:onboardingUserPreferenceVC animated:animated];
+                
                 break;
             }
                 
             case kOnboardingStatusAllComplete:
-                [self hide:YES];
+                [self setVisible:NO animated:YES];
                 break;
                 
             default:
@@ -343,13 +345,13 @@
 
 - (void)showViewController:(UIViewController *)viewController animated:(BOOL)animated {
     if (!self.navigationController) {
-        return;
+        self.navigationController = [[UINavigationController alloc] init];
     }
     
     NSArray *viewControllers = self.navigationController.viewControllers;
     
     if (viewControllers.count == 0) {
-        [self.navigationController pushViewController:viewController animated:animated];
+        [self.navigationController pushViewController:viewController animated:NO];
         return;
     }
     
@@ -381,7 +383,7 @@
     SignInViewController *signInVC = [[SignInViewController alloc] init];
     ResetPassViewController *resetPassView = [[ResetPassViewController alloc] init];
     
-    resetPassView.token = [[notification userInfo] objectForKey:@"token"];
+    resetPassView.token = notification.userInfo[@"token"];
     
     self.navigationController.viewControllers = @[onboardingSignInUpVC, signInVC];
     [self.navigationController pushViewController:resetPassView animated:YES];

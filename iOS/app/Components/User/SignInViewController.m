@@ -10,7 +10,6 @@
 #import "AppDelegate.h"
 #import "NotificarePushLib.h"
 #import "IIViewDeckController.h"
-#import "UIColor+Hex.h"
 
 @interface SignInViewController ()
 
@@ -22,133 +21,53 @@
     return @"signIn";
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+/*- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
     return self;
-}
+}*/
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self.view action:@selector(endEditing:)]];
-
-    [self setupNavigationBarWithTitle:LSSTRING(@"title_signin")];
-    [self resetForm];
-    [[self view] setBackgroundColor:[self viewBackgroundColor]];
  
     // Email Form Field
-    [[self email] configureWithDelegate:self
-                        secureTextEntry:NO
-                             properties:[[self signInProperties] objectForKey:@"emailForm"]
-                        placeHolderText:LSSTRING(@"placeholder_email")];
+    [self.email setup:self.configuration[@"emailField"]];
+    self.email.delegate = self;
     
     // Password Form Field
-    [[self password] configureWithDelegate:self
-                           secureTextEntry:YES
-                                properties:[[self signInProperties] objectForKey:@"passwordForm"]
-                           placeHolderText:LSSTRING(@"placeholder_password")];
+    [self.password setup:self.configuration[@"passwordField"]];
+    self.password.delegate = self;
     
     // Forgotten Password Transparent Button
-    NSDictionary *forgottenPasswordButtonProperties = [[self signInProperties] objectForKey:@"forgottenPasswordButton"];
-    [[self forgotPasswordButton] setTitle:LSSTRING(@"button_forgotpass") forState:UIControlStateNormal];
-    [[[self forgotPasswordButton] titleLabel] setFont:[UIFont fontWithName:[forgottenPasswordButtonProperties objectForKey:@"textFont"]
-                                                                      size:[[forgottenPasswordButtonProperties objectForKey:@"textSize"] doubleValue]]];
-    [[self forgotPasswordButton] setTitleColor:[UIColor colorWithHexString:[forgottenPasswordButtonProperties objectForKey:@"textColor"]] forState:UIControlStateNormal];
+    [self.forgotPasswordButton setup:self.configuration[@"forgottenPasswordButton"]];
     
     // Sign In Button
-    [[self signinButton] configureWithProperties:[[self signInProperties] objectForKey:@"signInButton"]
-                                          titleText:LSSTRING(@"button_signin")];
+    [self.signinButton setup:self.configuration[@"signinButton"]];
     
     // Create Account Button
-    [[self createAccountButton] configureWithProperties:[[self signInProperties] objectForKey:@"createAccountButton"]
-                                       titleText:LSSTRING(@"button_signup")];
-
-    [self setSignUpView:[[SignUpViewController alloc] initWithNibName:@"SignUpViewController"
-                                                              bundle:nil
-                                                      viewProperties:[self signUpProperties]
-                                                           titleFont:[self titleFont]
-                                                          titleColor:[self titleColor]
-                                                navigationBarBgColor:[self navigationBackgroundColor]
-                                                navigationBarFgColor:[self navigationForegroundColor]
-                                                         viewBgColor:[self viewBackgroundColor]]];
-    
-    [self setLostpassView:[[LostPassViewController alloc] initWithNibName:@"LostPassViewController"
-                                                                   bundle:nil
-                                                           viewProperties:[self lostPassProperties]
-                                                                titleFont:[self titleFont]
-                                                               titleColor:[self titleColor]
-                                                     navigationBarBgColor:[self navigationBackgroundColor]
-                                                     navigationBarFgColor:[self navigationForegroundColor]
-                                                              viewBgColor:[self viewBackgroundColor]]];
+    [self.createAccountButton setup:self.configuration[@"signupButton"]];
 }
 
-- (void) setupNavigationBarWithTitle:(NSString *) titleText {
+- (void)setupNavigationBar {
+    [super setupNavigationBar];
     
-    UILabel * title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 40)];
-    [title setText:titleText];
-    [title setFont:[self titleFont]];
-    [title setTextAlignment:NSTextAlignmentCenter];
-    [title setTextColor:[self titleColor]];
-    [[self navigationItem] setTitleView:title];
-    
-    int count = [[[self appDelegate] notificarePushLib] myBadge];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
 
-    if(count > 0){
-        [[self buttonIcon] setTintColor:[self navigationForegroundColor]];
-        [[self badgeButton] addTarget:[self viewDeckController] action:@selector(toggleLeftView) forControlEvents:UIControlEventTouchUpInside];
-        
-        NSString * badge = [NSString stringWithFormat:@"%i", count];
-        [[self badgeNr] setText:badge];
-        
-        UIBarButtonItem * leftButton = [[UIBarButtonItem alloc] initWithCustomView:[self badge]];
-        [leftButton setTarget:[self viewDeckController]];
-        [leftButton setAction:@selector(toggleLeftView)];
-        [leftButton setTintColor:[self navigationForegroundColor]];
-        [[self navigationItem] setLeftBarButtonItem:leftButton];
-        
-    } else {
-        
-        UIBarButtonItem * leftButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"LeftMenuIcon"] style:UIBarButtonItemStylePlain target:[self viewDeckController] action:@selector(toggleLeftView)];
-        [leftButton setTintColor:[self navigationForegroundColor]];
-        [[self navigationItem] setLeftBarButtonItem:leftButton];
-    }
-
-    UIBarButtonItem * rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"RightMenuIcon"] style:UIBarButtonItemStylePlain target:[self viewDeckController] action:@selector(toggleRightView)];
-    
-    [rightButton setTintColor:[self navigationForegroundColor]];
-    
-    if([[[self appDelegate] beacons] count] > 0){
-        
-        [[self navigationItem] setRightBarButtonItem:rightButton];
-        
-    } else {
-        
-        [[self navigationItem] setRightBarButtonItem:nil];
-    }
-    
-    //For iOS6
-    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
-        
-        [[[self navigationController] navigationBar] setTintColor:[self navigationBackgroundColor]];
-        
-        [[UIBarButtonItem appearance] setBackgroundImage:[UIImage imageNamed:@"Transparent"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-        [[UIBarButtonItem appearance] setBackgroundImage:[UIImage imageNamed:@"Transparent"] forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
-        
-    } else {
-        
-        [[[self navigationController] navigationBar] setBarTintColor:[self navigationBackgroundColor]];
-    }   
+- (void)back {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 -(void)changeBadge{
     
-    [self setupNavigationBarWithTitle:LSSTRING(@"title_signin")];
+    [self setupNavigationBar];
 }
 
 
@@ -160,7 +79,7 @@
         APP_ALERT_DIALOG(LSSTRING(@"error_signin_invalid_email"));
 
         [[self signinButton] setEnabled:YES];
-    }else if ([[[self password] text] length] < 5) {
+    }else if ([[[self password] text] length] < PASSWORD_MIN_LENGTH) {
 
         APP_ALERT_DIALOG(LSSTRING(@"error_signin_invalid_password"));
         [[self signinButton] setEnabled:YES];
@@ -214,12 +133,16 @@
     
 }
 
--(IBAction)forgottenPassword:(id)sender{
-     [[self navigationController] pushViewController:[self lostpassView] animated:YES];
+-(IBAction)forgottenPassword:(id)sender {
+#warning Update to use a configuration dictionary
+    LostPassViewController *lostPassVC = [[LostPassViewController alloc] init];
+    [[self navigationController] pushViewController:lostPassVC animated:YES];
 }
 
 -(IBAction)goToCreateAccount:(id)sender{
-    [[self navigationController] pushViewController:[self signUpView] animated:YES];
+#warning Update to use a configuration dictionary
+    SignUpViewController *signUpVC = [[SignUpViewController alloc] init];
+    [[self navigationController] pushViewController:signUpVC animated:YES];
 }
 
 

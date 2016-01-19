@@ -22,7 +22,7 @@
     return @"lostPass";
 }
 
-- (id)initWithNibName:(NSString *) nibNameOrNil
+/*- (id)initWithNibName:(NSString *) nibNameOrNil
                bundle:(NSBundle *) nibBundleOrNil
        viewProperties:(NSDictionary *) lostPassProperties
             titleFont:(UIFont *) titleFont
@@ -45,7 +45,7 @@
     }
     
     return self;
-}
+}*/
 
 - (void)viewDidLoad
 {
@@ -54,19 +54,12 @@
     
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self.view action:@selector(endEditing:)]];
     
-    [self setupNavigationBarWithTitle:LSSTRING(@"title_lostpass")];
-    [self resetForm];
-    [[self view] setBackgroundColor:[self viewBackgroundColor]];
-
     // Email Form Field
-    [[self email] configureWithDelegate:self
-                           secureTextEntry:NO
-                                properties:[[self lostPassProperties] objectForKey:@"emailForm"]
-                           placeHolderText:LSSTRING(@"placeholder_email")];
+    [self.email setup:self.configuration[@"emailField"]];
+    self.email.delegate = self;
     
     // Recover Password Button
-    [[self forgotPassButton] configureWithProperties:[[self lostPassProperties] objectForKey:@"forgottenPasswordButton"]
-                                           titleText:LSSTRING(@"button_forgotpass")];
+    [self.forgotPassButton setup:self.configuration[@"forgottenPasswordButton"]];
 }
 
 - (void) setupNavigationBarWithTitle:(NSString *) titleText {

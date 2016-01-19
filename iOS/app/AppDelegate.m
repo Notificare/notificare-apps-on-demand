@@ -9,8 +9,6 @@
 #import "AppDelegate.h"
 #import "IIViewDeckController.h"
 #import "MainViewController.h"
-#import "PageOneViewController.h"
-#import "PageTwoViewController.h"
 #import "PageThreeViewController.h"
 #import "WebViewController.h"
 #import "RightViewController.h"
@@ -26,8 +24,14 @@
 #import "NotificareDevice.h"
 #import "UIColor+Hex.h"
 #import "PassesViewController.h"
+#import "OnboardingManager.h"
 
 
+@interface AppDelegate () <OnboardingManagerDelegate>
+
+@property (strong, nonatomic) OnboardingManager *onboardingManager;
+
+@end
 
 
 @implementation AppDelegate
@@ -69,6 +73,10 @@
 
     //[self performSelector:@selector(createNotification) withObject:nil afterDelay:4.0];
     
+    self.onboardingManager = [OnboardingManager shared];
+    self.onboardingManager.delegate = self;
+    [self.onboardingManager setVisible:YES animated:NO];
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -106,31 +114,8 @@
     [self setLeftController:[[LeftViewController alloc] initWithNibName:@"LeftViewController" bundle:nil]];
     [self setRightController:[[RightViewController alloc] initWithNibName:@"RightViewController" bundle:nil]];
     
-    
-    NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
-    
-   
-    
-    if(![settings boolForKey:@"tutorialUserRegistered"] && ![[NotificarePushLib shared] checkLocationUpdates]){
-        PageOneViewController * controller = [[PageOneViewController alloc] initWithNibName:@"PageOneViewController" bundle:nil];
-        [self setCenterController:[[UINavigationController alloc] initWithRootViewController:controller]];
-    }
-    
-    if([settings boolForKey:@"tutorialUserRegistered"] && [[NotificarePushLib shared] checkLocationUpdates]){
-        PageThreeViewController * controller = [[PageThreeViewController alloc] initWithNibName:@"PageThreeViewController" bundle:nil];
-        [self setCenterController:[[UINavigationController alloc] initWithRootViewController:controller]];
-    }
-    
-    if([settings boolForKey:@"tutorialUserRegistered"] && ![[NotificarePushLib shared] checkLocationUpdates]){
-        
-        PageTwoViewController * controller = [[PageTwoViewController alloc] initWithNibName:@"PageTwoViewController" bundle:nil];
-        [self setCenterController:[[UINavigationController alloc] initWithRootViewController:controller]];
-        
-        
-        
-    }
-    
-    
+    PageThreeViewController *pageThreeViewController = [[PageThreeViewController alloc] init];
+    self.centerController = [[UINavigationController alloc] initWithRootViewController:pageThreeViewController];
     
    
     [self setDeckController:[[IIViewDeckController alloc] initWithCenterViewController:[self centerController]
@@ -162,7 +147,7 @@
     [settings setBool:NO forKey:@"re.notifica.office.prod2"];
     [settings synchronize];
     
-    if([settings boolForKey:@"tutorialUserRegistered"]){
+    if (self.onboardingManager.completedNotifications) {
 
         [[NotificarePushLib shared] registerForNotifications];
     }
@@ -235,8 +220,10 @@
                     [self setCenterController:[[UINavigationController alloc] initWithRootViewController:userDetails]];
                     
                 } else {
+#warning Consider using a configuration dictionary
+                    SignInViewController *signInVC = [[SignInViewController alloc] init];
                     
-                    SignInViewController * login = [[SignInViewController alloc] initWithNibName:@"SignInViewController" bundle:nil];
+                    /*SignInViewController * login = [[SignInViewController alloc] initWithNibName:@"SignInViewController" bundle:nil];
                     
                     [login setTitleFont:[UIFont fontWithName:[item objectForKey:@"titleFont"] size:[[item objectForKey:@"titleSize"] doubleValue]]];
                     [login setTitleColor:[UIColor colorWithHexString:[item objectForKey:@"titleColor"]]];
@@ -245,9 +232,9 @@
                     [login setViewBackgroundColor:[UIColor colorWithHexString:[item objectForKey:@"backgroundColor"]]];
                     [login setSignInProperties:[item objectForKey:@"signIn"]];
                     [login setSignUpProperties:[item objectForKey:@"signUp"]];
-                    [login setLostPassProperties:[item objectForKey:@"forgottenPassword"]];
+                    [login setLostPassProperties:[item objectForKey:@"forgottenPassword"]];*/
                     
-                    [self setCenterController:[[UINavigationController alloc] initWithRootViewController:login]];
+                    [self setCenterController:[[UINavigationController alloc] initWithRootViewController:signInVC]];
                 }
                 
                 
@@ -290,28 +277,8 @@
                 
                 
             } else if ([[item objectForKey:@"url"] hasPrefix:@"MainView:"]){
-            
-                
-                NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
-                
-                if(![settings boolForKey:@"tutorialUserRegistered"] && ![[NotificarePushLib shared] checkLocationUpdates]){
-                    PageOneViewController * controller = [[PageOneViewController alloc] initWithNibName:@"PageOneViewController" bundle:nil];
-                    [[self deckController] setCenterController:[[UINavigationController alloc] initWithRootViewController:controller]];
-                }
-                
-                
-                
-                if([settings boolForKey:@"tutorialUserRegistered"] && [[NotificarePushLib shared] checkLocationUpdates]){
-                    
-                    PageThreeViewController * controller = [[PageThreeViewController alloc] initWithNibName:@"PageThreeViewController" bundle:nil];
-                    [[self deckController] setCenterController:[[UINavigationController alloc] initWithRootViewController:controller]];
-                }
-                
-                if([settings boolForKey:@"tutorialUserRegistered"] && ![[NotificarePushLib shared] checkLocationUpdates]){
-                    
-                    PageTwoViewController * controller = [[PageTwoViewController alloc] initWithNibName:@"PageTwoViewController" bundle:nil];
-                    [[self deckController] setCenterController:[[UINavigationController alloc] initWithRootViewController:controller]];
-                }
+                PageThreeViewController *pageThreeViewController = [[PageThreeViewController alloc] init];
+                self.deckController.centerController = [[UINavigationController alloc] initWithRootViewController:pageThreeViewController];
                 
             } else if ([[item objectForKey:@"url"] hasPrefix:@"Passes:"]) {
                 PassesViewController *passesVC = [[PassesViewController alloc] init];
@@ -359,7 +326,7 @@
 - (void)notificarePushLib:(NotificarePushLib *)library didChangeAccountNotification:(NSDictionary *)info{
     NSLog(@"didChangeAccountNotification: %@",info);
     
-    UserDetailsViewController * userDetailsView = [[UserDetailsViewController alloc] initWithNibName:@"UserDetailsViewController" bundle:nil];
+    /*UserDetailsViewController * userDetailsView = [[UserDetailsViewController alloc] initWithNibName:@"UserDetailsViewController" bundle:nil];
     
     NSDictionary *appSettings = [[Configuration shared] getDictionary:@"appSettings"];
     
@@ -376,7 +343,9 @@
     [self setCenterController:navigationController];
     [[self deckController] setCenterController:[self centerController]];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"changedAccount" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"changedAccount" object:nil];*/
+    
+    [self.onboardingManager update];
     
     NSMutableDictionary * tmpLog = [NSMutableDictionary dictionary];
     [tmpLog setObject:@"didChangeAccountNotification" forKey:@"event"];
@@ -386,55 +355,7 @@
 }
 
 - (void)notificarePushLib:(NotificarePushLib *)library didFailToRequestAccessNotification:(NSError *)error{
-    NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
-    
-    if([settings boolForKey:@"tutorialUserRegistered"]){
-        
-        SignInViewController * signInView = [[SignInViewController alloc] initWithNibName:@"SignInViewController" bundle:nil];
-        
-        NSDictionary *appSettings = [[Configuration shared] getDictionary:@"appSettings"];
-        
-        NSDictionary *accountViewProperties = [appSettings objectForKey:@"accountView"];
-        NSDictionary *signInProperties = [accountViewProperties objectForKey:@"signIn"];
-        NSDictionary *signUpProperties = [accountViewProperties objectForKey:@"signUp"];
-        NSDictionary *lostPassProperties = [accountViewProperties objectForKey:@"forgottenPassword"];
-        
-        [signInView setTitleFont:[UIFont fontWithName:[accountViewProperties objectForKey:@"titleFont"] size:[[accountViewProperties objectForKey:@"titleSize"] doubleValue]]];
-        [signInView setTitleColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"titleColor"]]];
-        [signInView setNavigationBackgroundColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"navigationBgColor"]]];
-        [signInView setNavigationForegroundColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"navigationFgColor"]]];
-        [signInView setViewBackgroundColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"backgroundColor"]]];
-        [signInView setSignInProperties:(NSDictionary *)[signInProperties objectForKey:@"signIn"]];
-        [signInView setSignUpProperties:[signUpProperties objectForKey:@"signUp"]];
-        [signInView setLostPassProperties:[lostPassProperties objectForKey:@"forgottenPassword"]];
-        
-        UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:signInView];
-        [self setCenterController:navigationController];
-        [[self deckController] setCenterController:[self centerController]];
-        
-    } else {
-
-        NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
-        
-        if(![settings boolForKey:@"tutorialUserRegistered"] && ![[NotificarePushLib shared] checkLocationUpdates]){
-            PageOneViewController * controller = [[PageOneViewController alloc] initWithNibName:@"PageOneViewController" bundle:nil];
-            [[self deckController] setCenterController:[[UINavigationController alloc] initWithRootViewController:controller]];
-        }
-        
-        
-        
-        if([settings boolForKey:@"tutorialUserRegistered"] && [[NotificarePushLib shared] checkLocationUpdates]){
-            
-            PageThreeViewController * controller = [[PageThreeViewController alloc] initWithNibName:@"PageThreeViewController" bundle:nil];
-            [[self deckController] setCenterController:[[UINavigationController alloc] initWithRootViewController:controller]];
-        }
-        
-        if([settings boolForKey:@"tutorialUserRegistered"] && ![[NotificarePushLib shared] checkLocationUpdates]){
-            
-            PageTwoViewController * controller = [[PageTwoViewController alloc] initWithNibName:@"PageTwoViewController" bundle:nil];
-            [[self deckController] setCenterController:[[UINavigationController alloc] initWithRootViewController:controller]];
-        }
-    }
+    [self.onboardingManager update];
     
     
     
@@ -452,7 +373,7 @@
     
     [[NotificarePushLib shared] validateAccount:token completionHandler:^(NSDictionary *info) {
         
-        SignInViewController * signInView = [[SignInViewController alloc] initWithNibName:@"SignInViewController" bundle:nil];
+        /*SignInViewController * signInView = [[SignInViewController alloc] initWithNibName:@"SignInViewController" bundle:nil];
         
         NSDictionary *appSettings = [[Configuration shared] getDictionary:@"appSettings"];
         
@@ -468,9 +389,12 @@
         [signInView setViewBackgroundColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"backgroundColor"]]];
         [signInView setSignInProperties:(NSDictionary *)[signInProperties objectForKey:@"signIn"]];
         [signInView setSignUpProperties:[signUpProperties objectForKey:@"signUp"]];
-        [signInView setLostPassProperties:[lostPassProperties objectForKey:@"forgottenPassword"]];
+        [signInView setLostPassProperties:[lostPassProperties objectForKey:@"forgottenPassword"]];*/
         
-        UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:signInView];
+#warning Consider using a configuration dictionary
+        SignInViewController *signInVC = [[SignInViewController alloc] init];
+        
+        UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:signInVC];
         [self setCenterController:navigationController];
         [[self deckController] setCenterController:[self centerController]];
         
@@ -491,7 +415,7 @@
 
 - (void)notificarePushLib:(NotificarePushLib *)library didReceiveResetPasswordToken:(NSString *)token{
     
-    SignInViewController * login = [[SignInViewController alloc] initWithNibName:@"SignInViewController" bundle:nil];
+    /*SignInViewController * login = [[SignInViewController alloc] initWithNibName:@"SignInViewController" bundle:nil];
     
     UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:login];
     
@@ -521,11 +445,16 @@
                                           titleColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"titleColor"]]
                                 navigationBarBgColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"navigationBgColor"]]
                                 navigationBarFgColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"navigationFgColor"]]
-                                         viewBgColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"backgroundColor"]]];
+                                         viewBgColor:[UIColor colorWithHexString:[accountViewProperties objectForKey:@"backgroundColor"]]];*/
     
+#warning Consider using a configuraton dictionary 2x
+    SignInViewController *signInVC = [[SignInViewController alloc] init];
+    ResetPassViewController *resetPassVC = [[ResetPassViewController alloc] init];
     
-    [resetPassView setToken:token];
-    [navigationController pushViewController:resetPassView animated:YES];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:signInVC];
+    
+    [resetPassVC setToken:token];
+    [navigationController pushViewController:resetPassVC animated:YES];
     
     [self setCenterController:navigationController];
     [[self deckController] setCenterController:[self centerController]];
@@ -542,8 +471,8 @@
     
     //If you don't identify users you can just use this
     [[NotificarePushLib shared] registerDevice:deviceToken completionHandler:^(NSDictionary *info) {
-
-        _deviceIsRegistered = YES;
+        
+        self.onboardingManager.deviceIsRegistered = YES;
         
         [[NSNotificationCenter defaultCenter] postNotificationName:@"registeredDevice" object:nil];
 
@@ -810,12 +739,9 @@
     
 }
 
-- (void)notificarePushLib:(NotificarePushLib *)library didUpdateLocations:(NSArray *)locations{
+- (void)notificarePushLib:(NotificarePushLib *)library didUpdateLocations:(NSArray *)locations {
 
-    NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
-    if([settings boolForKey:@"tutorialUserRegistered"]){
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"startedLocationUpdate" object:nil];
-    }
+    
     
     NSMutableDictionary * tmpLog = [NSMutableDictionary dictionary];
     [tmpLog setObject:@"didUpdateLocations" forKey:@"event"];
@@ -1050,6 +976,29 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+
+#pragma mark - OnboardingManager delegate -
+
+- (void)onboardingWillShow:(OnboardingManager *)onboardingManager {
+    
+}
+
+- (void)onboardingDidShow:(OnboardingManager *)onboardingManager {
+    
+}
+
+- (void)onboardingWillHide:(OnboardingManager *)onboardingManager {
+    
+}
+
+- (void)onboardingDidHide:(OnboardingManager *)onboardingManager {
+    
+}
+
+- (void)onboardingManager:(OnboardingManager *)onboardingManager didUpdateStatus:(OnboardingStatus)status {
+    
 }
 
 @end

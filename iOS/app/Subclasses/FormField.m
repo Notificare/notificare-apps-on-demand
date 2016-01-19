@@ -37,34 +37,28 @@
     return self;
 }
 
-- (void) configureWithDelegate:(id) delegate
-               secureTextEntry:(BOOL) secureText
-                    properties:(NSDictionary *) formProperties
-               placeHolderText:(NSString *) placeholderText {
+- (void)setup:(NSDictionary *)configuration {
+    self.font = [UIFont fontWithName:configuration[@"font"] size:[configuration[@"fontSize"] doubleValue]];
+    self.textColor = [UIColor colorWithHexString:configuration[@"textColor"]];
+    self.backgroundColor = [UIColor colorWithHexString:configuration[@"backgroundColor"]];
+    self.tintColor = [UIColor colorWithHexString:configuration[@"tintColor"]];
+    self.secureTextEntry = [configuration[@"secureTextEntry"] boolValue];
+    [self setPlaceholder:LSSTRING(configuration[@"placeholder"][@"text"]) withColor:[UIColor colorWithHexString:configuration[@"placeholder"][@"color"]]];
     
-    [self setDelegate:delegate];
-    [self setSecureTextEntry:secureText];
-    [self setFont:[UIFont fontWithName:[formProperties objectForKey:@"textFont"] size:[[formProperties objectForKey:@"textSize"] doubleValue]]];
-    [self setBackgroundColor:[UIColor colorWithHexString:[formProperties objectForKey:@"backgroundColor"]]];
-    [self setTextColor:[UIColor colorWithHexString:[formProperties objectForKey:@"textColor"]]];
-    [self setTintColor:[UIColor colorWithHexString:[formProperties objectForKey:@"tintColor"]]];
-    self.layer.cornerRadius = [[formProperties objectForKey:@"cornerRadius"] doubleValue];
-    self.layer.borderColor = [[UIColor colorWithHexString:[formProperties objectForKey:@"borderColor"]] CGColor];
-    self.layer.borderWidth = [[formProperties objectForKey:@"borderWidth"] doubleValue];
-    [self setPlaceholderText:placeholderText
-          withColorHexString:[formProperties objectForKey:@"placeholderColor"]];
+    self.layer.cornerRadius = [configuration[@"cornerRadius"] doubleValue];
+    self.layer.borderColor = [[UIColor colorWithHexString:configuration[@"borderColor"]] CGColor];
+    self.layer.borderWidth = [configuration[@"borderWidth"] doubleValue];
 }
 
-- (void) setPlaceholderText:(NSString *)placeholderString
-         withColorHexString:(NSString *)colorHexString {
+- (void)setPlaceholder:(NSString *)placeHolder withColor:(UIColor *)color {
     
     if ([self respondsToSelector:@selector(setAttributedPlaceholder:)]) {
         
-        self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeholderString attributes:@{NSForegroundColorAttributeName: [UIColor colorWithHexString:colorHexString]}];
+        self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeHolder attributes:@{NSForegroundColorAttributeName: color}];
         
-    } else {
-        
-        [self setPlaceholder:placeholderString];
+    }
+    else {
+        self.placeholder = placeHolder;
     }
 }
 

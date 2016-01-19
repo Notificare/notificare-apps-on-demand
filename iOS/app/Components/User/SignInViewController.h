@@ -25,7 +25,7 @@
 @property (nonatomic, strong) IBOutlet FormField * email;
 @property (nonatomic, strong) IBOutlet FormField * password;
 @property (nonatomic, strong) IBOutlet FormButton * signinButton;
-@property (nonatomic, strong) IBOutlet FormButtonTransparent * forgotPasswordButton;
+@property (nonatomic, strong) IBOutlet FormButton * forgotPasswordButton;
 @property (nonatomic, strong) IBOutlet FormButton * createAccountButton;
 @property (nonatomic, strong) IBOutlet InfoLabel * infoLabel;
 @property (nonatomic, strong) IBOutlet UIView * badge;
@@ -35,14 +35,6 @@
 @property (nonatomic, strong) SignUpViewController * signUpView;
 @property (nonatomic, strong) LostPassViewController * lostpassView;
 @property (nonatomic, strong) FormField *activeField;
-@property (nonatomic, strong) UIFont *titleFont;
-@property (nonatomic, strong) UIColor *titleColor;
-@property (nonatomic, strong) UIColor *navigationBackgroundColor;
-@property (nonatomic, strong) UIColor *navigationForegroundColor;
-@property (nonatomic, strong) UIColor *viewBackgroundColor;
-@property (nonatomic, strong) NSDictionary *signInProperties;
-@property (nonatomic, strong) NSDictionary *signUpProperties;
-@property (nonatomic, strong) NSDictionary *lostPassProperties;
 
 -(IBAction)doLogin:(id)sender;
 -(IBAction)forgottenPassword:(id)sender;

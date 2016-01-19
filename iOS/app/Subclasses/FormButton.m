@@ -28,17 +28,19 @@
     return self;
 }
 
-- (void) configureWithProperties:(NSDictionary *) formProperties
-                       titleText:(NSString *) titleText {
+- (void)setup:(NSDictionary *)configuration {
+#warning Should really have a configuration validation
+    [self setTitle:LSSTRING(configuration[@"title"][@"text"]) forState:UIControlStateNormal];
     
-    [self setTitle:titleText forState:UIControlStateNormal];
-    [[self titleLabel] setFont:[UIFont fontWithName:[formProperties objectForKey:@"textFont"] size:[[formProperties objectForKey:@"textSize"] doubleValue]]];
-    [self setTitleColor:[UIColor colorWithHexString:[formProperties objectForKey:@"textColor"]] forState:UIControlStateNormal];
-    [self setBackgroundColor:[UIColor colorWithHexString:[formProperties objectForKey:@"backgroundColor"]]];
-    [[self titleLabel] setShadowColor:[UIColor blackColor]];
-    self.layer.cornerRadius= [[formProperties objectForKey:@"cornerRadius"] doubleValue];
-    self.layer.borderColor= [[UIColor colorWithHexString:[formProperties objectForKey:@"borderColor"]] CGColor];
-    self.layer.borderWidth= [[formProperties objectForKey:@"borderWidth"] doubleValue];
+    self.titleLabel.font = [UIFont fontWithName:configuration[@"title"][@"font"] size:[configuration[@"title"][@"fontSize"] doubleValue]];
+    [self setTitleColor:[UIColor colorWithHexString:configuration[@"title"][@"color"]] forState:UIControlStateNormal];
+    self.titleLabel.shadowColor = [UIColor blackColor];
+    
+    self.backgroundColor = [UIColor colorWithHexString:configuration[@"backgroundColor"]];
+    
+    self.layer.cornerRadius = [configuration[@"cornerRadius"] doubleValue];
+    self.layer.borderColor = [[UIColor colorWithHexString:configuration[@"borderColor"]] CGColor];
+    self.layer.borderWidth = [configuration[@"borderWidth"] doubleValue];
 }
 
 @end
