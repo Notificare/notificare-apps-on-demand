@@ -16,7 +16,7 @@
 
 @interface NotificareComponentViewController : UIViewController
 
-@property (nonatomic, readonly) NSDictionary *configuration;
+@property (strong, nonatomic, readonly) NSDictionary *configuration;
 @property (nonatomic, readonly) AppDelegate *appDelegate;
 @property (nonatomic, readonly) NotificarePushLib *notificarePushLib;
 

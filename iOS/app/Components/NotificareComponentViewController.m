@@ -109,45 +109,48 @@
     UIColor *foregroundColor = [UIColor colorWithHexString:self.configuration[@"navigationBar"][@"foregroundColor"]];
     UIColor *backgroundColor = [UIColor colorWithHexString:self.configuration[@"navigationBar"][@"backgroundColor"]];
     
+    self.navigationController.navigationBar.tintColor = foregroundColor;
     self.navigationController.navigationBar.barTintColor = backgroundColor;
     
     int count = self.notificarePushLib.myBadge;
     
-    if (count > 0) {
-        self.buttonIcon.tintColor = foregroundColor;
-        [self.badgeButton addTarget:self.viewDeckController action:@selector(toggleLeftView) forControlEvents:UIControlEventTouchUpInside];
+    if (self.viewDeckController) {
+        if (count > 0) {
+            self.buttonIcon.tintColor = foregroundColor;
+            [self.badgeButton addTarget:self.viewDeckController action:@selector(toggleLeftView) forControlEvents:UIControlEventTouchUpInside];
+            
+            self.badgeNr.text = [NSString stringWithFormat:@"%i", count];
+            
+            UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithCustomView:self.badge];
+            leftButton.target = self.viewDeckController;
+            leftButton.action = @selector(toggleLeftView);
+            leftButton.tintColor = foregroundColor;
+            
+            self.navigationItem.leftBarButtonItem = leftButton;
+        }
+        else {
+            UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"LeftMenuIcon"]
+                                                                           style:UIBarButtonItemStylePlain
+                                                                          target:self.viewDeckController
+                                                                          action:@selector(toggleLeftView)];
+            leftButton.tintColor = foregroundColor;
+            [[self navigationItem] setLeftBarButtonItem:leftButton];
+        }
         
-        self.badgeNr.text = [NSString stringWithFormat:@"%i", count];
-        
-        UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithCustomView:self.badge];
-        leftButton.target = self.viewDeckController;
-        leftButton.action = @selector(toggleLeftView);
-        leftButton.tintColor = foregroundColor;
-        
-        self.navigationItem.leftBarButtonItem = leftButton;
-    }
-    else {
-        UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"LeftMenuIcon"]
-                                                                       style:UIBarButtonItemStylePlain
-                                                                      target:self.viewDeckController
-                                                                      action:@selector(toggleLeftView)];
-        leftButton.tintColor = foregroundColor;
-        [[self navigationItem] setLeftBarButtonItem:leftButton];
-    }
-    
-    if (self.appDelegate.beacons.count > 0) {
-        UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"RightMenuIcon"]
-                                                                        style:UIBarButtonItemStylePlain
-                                                                       target:self.viewDeckController
-                                                                       action:@selector(toggleRightView)];
-        
-        rightButton.tintColor = foregroundColor;
-        
-        self.navigationItem.rightBarButtonItem = rightButton;
-        
-    }
-    else {
-        self.navigationItem.rightBarButtonItem = nil;
+        if (self.appDelegate.beacons.count > 0) {
+            UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"RightMenuIcon"]
+                                                                            style:UIBarButtonItemStylePlain
+                                                                           target:self.viewDeckController
+                                                                           action:@selector(toggleRightView)];
+            
+            rightButton.tintColor = foregroundColor;
+            
+            self.navigationItem.rightBarButtonItem = rightButton;
+            
+        }
+        else {
+            self.navigationItem.rightBarButtonItem = nil;
+        }
     }
 }
 
@@ -162,6 +165,5 @@
     [self setupNavigationBar];
     [self setupBackground];
 }
-
 
 @end
