@@ -134,7 +134,11 @@ UIAlertView *confirm = [[UIAlertView alloc] initWithTitle:(__title__) message:(_
 
 #define ZLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 
+/**
+ * OTHER
+ */
 
+#define PASSWORD_MIN_LENGTH 6
 
 
 #endif
